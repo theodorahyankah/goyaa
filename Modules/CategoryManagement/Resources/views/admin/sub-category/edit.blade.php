@@ -3,9 +3,9 @@
 @section('title',translate('sub_category_update'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
 @endpush
 
 @section('content')
@@ -145,8 +145,8 @@
                                                            data-maxFileSize="{{ readableUploadMaxFileSize('image') }}">
                                                     <div class="upload-file__img">
                                                         <img src="{{onErrorImage($subCategory->image,
-                                                                        asset('storage/app/public/category').'/' . $subCategory->image,
-                                                                        asset('public/assets/admin-module/img/media/upload-file.png') ,
+                                                                        asset('storage/category').'/' . $subCategory->image,
+                                                                        asset('assets/admin-module/img/media/upload-file.png') ,
                                                                         'category/')}}"
                                                             alt="{{translate('image')}}">
                                                     </div>
@@ -176,8 +176,8 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module/plugins/select2/select2.min.js')}}"></script>
-    <script src="{{asset('public/assets/category-module/js/sub-category/edit.js')}}"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/dataTables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/dataTables/dataTables.select.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/select2/select2.min.js')}}"></script>
+    <script src="{{asset('assets/category-module/js/sub-category/edit.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/dataTables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/dataTables/dataTables.select.min.js')}}"></script>
 @endpush

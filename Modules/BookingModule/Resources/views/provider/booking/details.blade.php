@@ -618,7 +618,7 @@
                                                      src="{{$booking?->customer?->profile_image_full_path}}" alt="{{translate('user_image')}}">
                                             @else
                                                 <img width="58" height="58" class="rounded-circle border border-white aspect-square object-fit-cover"
-                                                     src="{{ asset('public/assets/provider-module/img/user2x.png') }}" alt="{{translate('user_image')}}">
+                                                     src="{{ asset('assets/provider-module/img/user2x.png') }}" alt="{{translate('user_image')}}">
                                             @endif
                                             <div class="media-body">
                                                 <h5 class="c1 mb-3">
@@ -750,7 +750,7 @@
                     <div class="modal-body m-4">
                         <div class="d-flex flex-column gap-2 align-items-center">
                             <img width="75" class="mb-2"
-                                 src="{{asset('public/assets/provider-module')}}/img/media/ignore-request.png"
+                                 src="{{asset('assets/provider-module')}}/img/media/ignore-request.png"
                                  alt="">
                             <h3>{{translate('Update customer service address')}}</h3>
 
@@ -802,7 +802,7 @@
 
 @push('script')
 
-    <script src="{{ asset('public/assets/admin-module/js/spartan-multi-image-picker.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/spartan-multi-image-picker.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ business_config('google_map', 'third_party')?->live_values['map_api_key_client'] }}&libraries=places&v=3.45.8"></script>
 
     <script type="text/javascript">
@@ -819,7 +819,7 @@
                 groupClassName: 'spartan_item_wrapper min-w-100px max-w-100px',
                 maxFileSize: '',
                 placeholderImage: {
-                    image: '{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png',
+                    image: '{{asset('assets/admin-module')}}/img/media/banner-upload-file.png',
                     width: '100%',
                 },
                 dropFileLabel: "Drop Here",

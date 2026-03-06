@@ -3,9 +3,9 @@
 @section('title',translate('Send Notification'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
 @endpush
 
 @section('content')
@@ -317,7 +317,7 @@
                                                                             data-url="{{ route('admin.push-notification.delete', [$item->id]) }}"
                                                                             data-title="{{ translate('want_to_delete_this') }}?"
                                                                             data-description="{{ translate('You will not be able to revert this!') }}"
-                                                                            data-image="{{ asset('public/assets/admin-module/img/modal/delete-icon.svg') }}">
+                                                                            data-image="{{ asset('assets/admin-module/img/modal/delete-icon.svg') }}">
                                                                         <span class="material-icons">delete</span>
                                                                     </button>
                                                                 @endcan
@@ -352,7 +352,7 @@
                     <div class="modal-body p-30">
                         <div class="">
                             <div class="text-center mx-auto">
-                                <img class="mb-20 notification-details-image-view" src="{{asset('public/assets/admin-module')}}/img/short-thumb.png" alt="">
+                                <img class="mb-20 notification-details-image-view" src="{{asset('assets/admin-module')}}/img/short-thumb.png" alt="">
                             </div>
                             <div class="bg-light rounded p-10 mb-15">
                                 <div class="bg-white cus-shadow rounded">
@@ -517,7 +517,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
     <script>
         "use Strict";
 
@@ -695,8 +695,8 @@
             $('.confirmation-description-text').text(confirmationDescriptionText);
 
             let imgSrc = notificationInitialState
-                ? "{{ asset('public/assets/admin-module/img/icons/status-on.png') }}"
-                : "{{ asset('public/assets/admin-module/img/icons/status-off.png') }}";
+                ? "{{ asset('assets/admin-module/img/icons/status-on.png') }}"
+                : "{{ asset('assets/admin-module/img/icons/status-off.png') }}";
 
             $('#confirmChangeModal img').attr('src', imgSrc);
 
@@ -734,7 +734,7 @@
 
 
     </script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
 @endpush
 

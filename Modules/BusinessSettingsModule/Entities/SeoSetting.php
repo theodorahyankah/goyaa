@@ -43,9 +43,9 @@ class SeoSetting extends Model
     public function getImageFullPathAttribute()
     {
         $image = $this->meta_image;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
         if (request()->is('admin/*')) {
-            $defaultPath = asset('public/assets/admin-module/img/media/banner-upload-file.png');
+            $defaultPath = asset('assets/admin-module/img/media/banner-upload-file.png');
         }
 
         if (!$image) {

@@ -4,8 +4,8 @@
 
 @push('css_or_js')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/admin-module/swiper/swiper-bundle.min.css')}}"/>
-    <link rel="stylesheet" href="{{ asset('public/assets/admin-module/css/addon-module.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('assets/admin-module/swiper/swiper-bundle.min.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('assets/admin-module/css/addon-module.css')}}"/>
 @endpush
 
 @section('content')
@@ -13,7 +13,7 @@
         <div class="page-header d-flex justify-content-between">
             <h1 class="page-header-title mb-3">
                 <span class="page-header-icon">
-                    <img src="{{asset('public/assets/admin/img/business-setup.png')}}" class="w--22" alt="">
+                    <img src="{{asset('assets/admin/img/business-setup.png')}}" class="w--22" alt="">
                 </span>
                 <span>{{translate('system_addons')}}</span>
             </h1>
@@ -45,7 +45,7 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="d-flex flex-column align-items-center mx-w450 mx-auto">
-                                                <img src="{{asset('public/assets/admin-module/img/addon-setting.png')}}"
+                                                <img src="{{asset('assets/admin-module/img/addon-setting.png')}}"
                                                      loading="lazy"
                                                      alt="" class="dark-support rounded mb-4">
                                             </div>
@@ -165,7 +165,7 @@
                                         <button class="text-danger bg-transparent p-0 border-0 me-2"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#deleteThemeModal_{{$key}}"><img
-                                                src="{{asset('public/assets/admin-module/img/delete.svg')}}" class="svg"
+                                                src="{{asset('assets/admin-module/img/delete.svg')}}" class="svg"
                                                 alt=""></button>
                                     @endcan
 
@@ -184,7 +184,7 @@
                                                 <div class="modal-body px-4 px-sm-5 text-center">
                                                     <div class="mb-3 text-center">
                                                         <img width="75"
-                                                             src="{{asset('public/assets/admin-module/img/delete.png')}}"
+                                                             src="{{asset('assets/admin-module/img/delete.png')}}"
                                                              alt="">
                                                     </div>
 
@@ -209,7 +209,7 @@
                                     <button
                                         class="{{$data['is_published'] == 1 ? 'checkbox-color-primary' : 'text-muted'}} bg-transparent p-0 border-0"
                                         data-bs-toggle="modal" data-bs-target="#shiftThemeModal_{{$key}}"><img
-                                            src="{{asset('public/assets/admin-module/img/check.svg')}}" class="svg"
+                                            src="{{asset('assets/admin-module/img/check.svg')}}" class="svg"
                                             alt="">
                                     </button>
                                 @endcan
@@ -228,7 +228,7 @@
                                             <div class="modal-body px-4 px-sm-5 text-center">
                                                 <div class="mb-3 text-center">
                                                     <img width="75"
-                                                         src="{{asset('public/assets/admin-module/img/shift.png')}}"
+                                                         src="{{asset('assets/admin-module/img/shift.png')}}"
                                                          alt="">
                                                 </div>
 
@@ -279,7 +279,7 @@
 
                             <div class="aspect-ration-3:2 border border-color-primary-light radius-10">
                                 <img class="img-fit radius-10"
-                                     onerror='this.src="{{asset('public/assets/admin/img/placeholder.png')}}"'
+                                     onerror='this.src="{{asset('assets/admin/img/placeholder.png')}}"'
                                      src="{{asset($addon.'/public/addon.png')}}">
                             </div>
                         </div>
@@ -323,7 +323,7 @@
 {{--                                    <input type="file" accept=".zip" required style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;">--}}
 {{--                                    <div class="global-upload-box">--}}
 {{--                                        <div class="upload-content text-center">--}}
-{{--                                            <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/drop-upload-cloud.png" alt="" class="mb-15">--}}
+{{--                                            <img class="mb-20" src="{{asset('assets/admin-module')}}/img/drop-upload-cloud.png" alt="" class="mb-15">--}}
 {{--                                            <h5 class="mb-1 fw-normal">Select a file or <strong>Drag & Drop</strong> here</h5>--}}
 {{--                                            <span class="fz-12 d-block mb-15">ZIP file size no more than 10MB</span>--}}
 {{--                                            <span class="btn btn--primary py-2 px-3 btn-outline-primary rounded text-primary">Select File</span>--}}
@@ -455,7 +455,7 @@
 @endsection
 
 @push('script')
-    <script href="{{ asset('public/assets/admin-module/swiper/swiper-bundle.min.js')}}"></script>
+    <script href="{{ asset('assets/admin-module/swiper/swiper-bundle.min.js')}}"></script>
 
     <script>
         'use strict';

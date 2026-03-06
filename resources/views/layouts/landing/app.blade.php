@@ -12,20 +12,20 @@
     <title>@yield('title')</title>
 
     <meta property="og:image"
-          content="{{asset('storage/app/public/landing-page/meta')}}/{{bs_data($settings,'meta_image', 1,true)}}"/>
+          content="{{asset('storage/landing-page/meta')}}/{{bs_data($settings,'meta_image', 1,true)}}"/>
     <meta property="og:title" content="{{bs_data($settings,'meta_title', 1,true)}}"/>
     <meta property="og:description" content="{{bs_data($settings,'meta_description', 1,true)}}">
 
-    <link href="{{asset('public/assets/provider-module')}}/css/material-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('public/assets/landing')}}/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/landing')}}/css/line-awesome.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/landing')}}/css/owl.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/landing')}}/css/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/landing')}}/css/main.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/css/toastr.css">
+    <link href="{{asset('assets/provider-module')}}/css/material-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/landing')}}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/landing')}}/css/line-awesome.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/landing')}}/css/owl.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/landing')}}/css/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/landing')}}/css/main.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/css/toastr.css">
 
     <link rel="shortcut icon"
-          href="{{asset('storage/app/public/business')}}/{{bs_data($settings,'business_favicon', 1)}}"
+          href="{{asset('storage/business')}}/{{bs_data($settings,'business_favicon', 1)}}"
           type="image/x-icon"/>
 
     <style>
@@ -134,7 +134,7 @@
     </div>
 </div>
 <header>
-    @php($logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'public/assets/placeholder.png'))
+    @php($logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'assets/placeholder.png'))
 
     <div class="navbar-bottom">
         <div class="container">
@@ -215,13 +215,13 @@
                             <div class="app-btns">
                                 @if($settings->where('key_name','app_url_appstore')->first()->is_active??0)
                                     <a href="{{bs_data($settings,'app_url_appstore', 1)}}" class="d-block">
-                                        <img class="w-100" src="{{asset('public/assets/landing/img/app-btn/app-store.png')}}" alt="{{translate('app store')}}">
+                                        <img class="w-100" src="{{asset('assets/landing/img/app-btn/app-store.png')}}" alt="{{translate('app store')}}">
                                     </a>
                                 @endif
 
                                 @if($settings->where('key_name','app_url_playstore')->first()->is_active??0)
                                     <a href="{{bs_data($settings,'app_url_playstore', 1)}}" class="d-block">
-                                        <img class="w-100" src="{{asset('public/assets/landing/img/app-btn/google-play.png')}}" alt="{{translate('play store')}}">
+                                        <img class="w-100" src="{{asset('assets/landing/img/app-btn/google-play.png')}}" alt="{{translate('play store')}}">
                                     </a>
                                 @endif
                             </div>
@@ -246,7 +246,7 @@
                     </div>
                     <div class="footer__wrapper-widget">
                         <div class="footer__wrapper-contact">
-                            <img class="icon" src="{{asset('public/assets/landing/img/footer/mail.png')}}" alt="{{translate('footer')}}">
+                            <img class="icon" src="{{asset('assets/landing/img/footer/mail.png')}}" alt="{{translate('footer')}}">
                             <h6>
                                 {{translate('send_us_mail')}}
                             </h6>
@@ -255,7 +255,7 @@
                     </div>
                     <div class="footer__wrapper-widget">
                         <div class="footer__wrapper-contact">
-                            <img class="icon" src="{{asset('public/assets/landing/img/footer/tel.png')}}" alt="{{translate('footer')}}">
+                            <img class="icon" src="{{asset('assets/landing/img/footer/tel.png')}}" alt="{{translate('footer')}}">
                             <h6>
                                 {{translate('contact_us')}}
                             </h6>
@@ -264,7 +264,7 @@
                     </div>
                     <div class="footer__wrapper-widget">
                         <div class="footer__wrapper-contact">
-                            <img class="icon" src="{{asset('public/assets/landing/img/footer/pin.png')}}" alt="{{translate('footer')}}">
+                            <img class="icon" src="{{asset('assets/landing/img/footer/pin.png')}}" alt="{{translate('footer')}}">
                             <h6>
                                 {{translate('find_us_here')}}
                             </h6>
@@ -280,14 +280,14 @@
     </div>
 </footer>
 
-<script src="{{asset('public/assets/landing')}}/js/jquery-3.6.0.min.js"></script>
-<script src="{{asset('public/assets/landing')}}/js/viewport.jquery.js"></script>
-<script src="{{asset('public/assets/landing')}}/js/wow.min.js"></script>
-<script src="{{asset('public/assets/landing')}}/js/owl.min.js"></script>
-<script src="{{asset('public/assets/landing')}}/js/swiper-bundle.min.js"></script>
-<script src="{{asset('public/assets/landing')}}/js/bootstrap.min.js"></script>
-<script src="{{asset('public/assets/admin-module')}}/js/toastr.js"></script>
-<script src="{{asset('public/assets/landing')}}/js/custom.js"></script>
+<script src="{{asset('assets/landing')}}/js/jquery-3.6.0.min.js"></script>
+<script src="{{asset('assets/landing')}}/js/viewport.jquery.js"></script>
+<script src="{{asset('assets/landing')}}/js/wow.min.js"></script>
+<script src="{{asset('assets/landing')}}/js/owl.min.js"></script>
+<script src="{{asset('assets/landing')}}/js/swiper-bundle.min.js"></script>
+<script src="{{asset('assets/landing')}}/js/bootstrap.min.js"></script>
+<script src="{{asset('assets/admin-module')}}/js/toastr.js"></script>
+<script src="{{asset('assets/landing')}}/js/custom.js"></script>
 
 {!! Toastr::message() !!}
 
@@ -358,10 +358,10 @@
             function setTheme(theme) {
                 if (theme == "dark-theme") {
                     $("body").addClass('dark-theme');
-                    $(".mode--toggle").find("img").attr("src", "{{asset('public/assets/landing')}}/img/moon.png");
+                    $(".mode--toggle").find("img").attr("src", "{{asset('assets/landing')}}/img/moon.png");
                 } else {
                     $("body").removeClass("dark-theme");
-                    $(".mode--toggle").find("img").attr("src", "{{asset('public/assets/landing')}}/img/sun.png");
+                    $(".mode--toggle").find("img").attr("src", "{{asset('assets/landing')}}/img/sun.png");
                 }
             }
 

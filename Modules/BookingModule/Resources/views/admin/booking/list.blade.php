@@ -219,7 +219,7 @@
                                                             {{ $booking->readable_id }}
                                                         </a>
                                                         <img width="34" height="34"
-                                                             src="{{ asset('public/assets/admin-module/img/icons/repeat.svg') }}"
+                                                             src="{{ asset('assets/admin-module/img/icons/repeat.svg') }}"
                                                              class="rounded-circle repeat-icon"
                                                              alt="{{ translate('repeat') }}">
                                                     @else

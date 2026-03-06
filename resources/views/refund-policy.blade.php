@@ -3,7 +3,7 @@
 @section('title',translate('refund_policy'))
 
 @section('content')
-    @php($image = getDataSettingsImageFullPath(key: 'refund_policy_image', settingType: 'pages_setup_image', path: 'page-setup/', defaultPath: asset('public/assets/admin-module/img/page-default.png')))
+    @php($image = getDataSettingsImageFullPath(key: 'refund_policy_image', settingType: 'pages_setup_image', path: 'page-setup/', defaultPath: asset('assets/admin-module/img/page-default.png')))
 
     <div class="container pt-3">
         <section class="page-header bg__img" data-img="{{ $image }}">

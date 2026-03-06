@@ -57,7 +57,7 @@
                                                    data-maxFileSize="{{ readableUploadMaxFileSize('image') }}"
                                                    required >
                                             <div class="upload-file__img">
-                                                <img src="{{asset('public/assets/provider-module/img/media/upload-file.png')}}" alt="{{ translate('serviceman') }}">
+                                                <img src="{{asset('assets/provider-module/img/media/upload-file.png')}}" alt="{{ translate('serviceman') }}">
                                             </div>
                                             <span class="upload-file__edit">
                                                 <span class="material-icons">edit</span>
@@ -153,7 +153,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/provider-module/js/spartan-multi-image-picker.js')}}"></script>
+    <script src="{{asset('assets/provider-module/js/spartan-multi-image-picker.js')}}"></script>
     <script>
         "use strict";
         let maxSizeReadable = "{{ readableUploadMaxFileSize('image') }}"; // "2MB"
@@ -184,7 +184,7 @@
                 allowedExt: 'png|jpg|jpeg|webp|gif',
                 dropFileLabel : "{{translate('Drop_here')}}",
                 placeholderImage: {
-                    image: '{{asset('public/assets/provider-module')}}/img/media/identity-img.png',
+                    image: '{{asset('assets/provider-module')}}/img/media/identity-img.png',
                     width: '100%',
                 },
 

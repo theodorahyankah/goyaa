@@ -64,7 +64,7 @@
                                 @else
                                     <img width="58" height="58"
                                          class="rounded-circle border border-white aspect-square object-fit-cover"
-                                         src="{{ asset('public/assets/provider-module/img/user2x.png') }}"
+                                         src="{{ asset('assets/provider-module/img/user2x.png') }}"
                                          alt="{{ translate('user_image') }}">
                                 @endif
                                 <div class="media-body d-flex justify-content-between">

@@ -3,7 +3,7 @@
 @section('title',translate('3rd_party'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
 @endpush
 
 @section('content')
@@ -120,7 +120,7 @@
                                             <input type="file" accept=".zip" required style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
                                             <div class="global-upload-box">
                                                 <div class="upload-content text-center">
-                                                    <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/drop-upload-cloud.png" alt="" class="mb-15">
+                                                    <img class="mb-20" src="{{asset('assets/admin-module')}}/img/drop-upload-cloud.png" alt="" class="mb-15">
                                                     <h5 class="mb-1 fw-normal"><strong class="text-primary">Click to upload</strong> or <strong>Drag & Drop</strong> here</h5>
                                                     <span class="fz-12 d-block mb-15">JASON file size no more than 10MB</span>
                                                 </div>
@@ -681,7 +681,7 @@
             <div class="modal-body p-30">
                 <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="d-flex flex-column align-items-center text-center">
-                    <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/status-on.png" alt="">
+                    <img class="mb-20" src="{{asset('assets/admin-module')}}/img/status-on.png" alt="">
                     <h3 class="mb-15">{{ translate('Turn ON PayPal Payment Method')}}</h3>
                     <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                     <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -1050,7 +1050,7 @@
                                                 <div class="swiper-slide">
                                                     <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                                         <img width="80" class="mb-3"
-                                                             src="{{asset('public/assets/admin-module/img/media/firebase-console.png')}}"
+                                                             src="{{asset('assets/admin-module/img/media/firebase-console.png')}}"
                                                              alt="">
                                                         <h5 class="modal-title text-center mb-3">Go to Firebase
                                                             Console</h5>
@@ -1075,7 +1075,7 @@
                                                 <div class="swiper-slide">
                                                     <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                                         <img width="80" class="mb-3"
-                                                             src="{{asset('public/assets/admin-module/img/media/project-settings.png')}}"
+                                                             src="{{asset('assets/admin-module/img/media/project-settings.png')}}"
                                                              alt="">
                                                         <h5 class="modal-title text-center mb-3">{{translate('Navigate to Project
                                                             Settings')}}</h5>
@@ -1097,7 +1097,7 @@
                                                 <div class="swiper-slide">
                                                     <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                                         <img width="80" class="mb-3"
-                                                             src="{{asset('public/assets/admin-module/img/media/cloud-message.png')}}"
+                                                             src="{{asset('assets/admin-module/img/media/cloud-message.png')}}"
                                                              alt="">
                                                         <h5 class="modal-title text-center mb-3">{{translate('Cloud Messaging
                                                             API')}}</h5>
@@ -1418,7 +1418,7 @@
                                                 <!-- <div class="form-floating mb-30 mt-30">
                                                     <input type="file" accept=".p8" class="form-control"
                                                         name="service_file"
-                                                        value="{{ 'storage/app/public/apple-login/'.$appleLogin['service_file'] }}">
+                                                        value="{{ 'storage/apple-login/'.$appleLogin['service_file'] }}">
                                                     <label>{{translate('service_file')}} {{ $appleLogin['service_file']? translate('(Already Exists)'):'*' }}</label>
                                                 </div> -->
                                             </div>
@@ -1436,7 +1436,7 @@
                                 <!-- <div class="card">
                                     <div class="card-header">
                                         <h4 class="page-title">
-                                            <img src="{{asset('public/assets/admin-module/img/media/apple.png')}}"
+                                            <img src="{{asset('assets/admin-module/img/media/apple.png')}}"
                                                  alt="">
                                             {{translate('Apple_login')}}
                                         </h4>
@@ -1490,7 +1490,7 @@
                                                         <div class="form-floating mb-30 mt-30">
                                                             <input type="file" accept=".p8" class="form-control"
                                                                    name="service_file"
-                                                                   value="{{ 'storage/app/public/apple-login/'.$appleLogin['service_file'] }}">
+                                                                   value="{{ 'storage/apple-login/'.$appleLogin['service_file'] }}">
                                                             <label>{{translate('service_file')}} {{ $appleLogin['service_file']? translate('(Already Exists)'):'*' }}</label>
                                                         </div>
                                                     </div>
@@ -2366,7 +2366,7 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        @php($gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'public/assets/admin-module/img/placeholder.png'))
+                                                                        @php($gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'assets/admin-module/img/placeholder.png'))
                                                                         <div class="payment--gateway-img justify-content-center d-flex align-items-center">
                                                                             <img class="payment-image-preview" id="{{$gateway->key_name}}-image-preview"
                                                                                  src="{{ $gatewayImageFullPath }}" alt="{{ translate('image') }}">
@@ -2544,7 +2544,7 @@
                                                                         </div>
 
                                                                         <div class="payment--gateway-img justify-content-center d-flex align-items-center">
-                                                                            @php($gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'public/assets/admin-module/img/placeholder.png'))
+                                                                            @php($gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'assets/admin-module/img/placeholder.png'))
 
                                                                             <img class="payment-image-preview" id="{{$gateway->key_name}}-image-preview"
                                                                                 src="{{$gatewayImageFullPath}}" alt="{{translate('image')}}">
@@ -2994,7 +2994,7 @@
                                             <div class="row g-lg-4 g-3">
                                                 <div class="col-md-6 col-12">
                                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                                        <img src="{{asset('public/assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
+                                                        <img src="{{asset('assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
                                                     </div>
                                                     <div class="body-bg rounded p-20">
                                                         <div class="mb-xl-4 mb-3">
@@ -3022,7 +3022,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                                        <img src="{{asset('public/assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
+                                                        <img src="{{asset('assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
                                                     </div>
                                                     <div class="body-bg rounded p-20">
                                                         <div class="mb-xl-4 mb-3">
@@ -3085,7 +3085,7 @@
                                             <div class="row g-lg-4 g-3">
                                                 <div class="col-md-6 col-12">
                                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                                        <img src="{{asset('public/assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
+                                                        <img src="{{asset('assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
                                                     </div>
                                                     <div class="body-bg rounded p-20">
                                                         <div class="mb-xl-4 mb-3">
@@ -3113,7 +3113,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                                        <img src="{{asset('public/assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
+                                                        <img src="{{asset('assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
                                                     </div>
                                                     <div class="body-bg rounded p-20">
                                                         <div class="mb-xl-4 mb-3">
@@ -3176,7 +3176,7 @@
                                             <div class="row g-lg-4 g-3">
                                                 <div class="col-md-6 col-12">
                                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                                        <img src="{{asset('public/assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
+                                                        <img src="{{asset('assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
                                                     </div>
                                                     <div class="body-bg rounded p-20">
                                                         <div class="mb-xl-4 mb-3">
@@ -3204,7 +3204,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                                        <img src="{{asset('public/assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
+                                                        <img src="{{asset('assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
                                                     </div>
                                                     <div class="body-bg rounded p-20">
                                                         <div class="mb-xl-4 mb-3">
@@ -3575,7 +3575,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Are you sure you want save this information') }}?</h3>
                         <p>{{ translate('Connecting to S3 server for storage means that only new data will be stored in the S3 server. Existing data saved in local storage will not be migrated to the S3 server.') }}</p>
                         <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -3710,7 +3710,7 @@
                     </div>
                     <div class="view-map-error d-center py-5 px-3 body-bg rounded border">
                         <div class="boxes text-center">
-                            <img src="{{asset('public/assets/admin-module')}}/img/map-error.png" alt="">
+                            <img src="{{asset('assets/admin-module')}}/img/map-error.png" alt="">
                             <h5 class="my-3 fz-16 text-dark">404 Error</h5>
                             <p class="fz-14">Map is not Found. Ensure the Map API Key (Client & Server) is entered correctly.</p>
                         </div>
@@ -3759,7 +3759,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
     <script>
         "use strict";
 

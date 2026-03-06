@@ -46,7 +46,7 @@ class Banner extends Model
     public function getBannerImageFullPathAttribute()
     {
         $image = $this->banner_image;
-        $defaultPath = asset('public/assets/admin-module/img/media/banner-upload-file.png');
+        $defaultPath = asset('assets/admin-module/img/media/banner-upload-file.png');
 
         if (!$image) {
             if (request()->is('api/*')) {

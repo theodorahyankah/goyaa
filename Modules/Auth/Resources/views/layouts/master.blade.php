@@ -9,7 +9,7 @@
     <meta name="keywords" content=""/>
 
     <?php
-    $favIcon = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/placeholder.png')
+    $favIcon = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/placeholder.png')
     ?>
     <link rel="shortcut icon" href="{{ $favIcon }}"/>
 
@@ -19,13 +19,13 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet"/>
 
-    <link href="{{asset('public/assets/provider-module')}}/css/material-icons.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
+    <link href="{{asset('assets/provider-module')}}/css/material-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/style.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/toastr.css">
-    <link rel="stylesheet" href="{{asset('public/assets/common')}}/css/common.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/toastr.css">
+    <link rel="stylesheet" href="{{asset('assets/common')}}/css/common.css"/>
     @stack('css_or_js')
 </head>
 
@@ -34,26 +34,26 @@
 <div class="preloader"></div>
 
 <?php
-$logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/placeholder.png');
+$logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/placeholder.png');
 ?>
 
 @yield('content')
 
-<script src="{{asset('public/assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/main.js"></script>
-<script src="{{asset('public/assets/common')}}/js/common.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/main.js"></script>
+<script src="{{asset('assets/common')}}/js/common.js"></script>
 
-<script src="{{asset('public/assets/provider-module')}}/js/sweet_alert.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/toastr.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/sweet_alert.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/toastr.js"></script>
 
 {{--country code --}}
 <span class="system-default-country-code" data-value="us"></span>
-<link rel="stylesheet" href="{{asset('public/assets/libs/intl-tel-input/css/intlTelInput.css')}}"/>
-<script src="{{ asset('public/assets/libs/intl-tel-input/js/intlTelInput.js') }}"></script>
-<script src="{{ asset('public/assets/libs/intl-tel-input/js/utils.js') }}"></script>
-<script src="{{ asset('public/assets/libs/intl-tel-input/js/intlTelInout-validation.js') }}"></script>
+<link rel="stylesheet" href="{{asset('assets/libs/intl-tel-input/css/intlTelInput.css')}}"/>
+<script src="{{ asset('assets/libs/intl-tel-input/js/intlTelInput.js') }}"></script>
+<script src="{{ asset('assets/libs/intl-tel-input/js/utils.js') }}"></script>
+<script src="{{ asset('assets/libs/intl-tel-input/js/intlTelInout-validation.js') }}"></script>
 
 {!! Toastr::message() !!}
 

@@ -7,7 +7,7 @@
         @endphp
         <div class="tab-pane fade {{$webPage == 'storage_connection' ? 'show active' : ''}}" id="storage_connection">
             <div class="pick-map mb-3 p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                <img src="{{ asset('public/assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
+                <img src="{{ asset('assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
                 <p class="fz-12">{{ translate('You can manage all your storage files from') }}  <a @can('gallery_view') href="{{ route('admin.business-settings.get-gallery-setup') }}" @endcan target="_blank" class="text-primary fw-semibold text-decoration-underline"> {{ translate('Gallery') }}</a></p>
             </div>
 
@@ -20,7 +20,7 @@
                             @if($isS3FieldEmpty)
                                 <div class="bg-warning bg-opacity-10 fs-12 p-12 rounded">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="{{ asset('public/assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
+                                        <img src="{{ asset('assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
                                         <p class="fz-12 fw-normal">{{ translate('3rd Party storage is not set up yet. Please configure it first to ensure it works properly.') }}</p>
                                     </div>
                                 </div>
@@ -52,8 +52,8 @@
                                                        data-off-title="{{ translate('Do you want to switch 3rd party storage to local storage ?') }}"
                                                        data-on-description="{{ translate('If you switch this newly uploaded created files & data will store to local storage') }}"
                                                        data-off-description="{{ translate('If you switch this newly uploaded created files & data will store to local storage') }}"
-                                                       data-on-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
-                                                       data-off-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-on-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-off-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
                                                 >
                                                 <label for="radio-option-1">
                                                     <h5 class="mb-1">{{translate('Local Storage')}}</h5>
@@ -79,8 +79,8 @@
                                                        data-off-title="{{ translate('Do you want to switch local storage to 3rd party storage?') }}"
                                                        data-on-description="{{ translate('If you switch this newly uploaded created files & data will store to 3rd party storage') }}"
                                                        data-off-description="{{ translate('If you switch this newly uploaded created files & data will store to 3rd party storage') }}"
-                                                       data-on-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
-                                                       data-off-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-on-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-off-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
                                                 >
                                                 <label for="radio-option-2">
                                                     <h5 class="mb-1">{{translate('3rd Party Storage')}}</h5>
@@ -196,7 +196,7 @@
                                     <div class="d-flex justify-content-end gap-3">
                                         <button type="reset" class="btn btn--secondary rounded">{{translate('Reset')}}</button>
                                         <button type="submit" class="btn d-flex align-items-center gap-2 btn--primary demo_check rounded" data-bs-toggle="modal" data-bs-target="#confirmation">
-                                            <img src="{{ asset('public/assets/admin-module/img/icons/save-icon.svg') }}" alt="save icon">
+                                            <img src="{{ asset('assets/admin-module/img/icons/save-icon.svg') }}" alt="save icon">
                                             {{translate('Save Information')}}
                                         </button>
                                     </div>

@@ -37,7 +37,7 @@ class AdvertisementAttachment extends Model
     public function getProviderCoverImageFullPathAttribute()
     {
         $image = $this->file_name;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -55,7 +55,7 @@ class AdvertisementAttachment extends Model
     public function getProviderProfileImageFullPathAttribute()
     {
         $image = $this->file_name;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -73,7 +73,7 @@ class AdvertisementAttachment extends Model
     public function getPromotionalVideoFullPathAttribute()
     {
         $image = $this->file_name;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {

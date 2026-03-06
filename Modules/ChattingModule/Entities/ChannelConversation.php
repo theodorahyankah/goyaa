@@ -68,7 +68,7 @@ class ChannelConversation extends Model
                         //if admin
                         $user_name = business_config('business_name', 'business_information')?->live_values;
                         $user_phone = business_config('business_phone', 'business_information')?->live_values;
-                        $user_image = asset('storage/app/public/business') . '/' . business_config('business_favicon', 'business_information')?->live_values;
+                        $user_image = asset('storage/business') . '/' . business_config('business_favicon', 'business_information')?->live_values;
                         $user_type = USER_TYPES[0]['value'];
                         if ($to_user->user_type == USER_TYPES[2]['value']){
                             $servicemanNotification = isNotificationActive($user?->provider?->id, 'chatting', 'notification', 'provider');
@@ -86,7 +86,7 @@ class ChannelConversation extends Model
                         //if admin
                         $user_name = business_config('business_name', 'business_information')?->live_values;
                         $user_phone = business_config('business_phone', 'business_information')?->live_values;
-                        $user_image = asset('storage/app/public/business') . '/' . business_config('business_favicon', 'business_information')?->live_values;
+                        $user_image = asset('storage/business') . '/' . business_config('business_favicon', 'business_information')?->live_values;
                         $user_type = USER_TYPES[1]['value'];
                         if ($to_user->user_type == USER_TYPES[2]['value']){
                             $servicemanNotification = isNotificationActive($user?->provider?->id, 'chatting', 'notification', 'provider');
@@ -107,7 +107,7 @@ class ChannelConversation extends Model
                             //if provider
                             $user_name = $user->provider->company_name;
                             $user_phone = $user->provider->company_phone;
-                            $user_image = asset('storage/app/public/provider/logo') . '/' . $user->provider->logo;
+                            $user_image = asset('storage/provider/logo') . '/' . $user->provider->logo;
                             $user_type = USER_TYPES[2]['value'];
                         }
 
@@ -124,7 +124,7 @@ class ChannelConversation extends Model
                             //if serviceman
                             $user_name = $user->first_name . ' ' . $user->last_name;
                             $user_phone = $user->phone;
-                            $user_image = asset('storage/app/public/serviceman/profile') . '/' . $user->profile_image;
+                            $user_image = asset('storage/serviceman/profile') . '/' . $user->profile_image;
                             $user_type = USER_TYPES[3]['value'];
                             if ($to_user->user_type == USER_TYPES[2]['value']){
                                 $servicemanNotification = isNotificationActive($user?->provider?->id, 'chatting', 'notification', 'provider');
@@ -142,7 +142,7 @@ class ChannelConversation extends Model
                             //if customer
                             $user_name = $user->first_name . ' ' . $user->last_name;
                             $user_phone = $user->phone;
-                            $user_image = asset('storage/app/public/user/profile_image') . '/' . $user->profile_image;
+                            $user_image = asset('storage/user/profile_image') . '/' . $user->profile_image;
                             $user_type = USER_TYPES[4]['value'];
                             $providerNotification = isNotificationActive($user?->provider?->id, 'chatting', 'notification', 'provider');
                             $userNotification = $providerNotification;

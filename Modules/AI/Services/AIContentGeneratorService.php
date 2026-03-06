@@ -62,7 +62,7 @@ class AIContentGeneratorService
         // live
         return [
             'imageName' =>$image_name,
-            'imageFullPath' => asset(path: 'storage/app/public/product/ai_product_image/'.$image_name)
+            'imageFullPath' => asset(path: 'storage/product/ai_product_image/'.$image_name)
         ];
     }
 

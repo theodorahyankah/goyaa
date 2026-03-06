@@ -196,8 +196,8 @@ class BusinessInformationController extends Controller
 
         if ($webPage == 'business_setup') {
             $dataValues = $this->businessSetting->whereIn('settings_type', ['business_information', 'service_setup'])->get();
-            $businessLogoFullPath = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/admin-module/img/media/banner-upload-file.png');
-            $businessFaviconFullPath  = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/admin-module/img/media/upload-file.png');
+            $businessLogoFullPath = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/admin-module/img/media/banner-upload-file.png');
+            $businessFaviconFullPath  = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/admin-module/img/media/upload-file.png');
         } elseif ($webPage == 'payment') {
             $dataValues = $this->businessSetting->where('settings_type', 'service_setup')->get();
         } elseif ($webPage == 'service_setup') {

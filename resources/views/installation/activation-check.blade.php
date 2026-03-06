@@ -24,7 +24,7 @@
                                                       data-bs-placement="top" data-bs-custom-class="custom-tooltip"
                                                       data-bs-html="true"
                                                       data-bs-title="{{translate('Enter your real full name.')}}">
-                                                      <img src="{{asset('public/assets/installation')}}/assets/img/svg-icons/info2.svg"
+                                                      <img src="{{asset('assets/installation')}}/assets/img/svg-icons/info2.svg"
                                                            class="svg" alt="">
                                                 </span>
                                             </label>
@@ -42,7 +42,7 @@
                                                       data-bs-placement="top" data-bs-custom-class="custom-tooltip"
                                                       data-bs-html="true"
                                                       data-bs-title="{{translate('Enter your valid email address.')}}">
-                                                      <img src="{{asset('public/assets/installation')}}/assets/img/svg-icons/info2.svg"
+                                                      <img src="{{asset('assets/installation')}}/assets/img/svg-icons/info2.svg"
                                                            class="svg" alt="">
                                                 </span>
                                             </label>
@@ -60,7 +60,7 @@
                                                       data-bs-html="true"
                                                       data-bs-title="The username of your codecanyon account">
                                                       <img class="svg" alt=""
-                                                           src="{{ asset(path: 'public/assets/installation/assets/img/svg-icons/info2.svg') }}">
+                                                           src="{{ asset(path: 'assets/installation/assets/img/svg-icons/info2.svg') }}">
                                                 </span>
                                             </label>
                                             <input type="text" id="username" class="form-control" name="username"

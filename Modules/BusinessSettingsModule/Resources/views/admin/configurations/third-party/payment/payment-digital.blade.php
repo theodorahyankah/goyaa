@@ -2,7 +2,7 @@
     <div class="bg-warning bg-opacity-10 fs-12 p-12 text-dark rounded mb-10">
         <div class="d-flex align-items-center gap-2 mb-2">
             <p class="fz-12 fw-medium">
-                <img src="{{ asset('public/assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
+                <img src="{{ asset('assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
                 {{ translate('Here you can configure payment gateways by obtaining the necessary credentials (e.g., API keys) from each respective payment gateway platform.') }}</p>
         </div>
         <ul class="m-0 ps-20 d-flex flex-column gap-1 text-dark">
@@ -77,7 +77,7 @@
                                         $gatewayReadyToUse = 0;
                                     }
                                 }
-                                $gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'public/assets/admin-module/img/placeholder.png');
+                                $gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'assets/admin-module/img/placeholder.png');
                                 ?>
                             <div class="d-flex align-items-center gap-2">
                                 <h5 class="text-dark"> {{ ucwords(str_replace('_',' ',$gateway->key_name)) }}</h5> <span
@@ -170,7 +170,7 @@
                     </div>
                 @empty
                         <div class="text-center bg-white  pt-5 pb-5">
-                            <img src="{{asset('public/assets/admin-module')}}/img/payment-list-error.png" alt="error" class="w-100px mx-auto mb-3">
+                            <img src="{{asset('assets/admin-module')}}/img/payment-list-error.png" alt="error" class="w-100px mx-auto mb-3">
                             <p>{{translate('No Payment Method List')}}</p>
                         </div>
                 @endforelse

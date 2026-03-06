@@ -140,7 +140,7 @@
 <body style="background-color: #fff;">
 <div class="box">
     <div class="top-wrap-box">
-        @php($logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'public/assets/placeholder.png'))
+        @php($logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'assets/placeholder.png'))
         <img src="{{$logo}}" alt="{{translate('Logo')}}" width="140"/>
 
         <h3 style="margin-top: 20px">{{translate('Account Suspend')}} !</h3>
@@ -163,7 +163,7 @@
             @foreach($dataValues->live_values??[] as $key=>$item)
                 <a href="{{$item['link']}}">
                     <img width="20"
-                         src="{{ asset('public/assets/admin-module/img/icons/' . $item['media'] . '.png') }}"
+                         src="{{ asset('assets/admin-module/img/icons/' . $item['media'] . '.png') }}"
                          alt="{{ translate('image') }}">
                 </a>
             @endforeach

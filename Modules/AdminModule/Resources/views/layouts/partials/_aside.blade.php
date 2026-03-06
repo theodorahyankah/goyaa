@@ -31,7 +31,7 @@ $accepted_booking_count = \Modules\BookingModule\Entities\Booking::where('bookin
     ->count();
 $pending_providers = \Modules\ProviderManagement\Entities\Provider::ofApproval(2)->count();
 $denied_providers = \Modules\ProviderManagement\Entities\Provider::ofApproval(0)->count();
-$logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'public/assets/placeholder.png');
+$logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'assets/placeholder.png');
 ?>
 
 <aside class="aside">

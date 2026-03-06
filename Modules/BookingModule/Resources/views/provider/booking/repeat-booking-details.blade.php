@@ -3,7 +3,7 @@
 @section('title', translate('Booking_Details'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{ asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css') }}">
 
     <style>
         .btn:disabled {
@@ -36,7 +36,7 @@
                         <h3 class="c1 d-flex align-items-center gap-1 fw-bold">
                             {{ translate('Repeat_Booking') }} # {{ $booking['readable_id'] }}
                             <img width="20" height="20"
-                                src="{{ asset('public/assets/admin-module/img/icons/repeat.svg') }}"
+                                src="{{ asset('assets/admin-module/img/icons/repeat.svg') }}"
                                 class="rounded-circle repeat-icon" alt="{{ translate('repeat') }}">
                         </h3>
                         <span class="badge badge-{{
@@ -568,7 +568,7 @@
                                             @else
                                                 <img width="58" height="58"
                                                     class="rounded-circle border border-white aspect-square object-fit-cover"
-                                                    src="{{ asset('public/assets/provider-module/img/user2x.png') }}"
+                                                    src="{{ asset('assets/provider-module/img/user2x.png') }}"
                                                     alt="{{ translate('user_image') }}">
                                             @endif
 

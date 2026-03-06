@@ -3,7 +3,7 @@
 @section('title', translate('employee_update'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
 @endpush
 
 @section('content')
@@ -254,8 +254,8 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script>
         "use strict";
 
@@ -325,7 +325,7 @@
         });
     </script>
 
-    <script src="{{asset('public/assets/admin-module')}}/js/spartan-multi-image-picker.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/spartan-multi-image-picker.js"></script>
     <script>
         "use strict";
 
@@ -376,7 +376,7 @@
 
                 dropFileLabel: "{{translate('Drop_here')}}",
                 placeholderImage: {
-                    image: '{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png',
+                    image: '{{asset('assets/admin-module')}}/img/media/banner-upload-file.png',
                     width: '100%',
                 },
 
@@ -407,6 +407,6 @@
         );
     </script>
 
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/js/section/employee/custom.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/section/employee/custom.js"></script>
 @endpush

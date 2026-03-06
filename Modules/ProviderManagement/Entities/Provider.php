@@ -120,7 +120,7 @@ class Provider extends Model
     public function getLogoFullPathAttribute()
     {
         $image = $this->logo;
-        $defaultPath =  asset('public/assets/provider-module/img/user2x.png');
+        $defaultPath =  asset('assets/provider-module/img/user2x.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -139,7 +139,7 @@ class Provider extends Model
     public function getCoverImageFullPathAttribute()
     {
         $image = $this->cover_image;
-        $defaultPath =  asset('public/assets/provider-module/img/user2x.png');
+        $defaultPath =  asset('assets/provider-module/img/user2x.png');
 
         if (!$image) {
             if (request()->is('api/*')) {

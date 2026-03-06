@@ -28,7 +28,7 @@
             <div class="card mt-3">
                 <div class="card-body">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <!-- <img width="20" src="{{asset('public/assets/admin-module')}}/img/icons/billing.svg" class="svg" alt=""> -->
+                        <!-- <img width="20" src="{{asset('assets/admin-module')}}/img/icons/billing.svg" class="svg" alt=""> -->
                         <h3>{{translate('Billing')}}</h3>
                     </div>
 
@@ -36,7 +36,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="overview-card after-w50 d-flex gap-3 align-items-center p-lg-4">
                                 <div class="img-circle">
-                                    <img width="34" src="{{asset('public/assets/admin-module/img/icons/b1.png')}}" alt="{{ translate('basic') }}">
+                                    <img width="34" src="{{asset('assets/admin-module/img/icons/b1.png')}}" alt="{{ translate('basic') }}">
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <div>{{translate('Expire Date')}}</div>
@@ -48,7 +48,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="overview-card style__three after-w50 d-flex gap-3 align-items-center p-lg-4">
                                 <div class="img-circle">
-                                    <img width="34" src="{{asset('public/assets/admin-module/img/icons/b2.png')}}" alt="{{ translate('basic') }}">
+                                    <img width="34" src="{{asset('assets/admin-module/img/icons/b2.png')}}" alt="{{ translate('basic') }}">
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <div>{{translate('Next renewal Bill')}} <small>({{translate('Vat included')}})</small></div>
@@ -59,7 +59,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="overview-card style__two after-w50 d-flex gap-3 align-items-center p-lg-4">
                                 <div class="img-circle">
-                                    <img width="34" src="{{asset('public/assets/admin-module/img/icons/b3.png')}}" alt="{{ translate('basic') }}">
+                                    <img width="34" src="{{asset('assets/admin-module/img/icons/b3.png')}}" alt="{{ translate('basic') }}">
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <div>{{translate('Total Subscription Taken')}}</div>
@@ -75,7 +75,7 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <div class="d-flex align-items-center gap-2 mb-3">
-                            <!-- <img width="20" src="{{asset('public/assets/admin-module/img/icons/ov11.png')}}" alt=""> -->
+                            <!-- <img width="20" src="{{asset('assets/admin-module/img/icons/ov11.png')}}" alt=""> -->
                             <h3>{{translate('Package Overview')}}</h3>
                         </div>
                         <div class="c1-light-bg radius-10 p-lg-4 p-3">
@@ -90,7 +90,7 @@
                                             <h2 class="fs-28 mb-1">{{with_currency_symbol($subscriptionDetails?->package_price - $subscriptionDetails?->vat_amount)}}</h2>
                                             <strong class="fs-18 title-color"> {{ $monthsDifference }} {{translate('days')}} </strong> <span class="fs-12 fw-medium">({{ $remainingDays }} {{translate('days remaining')}})</span>
                                         </div>
-                                        <img src="{{asset('public/assets/provider-module/img/mony-hand.png')}}" alt="">
+                                        <img src="{{asset('assets/provider-module/img/mony-hand.png')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@
                 <div class="card mt-3 h-100">
                     <div class="card-body h-100">
                         <div class="mb-3">
-                            <!-- <img width="20" src="{{asset('public/assets/admin-module/img/icons/ov11.png')}}" alt=""> -->
+                            <!-- <img width="20" src="{{asset('assets/admin-module/img/icons/ov11.png')}}" alt=""> -->
                             <h3 class="mb-1">{{translate('Package Overview')}}</h3>
                             <p class="fs-12 m-0">Here you see your active business plan.</p>
                         </div>
@@ -171,7 +171,7 @@
                                         <h2 class="mb-2 fs-28 c1">{{ $commission }}%</h2>
                                         <h5 class="">{{ translate('Commission Per Booking')}}</h5>
                                     </div>
-                                    <img width="40" src="{{asset('public/assets/provider-module/img/mony-hand.png')}}" alt="">
+                                    <img width="40" src="{{asset('assets/provider-module/img/mony-hand.png')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{translate('Are You Sure?')}}</h3>
                         <p>If you cancel the subscription, after {{$daysDifference}} days the Provider will no longer be able to run the
                         business before subscribe a new plan</p>

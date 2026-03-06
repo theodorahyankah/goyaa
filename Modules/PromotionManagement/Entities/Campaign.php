@@ -44,7 +44,7 @@ class Campaign extends Model
     public function getThumbnailFullPathAttribute()
     {
         $image = $this->thumbnail;
-        $defaultPath = asset('public/assets/admin-module/img/media/upload-file.png');
+        $defaultPath = asset('assets/admin-module/img/media/upload-file.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -63,7 +63,7 @@ class Campaign extends Model
     public function getCoverImageFullPathAttribute()
     {
         $image = $this->cover_image;
-        $defaultPath = asset('public/assets/admin-module/img/media/upload-file.png');
+        $defaultPath = asset('assets/admin-module/img/media/upload-file.png');
 
         if (!$image) {
             if (request()->is('api/*')) {

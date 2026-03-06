@@ -3,7 +3,7 @@
 @section('title',translate('CronJob list'))
 
 @push('css_or_js')
-<link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 @endpush
 
 @section('content')
@@ -129,7 +129,7 @@
                                 <tr>
                                     <td class="text-center bg-white  pt-5 pb-5" colspan="7">
                                         <div class="d-flex flex-column gap-2">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/no-cron-data.svg " alt="error" class="w-100px mx-auto">
+                                            <img src="{{asset('assets/admin-module')}}/img/no-cron-data.svg " alt="error" class="w-100px mx-auto">
                                             <p>{{translate('No Cron Job List')}}</p>
                                         </div>
                                     </td>
@@ -249,7 +249,7 @@
                             <div class="row g-sm-3 g-2">
                                 <div class="col-lg-6">
                                     <div class="d-flex h-100 align-items-start gap-xl-3 gap-2 bg-white cus-shadow2 rounded p-20">
-                                        <img src="{{asset('public/assets/admin-module/img/php.png')}}" alt="">
+                                        <img src="{{asset('assets/admin-module/img/php.png')}}" alt="">
                                         <div class="w-0 flex-grow-1">
                                             <h6 class="fs-12 mb-1">{{translate('PHP File Path')}}</h6>
                                             <p class="fz-12 text-break mb-0"></p>
@@ -260,7 +260,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="d-flex h-100 align-items-start gap-xl-3 gap-2 bg-white cus-shadow2 rounded p-20">
-                                        <img src="{{asset('public/assets/admin-module/img/command.png')}}" alt="">
+                                        <img src="{{asset('assets/admin-module/img/command.png')}}" alt="">
                                         <div class="w-0 flex-grow-1">
                                             <h6 class="fs-12 mb-1">{{translate('PHP File Path')}}</h6>
                                             <div class="fs-12 command"></div>
@@ -275,7 +275,7 @@
                         </div>
                         <div class="bg-primary bg-opacity-10 rounded p-12 text-scrolling">
                             <h5 class="fs-16 d-flex align-items-center gap-2  mb-2">
-                                <img src="{{asset('public/assets/admin-module')}}/img/lights-icons.png" alt=""> {{translate('Instructions')}}
+                                <img src="{{asset('assets/admin-module')}}/img/lights-icons.png" alt=""> {{translate('Instructions')}}
                             </h5>
                             <ol class="text--grey instruction-info">
                                 <li class="text-body">
@@ -397,7 +397,7 @@
 @endsection
 
 @push('script')
-<script src="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.js')}}"></script>
 <script>
     var swiper = new Swiper('.cron-jobs-slider', {
         slidesPerView: 1,

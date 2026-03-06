@@ -37,8 +37,8 @@
                                                        data-off-title="{{ translate('Do you want to deactivate AI feature') }}?"
                                                        data-on-description="If enabled, AI feature will be active and able to to generate content by AI"
                                                        data-off-description="If disabled, AI feature will be inactive and could not able to generate content by AI"
-                                                       data-on-image="{{ asset('public/assets/admin-module/img/icons/status-on.png') }}"
-                                                       data-off-image="{{ asset('public/assets/admin-module/img/icons/status-off.png') }}"
+                                                       data-on-image="{{ asset('assets/admin-module/img/icons/status-on.png') }}"
+                                                       data-off-image="{{ asset('assets/admin-module/img/icons/status-off.png') }}"
                                                     {{ isset($data['status']) && $data['status'] == 1 ? 'checked' : '' }}>
                                                 <span class="switcher_control"></span>
                                             </label>

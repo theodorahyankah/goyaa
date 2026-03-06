@@ -144,7 +144,7 @@ class User extends Authenticatable
     public function getProfileImageFullPathAttribute()
     {
         $image = $this->profile_image;
-        $defaultPath = $this->user_type == 'customer' ? asset('public/assets/admin-module/img/customer.png') : asset('public/assets/provider-module/img/user2x.png');
+        $defaultPath = $this->user_type == 'customer' ? asset('assets/admin-module/img/customer.png') : asset('assets/provider-module/img/user2x.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -172,7 +172,7 @@ class User extends Authenticatable
     public function getIdentificationImageFullPathAttribute()
     {
         $identityImages = $this->identification_image ?? [];
-        $defaultImagePath = asset('public/assets/admin-module/img/media/provider-id.png');
+        $defaultImagePath = asset('assets/admin-module/img/media/provider-id.png');
 
         if (empty($identityImages)) {
             if (request()->is('api/*')) {

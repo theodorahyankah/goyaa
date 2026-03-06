@@ -136,7 +136,7 @@ class BookingRepeat extends Model
     public function getEvidencePhotosFullPathAttribute()
     {
         $evidenceImages = $this->evidence_photos ?? [];
-        $defaultImagePath = asset('public/assets/admin-module/img/media/user.png');
+        $defaultImagePath = asset('assets/admin-module/img/media/user.png');
         if (empty($evidenceImages)) {
             if (request()->is('api/*')) {
                 $defaultImagePath = null;

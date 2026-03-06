@@ -70,7 +70,7 @@ class LandingPageTestimonial extends Model
     public function getImageFullPathAttribute()
     {
         $image = $this->image;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {

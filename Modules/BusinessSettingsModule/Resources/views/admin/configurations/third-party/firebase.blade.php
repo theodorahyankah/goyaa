@@ -3,7 +3,7 @@
 @section('title',translate('3rd_party'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
 @endpush
 
 @section('content')
@@ -24,7 +24,7 @@
                                          aria-labelledby="configuration-custom-tab1" tabindex="0">
                                         <div
                                             class="pick-map mb-20 p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                                            <img src="{{ asset('public/assets/admin-module/img/icons/focus_mode.svg') }}"
+                                            <img src="{{ asset('assets/admin-module/img/icons/focus_mode.svg') }}"
                                                  alt="focus mode icon">
                                             <p class="fz-12">
                                                 {{ translate('After configuration next go to setup') }}
@@ -85,7 +85,7 @@
                                                             <div class="boxes">
                                                                 <div class="d-flex align-items-center gap-1 text-primary mb-3">
                                                                     <img
-                                                                        src="{{ asset('public/assets/admin-module/img/icons/focus_mode.svg') }}"
+                                                                        src="{{ asset('assets/admin-module/img/icons/focus_mode.svg') }}"
                                                                         class="svg" alt="focus mode icon">
                                                                     <h4 class="text-primary">{{('Instructions')}}</h4>
                                                                 </div>
@@ -115,7 +115,7 @@
                                                                         <div class="global-upload-box">
                                                                             <div class="upload-content text-center">
                                                                                 <img class="mb-20"
-                                                                                     src="{{asset('public/assets/admin-module/img/drop-upload-cloud.png')}}"
+                                                                                     src="{{asset('assets/admin-module/img/drop-upload-cloud.png')}}"
                                                                                      alt="">
                                                                                 <h5 class="mb-1 fw-normal"><strong class="text-primary">{{ translate('Click to
                                                                     upload') }}</strong> {{ translate('or') }} <strong>{{ translate('Drag & Drop') }}</strong> {{ translate('here') }}
@@ -270,7 +270,7 @@
                                                                             {{translate('reset')}}
                                                                         </button>
                                                                         <button type="submit" class="btn btn--primary rounded demo_check d-flex align-items-center gap-2">
-                                                                            <img src="{{ asset('public/assets/admin-module/img/icons/save-icon.svg') }}" alt="save icon">
+                                                                            <img src="{{ asset('assets/admin-module/img/icons/save-icon.svg') }}" alt="save icon">
                                                                             {{translate('Save Information')}}
                                                                         </button>
                                                                     </div>
@@ -285,7 +285,7 @@
                                     <div class="tab-pane fade {{ $webPage == 'firebase-authentication' ? 'active show' : '' }}">
                                         <div
                                             class="pick-map mb-20 p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                                            <img src="{{ asset('public/assets/admin-module/img/icons/focus_mode.svg') }}"
+                                            <img src="{{ asset('assets/admin-module/img/icons/focus_mode.svg') }}"
                                                  alt="focus mode icon">
                                             <p class="fz-12">
                                                 {{ translate('Please ensure that your firebase configuration is set up before using these

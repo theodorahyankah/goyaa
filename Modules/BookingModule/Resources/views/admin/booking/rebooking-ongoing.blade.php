@@ -3,7 +3,7 @@
 @section('title', translate('Booking_Details'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{ asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css') }}">
 @endpush
 
 @section('content')
@@ -668,7 +668,7 @@
                                             @else
                                                 <img width="58" height="58"
                                                      class="rounded-circle border border-white aspect-square object-fit-cover"
-                                                     src="{{ asset('public/assets/provider-module/img/user2x.png') }}"
+                                                     src="{{ asset('assets/provider-module/img/user2x.png') }}"
                                                      alt="{{ translate('user_image') }}">
                                             @endif
 
@@ -906,7 +906,7 @@
                     <div class="modal-body pt-0 m-4">
                         <div class="d-flex flex-column gap-2 align-items-center">
                             <img width="75" class="mb-2"
-                                 src="{{asset('public/assets/provider-module')}}/img/media/address.jpg"
+                                 src="{{asset('assets/provider-module')}}/img/media/address.jpg"
                                  alt="">
                             <h3>{{translate('Update customer service address')}}</h3>
 

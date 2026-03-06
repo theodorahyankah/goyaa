@@ -15,21 +15,21 @@
                     <div class="app-btns d-flex flex-wrap">
                         @if ($settings->where('key_name', 'app_url_appstore')->first()->is_active ?? 0)
                             <a href="{{ bs_data($settings, 'app_url_appstore', 1) }}">
-                                <img src="{{ asset('public/assets/landing/img/app-btn/app-store.png') }}"
+                                <img src="{{ asset('assets/landing/img/app-btn/app-store.png') }}"
                                     alt="{{ translate('app store') }}">
                             </a>
                         @endif
 
                         @if ($settings->where('key_name', 'app_url_playstore')->first()->is_active ?? 0)
                             <a href="{{ bs_data($settings, 'app_url_playstore', 1) }}">
-                                <img src="{{ asset('public/assets/landing') }}/img/app-btn/google-play.png"
+                                <img src="{{ asset('assets/landing') }}/img/app-btn/google-play.png"
                                     alt="{{ translate('play store') }}">
                             </a>
                         @endif
 
                         @if ($settings->where('key_name', 'web_url')->first()->is_active ?? 0)
                             <a href="{{ bs_data($settings, 'web_url', 1) }}">
-                                <img src="{{ asset('public/assets/landing') }}/img/app-btn/brows_button.png"
+                                <img src="{{ asset('assets/landing') }}/img/app-btn/brows_button.png"
                                     alt="{{ translate('app') }}">
                             </a>
                         @endif
@@ -142,10 +142,10 @@
                     </a>
                 </div>
                 <div class="about__wrapper-thumb">
-                    @php($aboutUsImage = getBusinessSettingsImageFullPath(key: 'about_us_image', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'public/assets/placeholder.png'))
+                    @php($aboutUsImage = getBusinessSettingsImageFullPath(key: 'about_us_image', settingType: 'landing_images', path: 'landing-page/', defaultPath: '/assets/placeholder.png'))
                     <img class="main-img" src="{{ $aboutUsImage }}" alt="{{ translate('image') }}">
                     <div class="bg-img">
-                        <img src="{{ asset('public/assets/landing') }}/img/about-us.png" alt="{{ translate('image') }}">
+                        <img src="{{ asset('assets/landing') }}/img/about-us.png" alt="{{ translate('image') }}">
                     </div>
                 </div>
             </div>
@@ -196,7 +196,7 @@
                 </div>
                 <div class="app-thumb">
                     <div class="main-thumb">
-                        <img class="main-img" src="{{ asset('public/assets/landing/img/app/iphone-frame.png') }}"
+                        <img class="main-img" src="{{ asset('assets/landing/img/app/iphone-frame.png') }}"
                             alt="{{ translate('app') }}">
                         <div class="app-slider owl-theme owl-carousel">
                             @foreach ($features ?? [] as $item)
@@ -205,7 +205,7 @@
                         </div>
                     </div>
                     <div class="smaller-thumb">
-                        <img class="main-img" src="{{ asset('public/assets/landing') }}/img/app/iphone-frame.png"
+                        <img class="main-img" src="{{ asset('assets/landing') }}/img/app/iphone-frame.png"
                             alt="{{ translate('app') }}">
                         <div class="app-slider owl-theme owl-carousel">
                             @foreach ($features ?? [] as $item)
@@ -220,9 +220,9 @@
     <section class="cta-section py-25">
         <div class="container">
             <div class="cta-main">
-                @php($providerSectionImage = getBusinessSettingsImageFullPath(key: 'provider_section_image', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'public/assets/placeholder.png'))
+                @php($providerSectionImage = getBusinessSettingsImageFullPath(key: 'provider_section_image', settingType: 'landing_images', path: 'landing-page/', defaultPath: '/assets/placeholder.png'))
 
-                <div class="cta-wrapper bg__img" data-img="{{ asset('public/assets/landing') }}/img/cta-bg.png">
+                <div class="cta-wrapper bg__img" data-img="{{ asset('assets/landing') }}/img/cta-bg.png">
                     <img width="238" src="{{ $providerSectionImage }}" alt="{{ translate('image') }}"
                         class="left-icon">
                     <div class="content text-center">

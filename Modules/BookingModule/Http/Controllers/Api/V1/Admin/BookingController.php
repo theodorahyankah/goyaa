@@ -121,7 +121,7 @@ class BookingController extends Controller
         if (!Storage::disk('public')->exists('/download')) {
             Storage::disk('public')->makeDirectory('/download');
         }
-        return response()->json(response_formatter(DEFAULT_200, ['download_link' => (new FastExcel($bookings))->export('storage/app/public/download/bookings-' . date('Y-m-d') . '-' . rand(1000, 99999) . '.xlsx')]), 200);
+        return response()->json(response_formatter(DEFAULT_200, ['download_link' => (new FastExcel($bookings))->export('storage/download/bookings-' . date('Y-m-d') . '-' . rand(1000, 99999) . '.xlsx')]), 200);
     }
 
     /**

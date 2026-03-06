@@ -1,8 +1,8 @@
 @extends('adminmodule::layouts.new-master')
 
 @section('title',translate('dashboard'))
-<link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/highlight/highlight.css"/>
-<link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/highlight/component-snippets.css"/>
+<link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/highlight/highlight.css"/>
+<link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/highlight/component-snippets.css"/>
 
 @section('content')
    
@@ -2468,11 +2468,11 @@
                                 </div>
                                <div class="d-flex flex-column gap-3">
                                     <div class="pick-map p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/lights-icons.png" alt="">
+                                        <img src="{{asset('assets/admin-module')}}/img/lights-icons.png" alt="">
                                         <p class="fz-12">To use any <span class="text-dark fw-medium">payment method</span> for <span class="text-dark fw-medium">Partial payment</span> you need to active them from <span class="text-dark fw-medium">Previous Section,</span> otherwise the payment method will remain disable.</p>
                                     </div>
                                     <div class="pick-map p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-start gap-1 bg-primary bg-opacity-10">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/lights-icons.png" alt="">
+                                        <img src="{{asset('assets/admin-module')}}/img/lights-icons.png" alt="">
                                         <p class="fz-12">All the provider <a href="#" class="text-primary text-decoration-underline fw-medium">Withdraw Request</a> you wil find from Withdraw Request page. For further setup for withdraw request go to <a href="#" class="text-primary text-decoration-underline fw-medium">Withdraw Method Setup</a> .</p>
                                     </div>
                                 </div>
@@ -2490,11 +2490,11 @@
                                             <code class="">
 <div class="d-flex flex-column gap-3">
     <div class="pick-map p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-        <img src="{{asset('public/assets/admin-module')}}/img/lights-icons.png" alt="">
+        <img src="{{asset('assets/admin-module')}}/img/lights-icons.png" alt="">
         <p class="fz-12">To use any <span class="text-dark fw-medium">payment method</span> for <span class="text-dark fw-medium">Partial payment</span> you need to active them from <span class="text-dark fw-medium">Previous Section,</span> otherwise the payment method will remain disable.</p>
     </div>
     <div class="pick-map p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-start gap-1 bg-primary bg-opacity-10">
-        <img src="{{asset('public/assets/admin-module')}}/img/lights-icons.png" alt="">
+        <img src="{{asset('assets/admin-module')}}/img/lights-icons.png" alt="">
         <p class="fz-12">All the provider <a href="#" class="text-primary text-decoration-underline fw-medium">Withdraw Request</a> you wil find from Withdraw Request page. For further setup for withdraw request go to <a href="#" class="text-primary text-decoration-underline fw-medium">Withdraw Method Setup</a> .</p>
     </div>
 </div>
@@ -2680,7 +2680,7 @@
                                     <div></div>
                                 </div>
                                 <div class="d-flex h-100 align-items-start gap-xl-3 gap-2 bg-white cus-shadow2 rounded p-20">
-                                    <img src="{{asset('public/assets/admin-module/img/command.png')}}" alt="">
+                                    <img src="{{asset('assets/admin-module/img/command.png')}}" alt="">
                                     <div class="w-0 flex-grow-1">
                                         <h6 class="fs-12 mb-1">{{translate('PHP File Path')}}</h6>                                            
                                         <div class="fs-12 command">/path/to/php/file</div>
@@ -2703,7 +2703,7 @@
                                         <pre>
                                             <code class="">
                         <div class="d-flex h-100 align-items-start gap-xl-3 gap-2 bg-white cus-shadow2 rounded p-20">
-    <img src="{{asset('public/assets/admin-module/img/command.png')}}" alt="">
+    <img src="{{asset('assets/admin-module/img/command.png')}}" alt="">
     <div class="w-0 flex-grow-1">
         <h6 class="fs-12 mb-1">{{translate('PHP File Path')}}</h6>                                            
         <div class="fs-12 command">/path/to/php/file</div>
@@ -2781,7 +2781,7 @@
                                                                         <div class="modal-body p-30">
                                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                             <div class="d-flex flex-column gap-2 align-items-center text-center">
-                                                                                <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                                                                                <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                                                                                 <h3 class="mb-2">{{ translate('Are you sure you want to restore this backup') }}?</h3>
                                                                                 <p>{{ translate('This action will replace the current database with the selected backup. Any unsaved changes made after the backup date will be lost.') }}</p>
                                                                                 <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -2863,7 +2863,7 @@
                                         <div class="modal-body p-30">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             <div class="d-flex flex-column gap-2 align-items-center text-center">
-                                                <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                                                <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                                                 <h3 class="mb-2">{{ translate('Are you sure you want to restore this backup') }}?</h3>
                                                 <p>{{ translate('This action will replace the current database with the selected backup. Any unsaved changes made after the backup date will be lost.') }}</p>
                                                 <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -3055,7 +3055,7 @@
                                     <input type="file" id="imageUpload" accept="image/*" required>        
                                     <label for="imageUpload" class="upload-box rounded position-relative d-flex align-items-center justify-content-center text-center overflow-hidden bg-white">
                                         <div class="upload-content">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
+                                            <img src="{{asset('assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
                                             <h6 class="fz-10 text-primary">Click to upload<br> <span class="text-dark d-block mt-1">Or drag and drop</span> </h6>
                                         </div>
                                         <img class="image-preview" src="" alt="Preview" />
@@ -3080,7 +3080,7 @@
     <input type="file" id="imageUpload" accept="image/*" required>        
     <label for="imageUpload" class="upload-box rounded position-relative d-flex align-items-center justify-content-center text-center overflow-hidden bg-white">
         <div class="upload-content">
-            <img src="{{asset('public/assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
+            <img src="{{asset('assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
             <h6 class="fz-10 text-primary">Click to upload<br> <span class="text-dark d-block mt-1">Or drag and drop</span> </h6>
         </div>
         <img class="image-preview" src="" alt="Preview" />
@@ -3110,7 +3110,7 @@
                                     <input type="file" id="imageUpload2" accept="image/*" required>        
                                     <label for="imageUpload2" class="upload-box rounded position-relative d-flex align-items-center justify-content-center text-center overflow-hidden bg-white">
                                         <div class="upload-content">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
+                                            <img src="{{asset('assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
                                             <h6 class="fz-10 text-primary">Click to upload<br> <span class="text-dark d-block mt-1">Or drag and drop</span> </h6>
                                         </div>
                                         <img class="image-preview" src="" alt="Preview" />
@@ -3136,7 +3136,7 @@
     <input type="file" id="imageUpload2" accept="image/*" required>        
     <label for="imageUpload2" class="upload-box rounded position-relative d-flex align-items-center justify-content-center text-center overflow-hidden bg-white">
         <div class="upload-content">
-            <img src="{{asset('public/assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
+            <img src="{{asset('assets/admin-module')}}/img/image-uploads.png" alt="placeholder" class="placeholder-icon mb-2">
             <h6 class="fz-10 text-primary">Click to upload<br> <span class="text-dark d-block mt-1">Or drag and drop</span> </h6>
         </div>
         <img class="image-preview" src="" alt="Preview" />
@@ -3652,7 +3652,7 @@
             <div class="modal-body p-30">
                 <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="d-flex flex-column align-items-center text-center">
-                    <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/status-on.png" alt="">
+                    <img class="mb-20" src="{{asset('assets/admin-module')}}/img/status-on.png" alt="">
                     <h3 class="mb-15">{{ translate('Are you sure Turn On the status?')}}</h3>
                     <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                     <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -3844,7 +3844,7 @@
             </div>
             <div class="offcanvas-body bg-white">
                 <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1"> 
-                    <img src="{{asset('public/assets/admin-module')}}/img/customer-hero-preview.png" alt="img" class="w-100">
+                    <img src="{{asset('assets/admin-module')}}/img/customer-hero-preview.png" alt="img" class="w-100">
                 </div>
             </div>
         </div>
@@ -3899,7 +3899,7 @@
                             <tr>
                                 <td class="text-center bg-white  pt-5 pb-5" colspan="7">
                                     <div class="d-flex flex-column gap-2">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/log-list-error.svg" alt="error" class="w-100px mx-auto">
+                                        <img src="{{asset('assets/admin-module')}}/img/log-list-error.svg" alt="error" class="w-100px mx-auto">
                                         <p>{{translate('data not found')}}</p>
                                     </div>
                                 </td>
@@ -3926,7 +3926,7 @@
             <div class="modal-body p-30"> 
                 <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="d-flex flex-column align-items-center text-center">
-                    <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/delete.png" alt="">
+                    <img class="mb-20" src="{{asset('assets/admin-module')}}/img/delete.png" alt="">
                     <h3 class="mb-15">{{ translate('Do you want to delete Facebook?')}}</h3>
                     <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                     <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -3950,7 +3950,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/status-on.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/status-on.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure Turn On the status?')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -3974,7 +3974,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/status-of.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/status-of.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure Turn Off the status?')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -3998,7 +3998,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/on-partial-payment.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/on-partial-payment.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure turn on Partial Payment')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -4022,7 +4022,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/of-partial-payment.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/of-partial-payment.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure turn Off Partial Payment')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -4046,7 +4046,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/mgoogle.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/mgoogle.png" alt="">
                         <h3 class="mb-15">{{ translate('Set Up Google Configuration First')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('It looks like your Google configuration is not set up yet. To enable the OTP system, please set up the Google configuration first.')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -4069,7 +4069,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/mapple.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/mapple.png" alt="">
                         <h3 class="mb-15">{{ translate('Set Up Apple ID Configuration First')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('It looks like your Apple ID Login configuration is not set up yet. To enable the Apple ID Login option, please set up the Apple ID configuration first.')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -4092,7 +4092,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/mfacebook.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/mfacebook.png" alt="">
                         <h3 class="mb-15">{{ translate('Set Up Facebook Configuration First')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('It looks like your Facebook Login configuration is not set up yet. To enable the Facebook Login option, please set up the Facebook configuration first.')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -4119,7 +4119,7 @@
             </div>
             <div class="offcanvas-body bg-white">
                 <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1"> 
-                    <img src="{{asset('public/assets/admin-module')}}/img/customer-hero-preview.png" alt="img" class="w-100">
+                    <img src="{{asset('assets/admin-module')}}/img/customer-hero-preview.png" alt="img" class="w-100">
                 </div>
             </div>
         </div>
@@ -4129,7 +4129,7 @@
 
 
 @push('script')
-<script src="{{asset('public/assets/admin-module')}}/plugins/highlight/highlight.js"></script>
+<script src="{{asset('assets/admin-module')}}/plugins/highlight/highlight.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

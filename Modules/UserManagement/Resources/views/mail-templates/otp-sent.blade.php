@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{translate('booking_request_sent')}}</title>
-    <link href="{{asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
-    <script src="{{asset('public/assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('public/assets/js/jquery.min.js')}}"></script>
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <style>
         a {
             color: rgb(65, 83, 179) !important;
@@ -198,7 +198,7 @@
                     <div class="col">
                         <a target="_blank" href="#">
                             @php($logo = business_config('business_logo','business_information'))
-                            <img width="200" src="{{asset('storage/app/public/business')}}/{{$logo->live_values}}" alt="{{ translate('logo') }}"
+                            <img width="200" src="{{asset('storage/business')}}/{{$logo->live_values}}" alt="{{ translate('logo') }}"
                                  data-holder-rendered="true"/>
                         </a>
                     </div>

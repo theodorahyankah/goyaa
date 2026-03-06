@@ -195,7 +195,7 @@
                                                         {{ $booking->readable_id }}
                                                     </a>
                                                     <img width="34" height="34"
-                                                         src="{{ asset('public/assets/admin-module/img/icons/repeat.svg') }}"
+                                                         src="{{ asset('assets/admin-module/img/icons/repeat.svg') }}"
                                                          class="rounded-circle repeat-icon"
                                                          alt="{{ translate('repeat') }}">
                                                 @else
@@ -324,7 +324,7 @@
                                                                                 aria-label="Close"></button>
 
                                                                         <div class="d-flex justify-content-center mb-4">
-                                                                            <img width="75" height="75" src="{{asset('public/assets/admin-module/img/delete2.png')}}" class="rounded-circle" alt="">
+                                                                            <img width="75" height="75" src="{{asset('assets/admin-module/img/delete2.png')}}" class="rounded-circle" alt="">
                                                                         </div>
 
                                                                         <h3 class="text-start mb-1 fw-medium text-center">{{translate('Are you sure you want to cancel the request?')}}</h3>

@@ -8,7 +8,7 @@
                 <button type="button"
                         class="rounded transition text-nowrap fz-12 fw-semibold btn-primary__outline btn d-flex align-items-center gap-1 py-2 px-3"
                         data-bs-toggle="modal" data-bs-target="#send__mail">
-                    <img src="{{ asset('public/assets/admin-module/img/icons/send-icon.svg') }}" class="svg"
+                    <img src="{{ asset('assets/admin-module/img/icons/send-icon.svg') }}" class="svg"
                          alt="send icon">
                     {{ translate('Send Test Mail') }}
                 </button>

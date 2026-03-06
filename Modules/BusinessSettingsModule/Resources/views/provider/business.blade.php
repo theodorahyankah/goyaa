@@ -231,7 +231,7 @@
                                                 </div>
                                             </div>
                                             <div class="pick-map p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                                                <img src="{{asset('public/assets/provider-module')}}/img/icons/bulp-icon.svg" alt="pulp/img" class="icon">
+                                                <img src="{{asset('assets/provider-module')}}/img/icons/bulp-icon.svg" alt="pulp/img" class="icon">
                                                 <p class="fz-12">{{ translate('For the address setup you can simply drag the map to pick for the perfect') }} <span class="fw-semibold">Lat(Latitude) & Log(Longitude)</span> {{ translate('value') }}.</p>
                                             </div>
                                         </div>
@@ -631,8 +631,8 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
 
     @php($api_key=(business_config('google_map', 'third_party'))->live_values)
     <script src="https://maps.googleapis.com/maps/api/js?key={{$api_key['map_api_key_client']}}&libraries=drawing,places&v=3.45.8"></script>

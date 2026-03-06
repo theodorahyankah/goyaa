@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateZonesTable extends Migration
 {
@@ -13,13 +14,16 @@ class CreateZonesTable extends Migration
      */
     public function up()
     {
+        // Create table without the polygon column
         Schema::create('zones', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name')->unique();
-            $table->polygon('coordinates')->nullable();
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
+
+        // Add polygon column using raw SQL
+        DB::statement('ALTER TABLE zones ADD COLUMN coordinates POLYGON NULL');
     }
 
     /**

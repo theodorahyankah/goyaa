@@ -244,7 +244,7 @@
                                                      src="{{$booking?->customer?->profile_image_full_path}}" alt="{{translate('user_image')}}">
                                             @else
                                                 <img width="58" height="58" class="rounded-circle border border-white aspect-square object-fit-cover"
-                                                     src="{{ asset('public/assets/provider-module/img/user2x.png') }}" alt="{{translate('user_image')}}">
+                                                     src="{{ asset('assets/provider-module/img/user2x.png') }}" alt="{{translate('user_image')}}">
                                             @endif
                                             <div class="media-body">
                                                 <h5 class="c1 mb-3">

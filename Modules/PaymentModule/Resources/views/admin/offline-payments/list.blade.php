@@ -3,7 +3,7 @@
 @section('title',translate('payment_gateway_configuration'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/select2/select2.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/select2/select2.min.css')}}"/>
 @endpush
 
 @section('content')
@@ -197,7 +197,7 @@
                                         <tr>
                                             <td class="text-center bg-white  pt-5 pb-5" colspan="7">
                                                 <div class="">
-                                                    <img src="{{asset('public/assets/admin-module')}}/img/payment-list-error.png" alt="error" class="w-100px mx-auto mb-3">
+                                                    <img src="{{asset('assets/admin-module')}}/img/payment-list-error.png" alt="error" class="w-100px mx-auto mb-3">
                                                     <p>{{translate('No Payment Method List')}}</p>
                                                     <a href="{{route('admin.configuration.offline-payment.create')}}" class="btn btn--primary rounded d-inline-flex align-items-center gap-1">
                                                         <span class="absolute-white-bg rounded-full d-center text-primary w-14 h-14">+</span>

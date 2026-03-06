@@ -3,12 +3,12 @@
         <div class="tab-pane fade show active"
              id="map_api">
             <div class="pick-map mb-15 p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                <img src="{{ asset('public/assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
+                <img src="{{ asset('assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
                 <p class="fz-12"> <span class="fw-semibold ">{{ translate('Client Key') }} </span> {{ translate('should have enable map') }}  <span class="fw-semibold">{{ translate('Javascript API') }}</span> {{ translate('and you can restrict it with http refer') }}  <span class="fw-semibold">{{ translate('Server Key') }}</span>{{ translate(' should have enable place api key and you can restrict it with ip You can use same api for both field without any restrictions.') }}</p>
             </div>
             <div class="bg-warning bg-opacity-10 fs-12 p-12 rounded mb-15">
                 <div class="d-flex align-items-center gap-2">
-                    <img src="{{ asset('public/assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
+                    <img src="{{ asset('assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
                     <p class="fz-12 fw-normal">{{ translate('Without configuring this section map functionality will not work properly thus the whole system will not work as it planned') }}</p>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="view-map-error d-center py-5 px-3 body-bg rounded border">
                             <div class="boxes text-center">
-                                <img src="{{asset('public/assets/admin-module/img/map-error.png')}}" alt="">
+                                <img src="{{asset('assets/admin-module/img/map-error.png')}}" alt="">
                                 <h5 class="my-3 fz-16 text-dark">{{ translate('404 Error') }}</h5>
                                 <p class="fz-14">{{ translate('Map is not Found. Ensure the Map API Key (Client & Server) is entered correctly.') }}</p>
                             </div>

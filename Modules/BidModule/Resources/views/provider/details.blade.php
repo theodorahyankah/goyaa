@@ -23,8 +23,8 @@
                                             <img width="140" class="radius-10"
                                                  src="{{onErrorImage(
                                                         $post?->customer?->profile_image,
-                                                        asset('storage/app/public/user/profile_image').'/' . $post?->customer?->profile_image,
-                                                        asset('public/assets/placeholder.png') ,
+                                                        asset('storage/user/profile_image').'/' . $post?->customer?->profile_image,
+                                                        asset('assets/placeholder.png') ,
                                                         'user/profile_image/')}}"
                                                  alt="{{ translate('profile-image') }}">
                                             <div class="media-body">
@@ -52,7 +52,7 @@
                                     <div class="card-body pb-5">
                                         <div class="d-flex align-items-center gap-2 mb-3">
                                             <img width="18"
-                                                 src="{{asset('public/assets/provider-module')}}/img/media/more-info.png"
+                                                 src="{{asset('assets/provider-module')}}/img/media/more-info.png"
                                                  alt="">
                                             <h4>{{translate('Service Information')}}</h4>
                                         </div>
@@ -60,8 +60,8 @@
                                             <img width="30"
                                                  src="{{onErrorImage(
                                                         $post?->sub_category?->image,
-                                                        asset('storage/app/public/category').'/' . $post?->sub_category?->image,
-                                                        asset('public/assets/placeholder.png') ,
+                                                        asset('storage/category').'/' . $post?->sub_category?->image,
+                                                        asset('assets/placeholder.png') ,
                                                         'category/')}}"
                                                  alt="{{ translate('category') }}">
                                             <div class="media-body">
@@ -86,7 +86,7 @@
                                     <div
                                         class="card-header d-flex align-items-center gap-2 bg-primary-light shadow-none">
                                         <img width="18"
-                                             src="{{asset('public/assets/provider-module')}}/img/icons/instruction.png"
+                                             src="{{asset('assets/provider-module')}}/img/icons/instruction.png"
                                              alt="">
                                         <h5 class="text-uppercase">{{translate('Additional Instruction')}}</h5>
                                     </div>
@@ -106,7 +106,7 @@
                                     <div
                                         class="card-header d-flex align-items-center gap-2 bg-primary-light shadow-none">
                                         <img width="18"
-                                             src="{{asset('public/assets/provider-module')}}/img/icons/edit-info.png"
+                                             src="{{asset('assets/provider-module')}}/img/icons/edit-info.png"
                                              alt="">
                                         <h5 class="text-uppercase">{{translate('Service Description')}}</h5>
                                     </div>
@@ -120,7 +120,7 @@
                                     <div
                                         class="card-header d-flex align-items-center gap-2 bg-primary-light shadow-none">
                                         <img width="18"
-                                             src="{{asset('public/assets/provider-module')}}/img/icons/provider.png"
+                                             src="{{asset('assets/provider-module')}}/img/icons/provider.png"
                                              alt="">
                                         <h5 class="text-uppercase">{{translate('PLACED OFFER DETAILS')}}</h5>
                                     </div>
@@ -143,7 +143,7 @@
                                         <div
                                             class="card-header d-flex align-items-center gap-2 bg-primary-light shadow-none">
                                             <img width="18"
-                                                 src="{{asset('public/assets/provider-module')}}/img/icons/provider.png"
+                                                 src="{{asset('assets/provider-module')}}/img/icons/provider.png"
                                                  alt="">
                                             <h5 class="text-uppercase">{{translate('OTHER PROVIDER OFFERING')}}</h5>
                                         </div>
@@ -156,8 +156,8 @@
                                                                 <img
                                                                     src="{{onErrorImage(
                                                                    $item?->provider?->logo,
-                                                                    asset('storage/app/public/provider/logo').'/' .$item?->provider?->logo,
-                                                                    asset('public/assets/placeholder.png') ,
+                                                                    asset('storage/provider/logo').'/' .$item?->provider?->logo,
+                                                                    asset('assets/placeholder.png') ,
                                                                     'provider/logo/')}}"
                                                                     class="rounded" alt="{{translate('image')}}">
                                                             </div>
@@ -184,7 +184,7 @@
                                                             <button class="dropdown-item" data-bs-toggle="modal"
                                                                     data-bs-target="#providerInformationModal--{{$item->provider->id}}">
                                                                 <img width="24"
-                                                                     src="{{asset('public/assets/provider-module')}}/img/icons/chat.png"
+                                                                     src="{{asset('assets/provider-module')}}/img/icons/chat.png"
                                                                      alt="">
                                                             </button>
 
@@ -244,8 +244,8 @@
                                             <img
                                                 src="{{onErrorImage(
                                                $post?->customer?->profile_image,
-                                                asset('storage/app/public/user/profile_image').'/' .$post?->customer?->profile_image,
-                                                asset('public/assets/placeholder.png') ,
+                                                asset('storage/user/profile_image').'/' .$post?->customer?->profile_image,
+                                                asset('assets/placeholder.png') ,
                                                 'user/profile_image/')}}"
                                                 alt="{{translate('image')}}">
                                         </div>
@@ -263,8 +263,8 @@
                                             <img width="30"
                                                  src="{{onErrorImage(
                                                 $post?->sub_category?->image,
-                                                asset('storage/app/public/category').'/' .$post?->sub_category?->image,
-                                                asset('public/assets/placeholder.png') ,
+                                                asset('storage/category').'/' .$post?->sub_category?->image,
+                                                asset('assets/placeholder.png') ,
                                                 'category/')}}"
                                                  alt="{{translate('profile image')}}">
                                             <div class="media-body">
@@ -278,7 +278,7 @@
 
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <img width="18"
-                                         src="{{asset('public/assets/provider-module')}}/img/media/edit-info.png"
+                                         src="{{asset('assets/provider-module')}}/img/media/edit-info.png"
                                          alt="">
                                     <h4>{{translate('Service Requirement')}}</h4>
                                 </div>
@@ -335,7 +335,7 @@
                 </div>
                 <div class="modal-body pb-sm-5 px-sm-5">
                     <div class="d-flex flex-column align-items-center gap-2 text-center">
-                        <img src="{{asset('public/assets/provider-module')}}/img/icons/alert.png" alt="">
+                        <img src="{{asset('assets/provider-module')}}/img/icons/alert.png" alt="">
                         <h3>{{translate('Alert')}}!</h3>
                         <p class="fw-medium">
                             {{translate('This request is with customized instructions. Please read the customer description and instructions thoroughly and place your pricing according to this')}}
@@ -359,7 +359,7 @@
                 <div class="modal-body">
                     <div class="d-flex flex-column gap-2 align-items-center">
                         <img width="75" class="mb-2"
-                             src="{{asset('public/assets/provider-module')}}/img/media/withdraw.png"
+                             src="{{asset('assets/provider-module')}}/img/media/withdraw.png"
                              alt="">
                         <h3>{{translate('Are you sure you want to withdraw this offer?')}}
                             ?</h3>
@@ -399,8 +399,8 @@
                                         <img
                                             src="{{onErrorImage(
                                             $item?->provider?->logo,
-                                            asset('storage/app/public/provider/logo').'/' . $item?->provider?->logo,
-                                            asset('public/assets/placeholder.png') ,
+                                            asset('storage/provider/logo').'/' . $item?->provider?->logo,
+                                            asset('assets/placeholder.png') ,
                                             'provider/logo/')}}"
                                             class="rounded" alt="{{translate('provider logo')}}">
                                     </div>

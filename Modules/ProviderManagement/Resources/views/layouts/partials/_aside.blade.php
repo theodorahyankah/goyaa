@@ -15,7 +15,7 @@ $pending_booking_count = \Modules\BookingModule\Entities\Booking::providerPendin
     ->count();
 $accepted_booking_count = \Modules\BookingModule\Entities\Booking::providerAcceptedBookings(auth()->user()->provider->id, $maxBookingAmount)->count();
 
-$logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/admin-module/img/placeholder.png');
+$logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/admin-module/img/placeholder.png');
 ?>
 
 @php($provider = auth()->user()->provider)
@@ -301,10 +301,10 @@ $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'bus
             </li>
 
             <li>
-                <div class="card" data-bg-img="{{asset('public/assets/provider-module')}}/img/media/create-ads-bg-vertical.png">
+                <div class="card" data-bg-img="{{asset('assets/provider-module')}}/img/media/create-ads-bg-vertical.png">
                     <div class="card-body">
                         <div class="d-flex flex-column gap-2 align-items-center text-center">
-                            <img width="140" class="mb-3" src="{{asset('public/assets/provider-module')}}/img/media/create-ads.png" alt="">
+                            <img width="140" class="mb-3" src="{{asset('assets/provider-module')}}/img/media/create-ads.png" alt="">
                             <h4 class="mb-2">{{translate('Want To Get Highlighted')}}?</h4>
                             <p>{{translate('Create ads to get highlighted on the app and web browser')}}</p>
 

@@ -63,7 +63,7 @@ class LandingPageFeature extends Model
     public function getImage1FullPathAttribute()
     {
         $image = $this->image_1;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -82,7 +82,7 @@ class LandingPageFeature extends Model
     public function getImage2FullPathAttribute()
     {
         $image = $this->image_2;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {

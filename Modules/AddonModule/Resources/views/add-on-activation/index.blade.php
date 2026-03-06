@@ -41,8 +41,8 @@
                                            data-off-title="{{ translate('want_to_Turn_OFF_the_Provider_App_addon') }}?"
                                            data-on-description="{{ translate('Turning this on will activate the Provider App features and make them work.') }}"
                                            data-off-description="{{ translate('Turning this off will stop the Provider App features from working.') }}"
-                                           data-on-image="{{ asset('public/assets/admin-module/img/icons/status-on.png') }}"
-                                           data-off-image="{{ asset('public/assets/admin-module/img/icons/status-off.png') }}"
+                                           data-on-image="{{ asset('assets/admin-module/img/icons/status-on.png') }}"
+                                           data-off-image="{{ asset('assets/admin-module/img/icons/status-off.png') }}"
                                         {{ isset($providerData) && isset($providerData['activation_status']) && $providerData['activation_status'] == 1 ? 'checked' : '' }}
                                     >
                                     <span class="switcher_control {{ env('APP_ENV') == 'demo' ? 'disabled' : '' }}"  ></span>
@@ -150,8 +150,8 @@
                                            data-off-title="{{ translate('want_to_Turn_OFF_the_Serviceman_App_addon') }}?"
                                            data-on-description="{{ translate('Turning this on will activate the Serviceman App features and make them work.') }}"
                                            data-off-description="{{ translate('Turning this off will stop the Serviceman App features from working.') }}"
-                                           data-on-image="{{ asset('public/assets/admin-module/img/icons/status-on.png') }}"
-                                           data-off-image="{{ asset('public/assets/admin-module/img/icons/status-off.png') }}"
+                                           data-on-image="{{ asset('assets/admin-module/img/icons/status-on.png') }}"
+                                           data-off-image="{{ asset('assets/admin-module/img/icons/status-off.png') }}"
                                         {{ isset($servicemanData) && isset($servicemanData['activation_status']) && $servicemanData['activation_status'] == 1 ? 'checked' : '' }}
                                     >
                                     <span class="switcher_control {{ env('APP_ENV') == 'demo' ? 'disabled' : '' }}"  ></span>
@@ -235,7 +235,7 @@
                     <button type="button" class="btn-close cancel-change" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mb-30 pb-0 text-center">
-                    <img width="80" src="{{ asset('public/assets/admin-module/img/icons/status-on.png') }}" alt="{{ translate('image') }}" class="mb-20">
+                    <img width="80" src="{{ asset('assets/admin-module/img/icons/status-on.png') }}" alt="{{ translate('image') }}" class="mb-20">
                     <h3 class="mb-3 confirmation-title-text">{{ translate('Are you sure') }}?</h3>
                     <p class="mb-0 confirmation-description-text">{{ translate('Do you want to change the status') }}?</p>
                     <div class="btn--container mt-30 justify-content-center">

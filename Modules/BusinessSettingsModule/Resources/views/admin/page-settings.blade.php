@@ -159,7 +159,7 @@
                                                 <a class="btn btn-outline--primary fs-14 text-capitalize gap-2 rounded-2" href="{{ $route }}" target="_blank">
                                                     {{ translate('View URL') }}
                                                     <span class="c1">
-                                                    <img class="svg" src="{{asset('public/assets/admin-module/img/icons/arrow-right.svg')}}" alt="">
+                                                    <img class="svg" src="{{asset('assets/admin-module/img/icons/arrow-right.svg')}}" alt="">
                                                     </span>
                                                 </a>
                                             @endif
@@ -224,7 +224,7 @@
                                                                        accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*"
                                                                        name="cover_image">
                                                                 <div class="upload-file__img m-auto max-w-100 h-180px text-center">
-                                                                    <img class="h-180px w-100" src="{{getDataSettingsImageFullPath(key: $pageData->key.'_image', settingType: 'pages_setup_image', path: 'page-setup/', defaultPath: asset('public/assets/admin-module/img/page-default.png'))}}" alt="">
+                                                                    <img class="h-180px w-100" src="{{getDataSettingsImageFullPath(key: $pageData->key.'_image', settingType: 'pages_setup_image', path: 'page-setup/', defaultPath: asset('assets/admin-module/img/page-default.png'))}}" alt="">
                                                                 </div>
                                                                 <span class="edit-wrapper">
                                                                     <span class="upload-file__edit top">
@@ -389,7 +389,7 @@
                                                 <a class="btn btn-outline--primary fs-14 text-capitalize gap-2 rounded-2" href="{{ $route }}" target="_blank">
                                                     {{ translate('View URL') }}
                                                     <span class="c1">
-                                                    <img class="svg" src="{{asset('public/assets/admin-module/img/icons/arrow-right.svg')}}" alt="">
+                                                    <img class="svg" src="{{asset('assets/admin-module/img/icons/arrow-right.svg')}}" alt="">
                                                     </span>
                                                 </a>
                                             @endif
@@ -407,7 +407,7 @@
                                                                        accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*"
                                                                        name="cover_image">
                                                                 <div class="upload-file__img m-auto max-w-100 h-180px text-center">
-                                                                    <img class="h-180px w-100" src="{{getDataSettingsImageFullPath(key: $pageData->key.'_image', settingType: 'pages_setup_image', path: 'page-setup/', defaultPath: asset('public/assets/admin-module/img/page-default.png'))}}" alt="">
+                                                                    <img class="h-180px w-100" src="{{getDataSettingsImageFullPath(key: $pageData->key.'_image', settingType: 'pages_setup_image', path: 'page-setup/', defaultPath: asset('assets/admin-module/img/page-default.png'))}}" alt="">
                                                                 </div>
                                                                 <span class="edit-wrapper">
                                                                     <span class="upload-file__edit top">
@@ -711,7 +711,7 @@
                             <tr>
                                 <td class="text-center bg-white  pt-5 pb-5" colspan="7">
                                     <div class="d-flex flex-column gap-2">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/log-list-error.svg" alt="error" class="w-100px mx-auto">
+                                        <img src="{{asset('assets/admin-module')}}/img/log-list-error.svg" alt="error" class="w-100px mx-auto">
                                         <p>{{translate('data not found')}}</p>
                                     </div>
                                 </td>
@@ -792,7 +792,7 @@
             <div class="modal-body p-30">
                 <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="d-flex flex-column align-items-center text-center">
-                    <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/delete.png" alt="">
+                    <img class="mb-20" src="{{asset('assets/admin-module')}}/img/delete.png" alt="">
                     <h3 class="mb-15">{{ translate('Do you want to delete Facebook?')}}</h3>
                     <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                     <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -826,7 +826,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
 
     <script>
         "use strict";

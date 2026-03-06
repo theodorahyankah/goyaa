@@ -3,12 +3,12 @@
 @section('title',translate('business_setup'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/new/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/new/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/new/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/new/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/new/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/new/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
 
 
-    <link rel="stylesheet" href="{{asset('public/assets/new/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/new/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 @endpush
 
 @section('content')
@@ -2528,7 +2528,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/status-on.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/status-on.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure Turn On the status?')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -2552,7 +2552,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/status-of.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/status-of.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure Turn Off the status?')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio tellus, laoreet ')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -2577,7 +2577,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/on-partial-payment.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/on-partial-payment.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure turn on Partial Payment')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('By enabling Partial Payment, customers will be able to pay a portion of their bill using wallet balance and complete the remaining payment through the selected payment option(s). This can improve flexibility and increase successful order completions.')}}</p>
                         <form action="#">
@@ -2600,7 +2600,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/of-partial-payment.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/of-partial-payment.png" alt="">
                         <h3 class="mb-15">{{ translate('Are you sure turn Off Partial Payment')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('By disabling Partial Payment, customers must pay the full bill using a single payment method. They will no longer be able to combine wallet balance with other payment options.')}}</p>
                         <form action="#" method="">
@@ -2624,7 +2624,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/mgoogle.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/mgoogle.png" alt="">
                         <h3 class="mb-15">{{ translate('Set Up Google Configuration First')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('It looks like your Google configuration is not set up yet. To enable the OTP system, please set up the Google configuration first.')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -2647,7 +2647,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/mapple.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/mapple.png" alt="">
                         <h3 class="mb-15">{{ translate('Set Up Apple ID Configuration First')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('It looks like your Apple ID Login configuration is not set up yet. To enable the Apple ID Login option, please set up the Apple ID configuration first.')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -2670,7 +2670,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/mfacebook.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/mfacebook.png" alt="">
                         <h3 class="mb-15">{{ translate('Set Up Facebook Configuration First')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('It looks like your Facebook Login configuration is not set up yet. To enable the Facebook Login option, please set up the Facebook configuration first.')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -2695,7 +2695,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/new/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/new/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Switch commission base')}}</h3>
                         <p class="old-subscription-name" id="old_subscription_name">{{ translate('If disabled Subscription, All subscriber moved to commission and providers have to give a certain percentage of commission to admin for every booking request')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -2725,7 +2725,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/new/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/new/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Want to switch existing business plan')}}?</h3>
                         <p class="old-subscription-name" id="old_subscription_name"></p>
                         <form class="w-100" action="{{ route('admin.subscription.package.commission-to-subscription') }}" method="post">
@@ -2793,9 +2793,9 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/new/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/new/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/new/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/new/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/new/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/new/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
 
     @php($api_key=(business_config('google_map', 'third_party'))->live_values)
     <script src="https://maps.googleapis.com/maps/api/js?key={{$api_key['map_api_key_client']}}&libraries=drawing,places&v=3.45.8"></script>

@@ -3,14 +3,14 @@
 @section('title',translate('service_update'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/css/tags-input.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/css/tags-input.min.css"/>
 
     {{--AI--}}
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/css/ai-sidebar.css') }}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/css/ai-sidebar.css') }}"/>
 
 @endpush
 
@@ -70,7 +70,7 @@
                                                                             data-item='@json(["name" => $service?->getRawOriginal('name') ?? ''])'
                                                                             data-route="{{ route('admin.product.title-auto-fill') }}">
                                                                         <div class="btn-svg-wrapper">
-                                                                            <img width="18" height="18" class="" src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                            <img width="18" height="18" class="" src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                         </div>
                                                                         <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                         <span class="btn-text">{{ translate('Generate') }}</span>
@@ -104,7 +104,7 @@
                                                                                 data-item='@json(["name" => $translate[$lang['code']]['name'] ?? ''])'
                                                                         >
                                                                             <div class="btn-svg-wrapper">
-                                                                                <img width="18" height="18" class="" src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                                <img width="18" height="18" class="" src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                             </div>
                                                                             <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                             <span class="btn-text">{{ translate('Generate') }}</span>
@@ -138,7 +138,7 @@
                                                                         data-lang="en"
                                                                         data-route="{{ route('admin.product.title-auto-fill') }}">
                                                                     <div class="btn-svg-wrapper">
-                                                                        <img width="18" height="18" class="" src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                        <img width="18" height="18" class="" src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                     </div>
                                                                     <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                     <span class="btn-text">{{ translate('Generate') }}</span>
@@ -158,7 +158,7 @@
                                                                                 data-route="{{ route('admin.product.short-description-auto-fill') }}">
                                                                             <div class="btn-svg-wrapper">
                                                                                 <img width="18" height="18" class=""
-                                                                                     src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                                     src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                             </div>
                                                                             <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                             <span class="btn-text">{{ translate('Generate') }}</span>
@@ -180,7 +180,7 @@
                                                                                     data-route="{{ route('admin.product.description-auto-fill') }}">
                                                                                 <div class="btn-svg-wrapper">
                                                                                     <img width="18" height="18" class=""
-                                                                                         src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                                         src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                                 </div>
                                                                                 <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                                 <span class="btn-text">{{ translate('Generate') }} </span>
@@ -219,7 +219,7 @@
                                                                                         data-route="{{ route('admin.product.short-description-auto-fill') }}">
                                                                                     <div class="btn-svg-wrapper">
                                                                                         <img width="18" height="18" class=""
-                                                                                             src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                                             src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                                     </div>
                                                                                     <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                                     <span class="btn-text">{{ translate('Generate') }}</span>
@@ -240,7 +240,7 @@
                                                                                         data-item='@json(["description" => $translate[$lang['code']]['description'] ?? ''])'
                                                                                         data-route="{{ route('admin.product.description-auto-fill') }}">
                                                                                     <div class="btn-svg-wrapper">
-                                                                                        <img width="18" height="18" class="" src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                                        <img width="18" height="18" class="" src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                                     </div>
                                                                                     <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                                     <span class="btn-text">{{ translate('Generate') }}</span>
@@ -270,7 +270,7 @@
                                                                         data-route="{{ route('admin.product.short-description-auto-fill') }}">
                                                                     <div class="btn-svg-wrapper">
                                                                         <img width="18" height="18" class=""
-                                                                             src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                             src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                     </div>
                                                                     <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                     <span class="btn-text">{{ translate('Generate') }}</span>
@@ -290,7 +290,7 @@
                                                                         data-route="{{ route('admin.product.description-auto-fill') }}">
                                                                     <div class="btn-svg-wrapper">
                                                                         <img width="18" height="18" class=""
-                                                                             src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                             src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                                     </div>
                                                                     <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                                     <span class="btn-text">{{ translate('Generate') }}</span>
@@ -378,7 +378,7 @@
                                                                 data-route="{{ route('admin.product.general-setup-auto-fill') }}"  data-lang="default">
                                                             <div class="btn-svg-wrapper">
                                                                 <img width="18" height="18" class=""
-                                                                     src="{{ asset(path: 'public/assets/admin-module/img/ai//blink-right-small.svg') }}" alt="">
+                                                                     src="{{ asset(path: 'assets/admin-module/img/ai//blink-right-small.svg') }}" alt="">
                                                             </div>
                                                             <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                             <span class="btn-text">{{ translate('Generate') }}</span>
@@ -457,7 +457,7 @@
                                                                 data-route="{{ route('admin.product.variation-setup-auto-fill') }}">
                                                             <div class="btn-svg-wrapper">
                                                                 <img width="18" height="18" class=""
-                                                                     src="{{ asset(path: 'public/assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
+                                                                     src="{{ asset(path: 'assets/admin-module/img/ai/blink-right-small.svg') }}" alt="">
                                                             </div>
                                                             <span class="ai-text-animation d-none" role="status">{{ translate('Just_a_second') }}</span>
                                                             <span class="btn-text">{{ translate('Generate') }}</span>
@@ -533,7 +533,7 @@
                     <span class="gradientCirc"></span>
                 </span>
                 <span class="position-relative z-1 text-white-absolute d-flex flex-column gap-1 align-items-center">
-                    <img width="16" height="17" src="{{ asset(path: 'public/assets/admin-module/img/ai/hexa-ai.svg') }}" alt="">
+                    <img width="16" height="17" src="{{ asset(path: 'assets/admin-module/img/ai/hexa-ai.svg') }}" alt="">
                     <span class="fs-12 fw-semibold">{{ translate('Use_AI') }}</span>
                 </span>
             </button>
@@ -545,21 +545,21 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/js//tags-input.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{asset('public/assets/ckeditor/jquery.js')}}"></script>
+    <script src="{{asset('assets/admin-module')}}/js//tags-input.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('assets/ckeditor/jquery.js')}}"></script>
 
     {{--AI--}}
-    <script src="{{ asset('public/assets/admin-module/js/AI/products/ai-sidebar.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/AI/products/general-setup.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/AI/products/product-short-description-autofill.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/AI/products/product-description-autofill.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/AI/products/product-title-autofill.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/AI/products/product-variation-setup.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/AI/image-compressor/image-compressor.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/AI/image-compressor/compressor.min.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/products/ai-sidebar.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/products/general-setup.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/products/product-short-description-autofill.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/products/product-description-autofill.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/products/product-title-autofill.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/products/product-variation-setup.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/image-compressor/image-compressor.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/AI/image-compressor/compressor.min.js') }}"></script>
 
     <script>
         "use strict";

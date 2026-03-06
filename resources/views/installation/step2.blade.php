@@ -23,7 +23,7 @@
                     {{translate('Where to get this information?')}}
                     <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
                           data-bs-title="Purchase code information">
-                                <img src="{{asset('public/assets/installation')}}/assets/img/svg-icons/info.svg" alt=""
+                                <img src="{{asset('assets/installation')}}/assets/img/svg-icons/info.svg" alt=""
                                      class="svg">
                             </span>
                 </a>
@@ -49,7 +49,7 @@
                                               data-bs-placement="top" data-bs-custom-class="custom-tooltip"
                                               data-bs-html="true"
                                               data-bs-title="{{translate('Enter your real full name.')}}">
-                                                      <img src="{{asset('public/assets/installation')}}/assets/img/svg-icons/info2.svg"
+                                                      <img src="{{asset('assets/installation')}}/assets/img/svg-icons/info2.svg"
                                                            class="svg" alt="">
                                                 </span>
                                     </label>
@@ -67,7 +67,7 @@
                                               data-bs-placement="top" data-bs-custom-class="custom-tooltip"
                                               data-bs-html="true"
                                               data-bs-title="{{translate('Enter your valid email address.')}}">
-                                                      <img src="{{asset('public/assets/installation')}}/assets/img/svg-icons/info2.svg"
+                                                      <img src="{{asset('assets/installation')}}/assets/img/svg-icons/info2.svg"
                                                            class="svg" alt="">
                                                 </span>
                                     </label>
@@ -85,7 +85,7 @@
                                               data-bs-html="true"
                                               data-bs-title="The username of your codecanyon account">
                                                     <img
-                                                        src="{{asset('public/assets/installation')}}/assets/img/svg-icons/info2.svg"
+                                                        src="{{asset('assets/installation')}}/assets/img/svg-icons/info2.svg"
                                                         class="svg" alt="">
                                                 </span>
                                     </label>

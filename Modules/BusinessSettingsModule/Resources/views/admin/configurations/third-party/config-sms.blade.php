@@ -3,12 +3,12 @@
         <div class="tab-pane fade show active"
              id="sms_config">
             <div class="pick-map mb-3 p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                <img src="{{ asset('public/assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
+                <img src="{{ asset('assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
                 <p class="fz-12">{{ translate('This SMS gateway will work for') }} <a @can('login_setup_view') href="{{ route('admin.business-settings.login.setup') }}" @endcan class="text-primary fw-semibold text-decoration-underline" target="_blank"> {{ translate('OTP verification') }} </a> {{ translate('_or') }} <a @can('firebase_view') href="{{ route('admin.configuration.third-party', 'firebase-authentication') }}" @endcan target="_blank" class="text-primary fw-semibold text-decoration-underline">{{ translate('Notification') }}</a> {{ translate('_through SMS.') }}</p>
             </div>
             <div class="bg-warning bg-opacity-10 fs-12 p-12 rounded mb-3">
                 <div class="d-flex align-items-center gap-2">
-                    <img src="{{ asset('public/assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
+                    <img src="{{ asset('assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
                     <p class="fz-12 fw-normal">{{ translate('Please recheck if you have put all the data correctly or contact your SMS gateway provider for assistance.') }}</p>
                 </div>
             </div>
@@ -61,8 +61,8 @@
                                                        data-off-title="{{ translate('Are you sure you want to use third party gateway for sms') }}?"
                                                        data-on-description="This action will make SMS Gateways your default SMS provider"
                                                        data-off-description="This action will make SMS Gateways your default SMS provider"
-                                                       data-on-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
-                                                       data-off-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-on-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-off-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
                                                 >
                                                 <label for="radio-option-1">
                                                     <h5 class="mb-1">{{translate('3rd Party')}}</h5>
@@ -82,8 +82,8 @@
                                                        data-off-title="{{ translate('Are you sure you want to use firebase for sms') }}?"
                                                        data-on-description="This action will make Firebase your default SMS provider"
                                                        data-off-description="This action will make Firebase your default SMS provider"
-                                                       data-on-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
-                                                       data-off-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-on-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
+                                                       data-off-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}"
                                                 >
                                                 <label for="radio-option-2">
                                                     <h5 class="mb-1">{{translate('Firebase OTP')}}</h5>
@@ -152,8 +152,8 @@
                                                                data-off-title="{{translate('want_to_Turn_OFF_').' '.ucwords(str_replace('_',' ',$smsConfig['key_name'])).' '.translate('_as_the_SMS_Gateway').'?'}}"
                                                                data-on-description="{{translate('if_enabled_system_can_use_this_SMS_Gateway')}}"
                                                                data-off-description="{{translate('if_disabled_system_cannot_use_this_SMS_Gateway')}}"
-                                                               data-on-image="{{ asset('public/assets/admin-module/img/modal/sms/'. $smsConfig['key_name'] . '.png' ) }}"
-                                                               data-off-image="{{ asset('public/assets/admin-module/img/icons/swap.svg') }}">
+                                                               data-on-image="{{ asset('assets/admin-module/img/modal/sms/'. $smsConfig['key_name'] . '.png' ) }}"
+                                                               data-off-image="{{ asset('assets/admin-module/img/icons/swap.svg') }}">
                                                         <span class="switcher_control {{ env('APP_ENV') == 'demo' ? 'disabled' : '' }}"  ></span>
                                                     </label>
                                                 </div>
@@ -221,7 +221,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="pick-map mb-20 p-12 rounded d-flex flex-md-nowrap flex-wrap align-items-center gap-1 bg-primary bg-opacity-10">
-                        <img src="{{ asset('public/assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
+                        <img src="{{ asset('assets/admin-module/img/icons/focus_mode.svg') }}" alt="focus mode icon">
                         <p class="fz-12"> {{ $data['firebase_otp_verification']['live_values']['status'] == 1 ? 'Firebase OTP' : $activeSMSGateway }} is configured for SMS. Please test to ensure you are receiving SMS messages correctly.</p>
                     </div>
                     <form action="javascript:" class="body-bg rounded p-20">

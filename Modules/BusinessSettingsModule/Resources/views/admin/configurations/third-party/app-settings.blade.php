@@ -4,7 +4,7 @@
              id="app_settings">
             <div class="bg-warning bg-opacity-10 fs-12 p-12 text-dark rounded mb-15">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                    <img src="{{ asset('public/assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
+                    <img src="{{ asset('assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
                     <p class="fz-12 fw-medium">{{ translate('In this page you can setup latest version app forcefully activate for the users. Please input proper data for the app link & versions.') }}</p>
                 </div>
                 <ul class="m-0 ps-20 d-flex flex-column gap-1 text-dark">
@@ -27,7 +27,7 @@
                             <div class="row g-lg-4 g-3">
                                 <div class="col-md-6 col-12">
                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                        <img src="{{asset('public/assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
+                                        <img src="{{asset('assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
                                     </div>
                                     <div class="body-bg rounded p-20">
                                         <div class="mb-xl-4 mb-3">
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                        <img src="{{asset('public/assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
+                                        <img src="{{asset('assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
                                     </div>
                                     <div class="body-bg rounded p-20">
                                         <div class="mb-xl-4 mb-3">
@@ -113,7 +113,7 @@
                             <div class="row g-lg-4 g-3">
                                 <div class="col-md-6 col-12">
                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                        <img src="{{asset('public/assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
+                                        <img src="{{asset('assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
                                     </div>
                                     <div class="body-bg rounded p-20">
                                         <div class="mb-xl-4 mb-3">
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                        <img src="{{asset('public/assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
+                                        <img src="{{asset('assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
                                     </div>
                                     <div class="body-bg rounded p-20">
                                         <div class="mb-xl-4 mb-3">
@@ -199,7 +199,7 @@
                             <div class="row g-lg-4 g-3">
                                 <div class="col-md-6 col-12">
                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                        <img src="{{asset('public/assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
+                                        <img src="{{asset('assets/admin-module/img/google-play-icon.png')}}" alt="">  {{translate('For android')}}
                                     </div>
                                     <div class="body-bg rounded p-20">
                                         <div class="mb-xl-4 mb-3">
@@ -227,7 +227,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="d-flex align-items-center gap-2 fw-bold text-dark mb-20">
-                                        <img src="{{asset('public/assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
+                                        <img src="{{asset('assets/admin-module/img/ios-icon.png')}}" alt="">  {{translate('For ios')}}
                                     </div>
                                     <div class="body-bg rounded p-20">
                                         <div class="mb-xl-4 mb-3">

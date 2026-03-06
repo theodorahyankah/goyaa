@@ -10,14 +10,14 @@
                  @elseif(isset($fromUser->user) && $fromUser->user->user_type == 'provider-serviceman')
                      src="{{onErrorImage(
                                 $fromUser->user->profile_image,
-                                asset('storage/app/public/serviceman/profile').'/' .$fromUser->user->profile_image,
-                                asset('public/assets/admin-module/img/media/user.png') ,
+                                asset('storage/serviceman/profile').'/' .$fromUser->user->profile_image,
+                                asset('assets/admin-module/img/media/user.png') ,
                                 'serviceman/profile/'
                                 )}}"
                  @else
                      src="{{onErrorImage('null',
-                        asset('storage/app/public/serviceman/profile').'/',
-                        asset('public/assets/admin-module/img/media/user.png') ,
+                        asset('storage/serviceman/profile').'/',
+                        asset('assets/admin-module/img/media/user.png') ,
                         'serviceman/profile/')}}"
                  @endif
                  alt="{{ translate('profile_image') }}">
@@ -63,7 +63,7 @@
                                     </div>
                                 @else
                                     <div class="d-flex align-items-center flex-column gap-1">
-                                        <img width="50" src="{{asset('public/assets/admin-module/img/icons/folder.png')}}" alt="">
+                                        <img width="50" src="{{asset('assets/admin-module/img/icons/folder.png')}}" alt="">
                                         <a class="fs-12" href="{{$file->stored_file_name_full_path}}" download>
                                             {{$file->original_file_name}}
                                         </a>
@@ -121,14 +121,14 @@
                     <div class="send-msg-btns d-flex justify-content-end mt-3 gap-3">
                         <div class="position-relative">
                             <label class="cursor-pointer">
-                                <img src="{{asset('public/assets/admin-module/img/icons/img-icon.svg')}}" alt="">
+                                <img src="{{asset('assets/admin-module/img/icons/img-icon.svg')}}" alt="">
                                 <input type="file" id="msgfilesValue" class="h-100 position-absolute w-100 " hidden multiple
                                        data-maxFileSize="{{ readableUploadMaxFileSize('image') }}"
                                        accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
                             </label>
                         </div>
                         <div class="add-attatchment">
-                            <img src="{{asset('public/assets/admin-module/img/icons/clip-icon.svg')}}" alt="">
+                            <img src="{{asset('assets/admin-module/img/icons/clip-icon.svg')}}" alt="">
                             <input type="file" class="file_input document_input" name="files[]" multiple
                                    data-maxFileSize="{{ readableUploadMaxFileSize('file') }}"
                                    accept=".{{ implode(',.', array_column(ALLOWED_FILE_TYPE, 'key')) }},">

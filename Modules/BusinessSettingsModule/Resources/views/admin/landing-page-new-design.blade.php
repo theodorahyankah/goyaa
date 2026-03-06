@@ -3,9 +3,9 @@
 @section('title',translate('landing_page_setup'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
 @endpush
 
 @section('content')
@@ -587,7 +587,7 @@
                                                     <tr>
                                                         <td>1</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb1.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb1.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark">46,465+</span></td>
                                                         <td><span class="text-dark">Happy Clients</span></td>
@@ -611,7 +611,7 @@
                                                     <tr>
                                                         <td>2</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb2.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb2.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark">46,465+</span></td>
                                                         <td><span class="text-dark">Customer Support</span></td>
@@ -635,7 +635,7 @@
                                                     <tr>
                                                         <td>3</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb3.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb3.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark">46,465+</span></td>
                                                         <td><span class="text-dark">Happy Clients</span></td>
@@ -659,7 +659,7 @@
                                                     <tr>
                                                         <td>4</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb4.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb4.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark">46,465+</span></td>
                                                         <td><span class="text-dark">Happy Clients</span></td>
@@ -841,10 +841,10 @@
                                                     <tr>
                                                         <td>1</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb1.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb1.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/feature-thumb1.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/feature-thumb1.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark text-uppercase title-text">GET YOUR SERVICE ANYTIMEGET </span></td>
                                                         <td><span class="text-dark max-w-260px d-block fz-14">Visit our app and select your location to see available services near you</span></td>
@@ -868,10 +868,10 @@
                                                     <tr>
                                                         <td>2</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb2.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb2.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/feature-thumb2.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/feature-thumb2.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark text-uppercase title-text">GET YOUR SERVICE ANYTIMEGET </span></td>
                                                         <td><span class="text-dark max-w-260px d-block fz-14">Visit our app and select your location to see available services near you</span></td>
@@ -895,10 +895,10 @@
                                                     <tr>
                                                         <td>3</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb3.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb3.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/feature-thumb3.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/feature-thumb3.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark text-uppercase title-text">GET YOUR SERVICE ANYTIMEGET </span></td>
                                                         <td><span class="text-dark max-w-260px d-block fz-14">Visit our app and select your location to see available services near you</span></td>
@@ -922,10 +922,10 @@
                                                     <tr>
                                                         <td>4</td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/specialty-thumb4.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/specialty-thumb4.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td>
-                                                            <img src="{{asset('public/assets/admin-module')}}/img/feature-thumb4.png" alt="" class="table-cover-img">
+                                                            <img src="{{asset('assets/admin-module')}}/img/feature-thumb4.png" alt="" class="table-cover-img">
                                                         </td>
                                                         <td><span class="text-dark text-uppercase title-text">GET YOUR SERVICE ANYTIMEGET </span></td>
                                                         <td><span class="text-dark max-w-260px d-block fz-14">Visit our app and select your location to see available services near you</span></td>
@@ -1243,7 +1243,7 @@
                                                 <tr>
                                                     <td>1</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author1.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author1.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -1269,7 +1269,7 @@
                                                 <tr>
                                                     <td>2</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author2.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author2.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -1295,7 +1295,7 @@
                                                 <tr>
                                                     <td>3</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author3.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author3.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -1321,7 +1321,7 @@
                                                 <tr>
                                                     <td>4</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author4.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author4.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -1487,7 +1487,7 @@
         </div>
         <div class="offcanvas-body">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/hero-previews.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/hero-previews.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -1502,7 +1502,7 @@
         </div>
         <div class="offcanvas-body">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/service-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/service-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -1517,7 +1517,7 @@
         </div>
         <div class="offcanvas-body">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/about-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/about-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -1532,7 +1532,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/speciality-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/speciality-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -1627,7 +1627,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/feature-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/feature-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -1742,7 +1742,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/registration-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/registration-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -1757,7 +1757,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/testimonial-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/testimonial-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -2518,7 +2518,7 @@
                                                 <tr>
                                                     <td>1</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author1.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author1.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -2544,7 +2544,7 @@
                                                 <tr>
                                                     <td>2</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author2.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author2.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -2570,7 +2570,7 @@
                                                 <tr>
                                                     <td>3</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author3.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author3.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -2596,7 +2596,7 @@
                                                 <tr>
                                                     <td>4</td>
                                                     <td>
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/reviewer-author4.png" alt="" class="table-cover-img">
+                                                        <img src="{{asset('assets/admin-module')}}/img/reviewer-author4.png" alt="" class="table-cover-img">
                                                     </td>
                                                     <td><span class="text-dark">Customer</span></td>
                                                     <td class="max-w-400">
@@ -2956,7 +2956,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/customer-hero-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/customer-hero-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -2971,7 +2971,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/customer-feature-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/customer-feature-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -2986,7 +2986,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/customer-testimonial-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/customer-testimonial-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -3087,7 +3087,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/customer-download-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/customer-download-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -3102,7 +3102,7 @@
         </div>
         <div class="offcanvas-body bg-white">
             <div class="hero-preview-thumb px-md-5 px-0 py-md-4 py-1">
-                <img src="{{asset('public/assets/admin-module')}}/img/customer-support-preview.png" alt="img" class="w-100">
+                <img src="{{asset('assets/admin-module')}}/img/customer-support-preview.png" alt="img" class="w-100">
             </div>
         </div>
     </div>
@@ -3117,7 +3117,7 @@
 
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
     <script>
         "use strict";
 
@@ -3125,8 +3125,8 @@
             $('.js-select').select2();
         });
     </script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
 
     <script>
         "use strict";

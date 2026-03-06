@@ -192,7 +192,7 @@
             <div class="offcanvas-body bg-white">
                 <div class="max-w-300 mx-auto">
                     <div class="text-center mb-20">
-                        <img width="100" src="{{asset('public/assets/admin-module/img/offline_payment.png')}}" alt="" class="mb-2">
+                        <img width="100" src="{{asset('assets/admin-module/img/offline_payment.png')}}" alt="" class="mb-2">
                         <p class="fz-12 mb-2" class="d-none d-sm-block"> {{translate('This view is from the user app.')}}{{translate('This is how customer will see in the app')}}</p>
                         <h4>{{translate('Amount : xxx')}}</h4>
                     </div>
@@ -272,7 +272,7 @@
                 <div class="modal-body">
                     <div class="d-flex align-items-center flex-column gap-3 text-center">
                         <h3>{{translate('Offline Payment')}}</h3>
-                        <img width="100" src="{{asset('public/assets/admin-module/img/offline_payment.png')}}" alt="">
+                        <img width="100" src="{{asset('assets/admin-module/img/offline_payment.png')}}" alt="">
                         <p class="text-muted">{{translate('This view is from the user app.')}} <br
                                 class="d-none d-sm-block"> {{translate('This is how customer will see in the app')}}</p>
                     </div>

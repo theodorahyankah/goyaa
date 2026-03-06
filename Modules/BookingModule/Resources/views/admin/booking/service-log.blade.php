@@ -15,7 +15,7 @@
                         <h3 class="c1 d-flex align-items-center gap-1">
                             {{ translate('Repeat_Booking') }} # {{ $booking['readable_id'] }}
                             <img width="34" height="34"
-                                src="{{ asset('public/assets/admin-module/img/icons/repeat.svg') }}"
+                                src="{{ asset('assets/admin-module/img/icons/repeat.svg') }}"
                                 class="rounded-circle repeat-icon" alt="{{ translate('repeat') }}">
                         </h3>
                         <span class="badge badge-{{
@@ -480,7 +480,7 @@
                                             @else
                                                 <img width="58" height="58"
                                                     class="rounded-circle border border-white aspect-square object-fit-cover"
-                                                    src="{{ asset('public/assets/provider-module/img/user2x.png') }}"
+                                                    src="{{ asset('assets/provider-module/img/user2x.png') }}"
                                                     alt="{{ translate('user_image') }}">
                                             @endif
                                             <div class="media-body">

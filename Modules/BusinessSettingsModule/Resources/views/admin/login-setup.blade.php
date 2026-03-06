@@ -412,7 +412,7 @@
                 <button type="button" class="btn-close position-absolute right-3 top-3 z-10" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body text-center">
                     <div>
-                        <img src="{{ asset('public/assets/admin-module/img/sms-img.png') }}" alt="{{ translate('image') }}">
+                        <img src="{{ asset('assets/admin-module/img/sms-img.png') }}" alt="{{ translate('image') }}">
                     </div>
                     <div class="py-4">
                         <h4 class="modal-title" id="smsConfigModalLabel">{{ translate('Set Up SMS Configuration First') }}</h4>
@@ -433,7 +433,7 @@
                 <button type="button" class="btn-close position-absolute right-3 top-3 z-10" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body text-center">
                     <div>
-                        <img src="{{ asset('public/assets/admin-module/img/sms-img.png') }}" alt="{{ translate('image') }}">
+                        <img src="{{ asset('assets/admin-module/img/sms-img.png') }}" alt="{{ translate('image') }}">
                     </div>
                     <div class="py-4">
                         <h4 class="modal-title" id="socialMediaConfigModalLabel">{{ translate('Set Up Social Media Configuration First') }}</h4>
@@ -563,7 +563,7 @@
                             showModal(
                                 '{{ translate("Set Up Apple Configuration First") }}',
                                 '{{ translate("It looks like your Apple configuration is not set up yet. To enable the Apple login system, please set up the Apple configuration first.") }}',
-                                '{{ asset("public/assets/admin-module/img/apple-logo.png") }}',
+                                '{{ asset("assets/admin-module/img/apple-logo.png") }}',
                                 '{{ route('admin.configuration.third-party', 'apple-login')}}',
                                 '{{ translate('Go to Social Media Configuration') }}'
                             );
@@ -581,7 +581,7 @@
                             showModal(
                                 '{{ translate("Set Up Email Configuration First") }}',
                                 '{{ translate("It looks like your Email configuration is not set up yet. To enable the Email verification, please set up the Email configuration and turn on the status first.") }}',
-                                '{{ asset("public/assets/admin-module/img/sms-img.png") }}',
+                                '{{ asset("assets/admin-module/img/sms-img.png") }}',
                                 '{{ route('admin.configuration.third-party', 'email-config', 'apple-login')}}',
                                 '{{ translate('Go to Email Configuration') }}'
                             );
@@ -599,7 +599,7 @@
                             showModal(
                                 '{{ translate("Set Up SMS Configuration First") }}',
                                 '{{ translate("It looks like your SMS configuration is not set up yet. To enable the Phone verification, please set up the SMS configuration and turn on the status first.") }}',
-                                '{{ asset("public/assets/admin-module/img/sms-img.png") }}',
+                                '{{ asset("assets/admin-module/img/sms-img.png") }}',
                                 '{{ route('admin.configuration.third-party', 'sms_config')}}',
                                 '{{ translate('Go to SMS Configuration') }}'
                             );

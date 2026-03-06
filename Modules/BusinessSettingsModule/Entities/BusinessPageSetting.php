@@ -44,18 +44,18 @@ class BusinessPageSetting extends Model
     public function getImageFullPathAttribute()
     {
         $image = $this->image;
-        $defaultPath = asset('public/assets/admin-module/img/media/default-page.png');
+        $defaultPath = asset('assets/admin-module/img/media/default-page.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
-                $defaultPath = asset('public/assets/admin-module/img/media/default-page.png');
+                $defaultPath = asset('assets/admin-module/img/media/default-page.png');
             }
             return $defaultPath;
         }
 
         if ($image == 'def.png') {
             if (request()->is('api/*')) {
-                $defaultPath = asset('public/assets/admin-module/img/media/default-page.png');
+                $defaultPath = asset('assets/admin-module/img/media/default-page.png');
             }
             return $defaultPath;
         }

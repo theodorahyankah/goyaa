@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{translate('booking_request_sent')}}</title>
-    <link href="{{asset('public/assets')}}/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="{{asset('public/assets')}}/js/bootstrap.min.js"></script>
-    <script src="{{asset('public/assets')}}/js/jquery.min.js"></script>
+    <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
+    <script src="{{asset('assets')}}/js/jquery.min.js"></script>
     <style>
 
         a {
@@ -196,7 +196,7 @@
                 <div class="row">
                     <div class="col">
                         <a target="_blank" href="#">
-                            @php($logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'public/assets/placeholder.png'))
+                            @php($logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'assets/placeholder.png'))
                             <img width="200" src="{{ $logo }}"
                                  data-holder-rendered="true"/>
                         </a>

@@ -3,7 +3,7 @@
 @section('title',translate('customer_add'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 @endpush
 
 @section('content')
@@ -97,7 +97,7 @@
                                                            accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*"
                                                            data-maxFileSize="{{ readableUploadMaxFileSize('image') }}">
                                                     <div class="upload-file__img">
-                                                        <img src="{{asset('public/assets/admin-module')}}/img/media/upload-file.png" alt="">
+                                                        <img src="{{asset('assets/admin-module')}}/img/media/upload-file.png" alt="">
                                                     </div>
                                                 </div>
                                             </div>

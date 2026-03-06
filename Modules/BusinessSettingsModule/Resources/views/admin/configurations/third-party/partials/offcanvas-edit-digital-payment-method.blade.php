@@ -15,7 +15,7 @@
                 </div>
                 <div class="border rounded py-3 px-3 bg-white d-flex align-items-center justify-content-between">
                     <h5 class="fw-normal">{{translate('Status')}}</h5>
-                    @php($gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'public/assets/admin-module/img/placeholder.png'))
+                    @php($gatewayImageFullPath = getPaymentGatewayImageFullPath(key: $gateway->key_name, settingsType: $gateway->settings_type, defaultPath: 'assets/admin-module/img/placeholder.png'))
                     @php($additionalData = $gateway['additional_data'] != null ? json_decode($gateway['additional_data']) : [])
 
                     @if(($gateway->is_active == 0 && checkCurrency($gateway->key_name, 'payment_gateway')) || ($gateway->is_active == 1))

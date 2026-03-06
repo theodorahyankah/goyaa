@@ -84,7 +84,7 @@
                                                                    data-id="{{ $method->id }}"
                                                                    data-title="{{ $method->is_active == 1 ? 'Do you want to '. $method->method_name .' status OFF' : 'Do you want to '. $method->method_name .' status ON' }}"
                                                                    data-description="{{ $method->is_active == 1 ? 'If you turn status off for '. $method->method_name .' it will not show in withdraw methods dropdown list.' : 'If you turn status on for '. $method->method_name .' it will show in withdraw methods dropdown list.' }}"
-                                                                   data-image="{{ $method->is_active == 1 ? asset('public/assets/admin-module/img/icons/status-off.png') : asset('public/assets/admin-module/img/icons/status-on.png') }}"
+                                                                   data-image="{{ $method->is_active == 1 ? asset('assets/admin-module/img/icons/status-off.png') : asset('assets/admin-module/img/icons/status-on.png') }}"
                                                                 {{ $method->is_active == 1 ? 'checked' : '' }}>
                                                             <span class="switcher_control {{ $method->is_default == 1 ? 'disabled' : '' }}"></span>
                                                         </label>
@@ -133,7 +133,7 @@
                                             <tr>
                                                 <td class="text-center bg-white  pt-5 pb-5" colspan="7">
                                                     <div class="d-flex flex-column gap-2">
-                                                        <img width="50" height="50" src="{{ asset('public/assets/provider-module/img/icons/no-payment-add.png') }}" alt="error" class="aspect-square mx-auto">
+                                                        <img width="50" height="50" src="{{ asset('assets/provider-module/img/icons/no-payment-add.png') }}" alt="error" class="aspect-square mx-auto">
                                                         <p>{{ translate('No payment info added yet') }}</p>
                                                         <a href="#" class="btn btn--primary mx-auto" data-bs-toggle="offcanvas" data-bs-target="#add_payment_info_offcanvas">
                                                             <i class="fi fi-sr-add"></i>
@@ -258,7 +258,7 @@
                     <button type="button" class="btn-close cancel-change" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mb-30 pb-0 text-center">
-                    <img width="80" src="{{ asset('public/assets/admin-module/img/icons/status-on.png') }}" alt="{{ translate('image') }}" class="mb-20">
+                    <img width="80" src="{{ asset('assets/admin-module/img/icons/status-on.png') }}" alt="{{ translate('image') }}" class="mb-20">
                     <h3 class="mb-3 confirmation-title-text">{{ translate('Are you sure') }}?</h3>
                     <p class="mb-0 confirmation-description-text">{{ translate('Do you want to change the status') }}?</p>
                     <div class="btn--container mt-30 justify-content-center">
@@ -277,7 +277,7 @@
                     <button type="button" class="btn-close cancel-change" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mb-30 pb-0 text-center">
-                    <img width="80" src="{{ asset('public/assets/admin-module/img/delete.png') }}" alt="{{ translate('image') }}" class="mb-20">
+                    <img width="80" src="{{ asset('assets/admin-module/img/delete.png') }}" alt="{{ translate('image') }}" class="mb-20">
                     <h3 class="mb-3 confirmation-title-text" id="confirmationTitle">{{ translate('Are you sure') }}?</h3>
                     <p class="mb-0 confirmation-description-text" id="confirmationMessage">{{ translate('Do you want to change the status') }}?</p>
                     <div class="btn--container mt-30 justify-content-center">

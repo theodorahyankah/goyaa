@@ -158,7 +158,7 @@
                                                                accept=".{{ implode(',.', array_column(VIDEO_EXTENSIONS, 'key')) }}"
                                                                data-maxFileSize="{{ readableUploadMaxFileSize('file') }}">
                                                         <div class="upload-file__img upload-file__img_banner upload-file__video-not-playable h-200">
-                                                            <img src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}"
+                                                            <img src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}"
                                                                 alt="">
                                                         </div>
                                                         <button class="remove-file-button" type="button">
@@ -202,7 +202,7 @@
                                                                data-maxFileSize="{{ readableUploadMaxFileSize('image') }}">
                                                         <div class="upload-file__img">
                                                             <img src="{{ $advertisement?->provider_profile_image_full_path}}"
-                                                                alt="" onerror='this.src="{{asset('public/assets/admin-module/img/media/upload-file.png')}}"'>
+                                                                alt="" onerror='this.src="{{asset('assets/admin-module/img/media/upload-file.png')}}"'>
                                                         </div>
                                                         <button class="remove-file-button" type="button">
                                                             <span class="material-symbols-outlined">close</span>
@@ -229,7 +229,7 @@
 
                                                         <div class="upload-file__img upload-file__img_banner">
                                                             <img src="{{ $advertisement?->provider_cover_image_full_path}}"
-                                                                alt="" onerror='this.src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}"'>
+                                                                alt="" onerror='this.src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}"'>
                                                         </div>
                                                         <button class="remove-file-button" type="button">
                                                             <span class="material-symbols-outlined">close</span>
@@ -404,7 +404,7 @@
             $(".video_attachment").closest('.upload-file').find('.remove-file-button').show()
             $(".video_attachment").closest('.upload-file').find('.remove-file-button').on('click', function(){
                 $(this).hide()
-                $(this).closest('.upload-file').find('.upload-file__img').html('<img src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}" alt="">');
+                $(this).closest('.upload-file').find('.upload-file__img').html('<img src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}" alt="">');
                 $(this).closest('.upload-file').find('.video_attachment').val('');
                 $(this).closest('.upload-file').find('.video > video').css('display', 'none');
                 videoEl.css('display', 'none');

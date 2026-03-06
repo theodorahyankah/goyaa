@@ -3,7 +3,7 @@
 @section('title', translate('Update_employee_permission'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
 @endpush
 
 @section('content')
@@ -122,8 +122,8 @@
                                                                            accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
                                                                     <div class="upload-file__img">
                                                                         <img class="onerror-image"
-                                                                             src="{{onErrorImage($employee->profile_image, asset('storage/app/public/employee/profile').'/' . $employee->profile_image,
-                                                                    asset('public/assets/admin-module/img/media/upload-file.png') ,'employee/profile/')}}"
+                                                                             src="{{onErrorImage($employee->profile_image, asset('storage/employee/profile').'/' . $employee->profile_image,
+                                                                    asset('assets/admin-module/img/media/upload-file.png') ,'employee/profile/')}}"
                                                                              alt="{{ translate('profile_image') }}">
                                                                     </div>
                                                                     <span class="upload-file__edit">
@@ -255,8 +255,8 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script>
         "use strict";
 
@@ -305,7 +305,7 @@
         });
     </script>
 
-    <script src="{{asset('public/assets/admin-module')}}/js/spartan-multi-image-picker.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/spartan-multi-image-picker.js"></script>
     <script>
         "use strict";
 
@@ -336,7 +336,7 @@
                 maxFileSize: '2097152',
                 dropFileLabel: "{{translate('Drop_here')}}",
                 placeholderImage: {
-                    image: '{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png',
+                    image: '{{asset('assets/admin-module')}}/img/media/banner-upload-file.png',
                     width: '100%',
                 },
 
@@ -364,6 +364,6 @@
         );
     </script>
 
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/js/section/employee/custom.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/section/employee/custom.js"></script>
 @endpush

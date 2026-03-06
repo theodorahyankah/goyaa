@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <?php
-    $favIcon = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/admin-module/img/placeholder.png')
+    $favIcon = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/admin-module/img/placeholder.png')
     ?>
     <link rel="shortcut icon" href="{{ $favIcon }}"/>
 
@@ -21,25 +21,25 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet"/>
 
-    <link href="{{asset('public/assets/provider-module')}}/css/material-icons.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/toastr.css">
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+    <link href="{{asset('assets/provider-module')}}/css/material-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/toastr.css">
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/style.css"/>
 </head>
 
 <body>
     <div class="preloader"></div>
 
     <?php
-    $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/admin-module/img/placeholder.png');
+    $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/admin-module/img/placeholder.png');
     ?>
 
     <div class="dark-support">
         <div class="register-wrap style__two">
-            <div class="register-left d-flex justify-content-center align-items-center bg-center" data-bg-img="{{asset('public/assets/provider-module')}}/img/media/login-bg.png">
+            <div class="register-left d-flex justify-content-center align-items-center bg-center" data-bg-img="{{asset('assets/provider-module')}}/img/media/login-bg.png">
                 <div class="tf-box d-flex flex-column gap-3 align-items-center justify-content-center p-5 mx-5 h-75">
                     <div class="px-xl-5 text-center">
                         <img class="login-img login-logo mb-2"
@@ -115,7 +115,7 @@
                                                             <span class="material-icons">edit</span>
                                                         </span>
                                                     <div class="upload-file__img">
-                                                        <img src="{{asset('public/assets/provider-module')}}/img/media/upload-file.png" alt="">
+                                                        <img src="{{asset('assets/provider-module')}}/img/media/upload-file.png" alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -405,8 +405,8 @@
                                                         <div class="d-flex gap-2 align-items-center">
                                                             <img width="70" src="{{onErrorImage(
                                                                     $gateway['gateway_image'],
-                                                                    asset('storage/app/public/payment_modules/gateway_image').'/' . $gateway['gateway_image'],
-                                                                    asset('public/assets/admin-module/img/placeholder.png') ,
+                                                                    asset('storage/payment_modules/gateway_image').'/' . $gateway['gateway_image'],
+                                                                    asset('assets/admin-module/img/placeholder.png') ,
                                                                     'payment_modules/gateway_image/')}}" alt="{{translate('gateway image')}}">
                                                             <div>{{ $gateway['label'] }}</div>
                                                         </div>
@@ -432,28 +432,28 @@
         ?>
     </div>
 
-    <script src="{{asset('public/assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/js/main.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/main.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
 
-    <script src="{{asset('public/assets/provider-module')}}/js/sweet_alert.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/js/toastr.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/sweet_alert.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/toastr.js"></script>
     {!! Toastr::message() !!}
 
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/js/helper.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/helper.js"></script>
 
     {{--country code --}}
     <span class="system-default-country-code" data-value="us"></span>
-    <link rel="stylesheet" href="{{asset('public/assets/libs/intl-tel-input/css/intlTelInput.css')}}"/>
-    <script src="{{ asset('public/assets/libs/intl-tel-input/js/intlTelInput.js') }}"></script>
-    <script src="{{ asset('public/assets/libs/intl-tel-input/js/utils.js') }}"></script>
-    <script src="{{ asset('public/assets/libs/intl-tel-input/js/intlTelInout-validation.js') }}"></script>
+    <link rel="stylesheet" href="{{asset('assets/libs/intl-tel-input/css/intlTelInput.css')}}"/>
+    <script src="{{ asset('assets/libs/intl-tel-input/js/intlTelInput.js') }}"></script>
+    <script src="{{ asset('assets/libs/intl-tel-input/js/utils.js') }}"></script>
+    <script src="{{ asset('assets/libs/intl-tel-input/js/intlTelInout-validation.js') }}"></script>
 
-    <script src="{{ asset('public/assets/common/js/file-size-type-validation.js') }}"></script>
+    <script src="{{ asset('assets/common/js/file-size-type-validation.js') }}"></script>
 
     <script>
         "use strict";
@@ -733,8 +733,8 @@
     </script>
 
 
-    <script src="{{asset('public/assets/provider-module')}}/js//tags-input.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/js/spartan-multi-image-picker.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js//tags-input.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/spartan-multi-image-picker.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{business_config('google_map', 'third_party')?->live_values['map_api_key_client']}}&libraries=places&v=3.45.8"></script>
     <script>
         "use strict";
@@ -767,7 +767,7 @@
             maxFileSize: maxFileSize,
             dropFileLabel: "{{translate('Drop_here')}}",
             placeholderImage: {
-                image: '{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png',
+                image: '{{asset('assets/admin-module')}}/img/media/banner-upload-file.png',
                 width: '100%',
             },
 

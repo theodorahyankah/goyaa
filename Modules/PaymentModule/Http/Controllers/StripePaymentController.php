@@ -72,8 +72,8 @@ class StripePaymentController extends Controller
             $business_logo = url('/');
         }
         $business_name =  (business_config('business_name', 'business_information'))->live_values ?? 'my_business';
-        //$business_logo = asset('storage/app/public/business').'/' . business_config('business_logo', 'business_information')?->live_values??"";
-        $business_logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/admin-module/img/placeholder.png');
+        //$business_logo = asset('storage/business').'/' . business_config('business_logo', 'business_information')?->live_values??"";
+        $business_logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/admin-module/img/placeholder.png');
 
         $checkout_session = Session::create([
             'payment_method_types' => ['card'],

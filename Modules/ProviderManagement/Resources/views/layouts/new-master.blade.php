@@ -15,7 +15,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @php($favIcon = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'public/assets/admin-module/img/media/upload-file.png'))
+    @php($favIcon = getBusinessSettingsImageFullPath(key: 'business_favicon', settingType: 'business_information', path: 'business/',  defaultPath : 'assets/admin-module/img/media/upload-file.png'))
     <link rel="shortcut icon" href="{{ $favIcon }}"/>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,23 +25,23 @@
             rel="stylesheet">
 
     {{-- old icon link --}}
-    <link href="{{asset('public/assets/provider-module')}}/css/material-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/webfonts/uicons-regular-rounded.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/webfonts/uicons-solid-rounded.css"/>
+    <link href="{{asset('assets/provider-module')}}/css/material-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/webfonts/uicons-regular-rounded.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/webfonts/uicons-solid-rounded.css"/>
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/bootstrap.min.css"/>
     <link rel="stylesheet"
-          href="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
+          href="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/apex/apexcharts.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/apex/apexcharts.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/select2/select2.min.css"/>
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/toastr.css">
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/toastr.css">
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/style.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/dev.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/dev-tahir-provider.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/common')}}/css/common.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/dev.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/dev-tahir-provider.css"/>
+    <link rel="stylesheet" href="{{asset('assets/common')}}/css/common.css"/>
 
     @stack('css_or_js')
     <style>
@@ -78,7 +78,7 @@
 
     @if(env('APP_ENV') == 'demo')
         <div class="alert alert--message-2 alert-dismissible fade show" id="demo-reset-warning">
-            <img width="28" class="align-self-start" src="{{ asset('public/assets/admin-module/img/info-2.png') }}" alt="">
+            <img width="28" class="align-self-start" src="{{ asset('assets/admin-module/img/info-2.png') }}" alt="">
             <div class="w-0 flex-grow-1">
                 <h6>{{ translate('warning').'!'}}</h6>
                 <span class="warning-message">
@@ -108,38 +108,38 @@ $serviceLocations = getProviderSettings(providerId: auth()->user()->provider->id
 ?>
 
 
-<script src="{{asset('public/assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/plugins/spartan-multi-image-picker/spartan-multi-image-picker-min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/main.js"></script>
-<script src="{{asset('public/assets/common')}}/js/common-image-upload.js"></script>
-<script src="{{asset('public/assets/common')}}/js/common.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/plugins/spartan-multi-image-picker/spartan-multi-image-picker-min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/main.js"></script>
+<script src="{{asset('assets/common')}}/js/common-image-upload.js"></script>
+<script src="{{asset('assets/common')}}/js/common.js"></script>
 
 
-<script src="{{asset('public/assets/provider-module')}}/plugins/select2/select2.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/plugins/select2/select2.min.js"></script>
 
-<script src="{{asset('public/assets/provider-module')}}/js/sweet_alert.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/toastr.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/dev.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/keyword-highlight.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/sweet_alert.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/toastr.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/dev.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/keyword-highlight.js"></script>
 
 {{--country code --}}
 <span class="system-default-country-code" data-value="us"></span>
-<link rel="stylesheet" href="{{asset('public/assets/libs/intl-tel-input/css/intlTelInput.css')}}"/>
-<script src="{{ asset('public/assets/libs/intl-tel-input/js/intlTelInput.js') }}"></script>
-<script src="{{ asset('public/assets/libs/intl-tel-input/js/utils.js') }}"></script>
-<script src="{{ asset('public/assets/libs/intl-tel-input/js/intlTelInout-validation.js') }}"></script>
+<link rel="stylesheet" href="{{asset('assets/libs/intl-tel-input/css/intlTelInput.css')}}"/>
+<script src="{{ asset('assets/libs/intl-tel-input/js/intlTelInput.js') }}"></script>
+<script src="{{ asset('assets/libs/intl-tel-input/js/utils.js') }}"></script>
+<script src="{{ asset('assets/libs/intl-tel-input/js/intlTelInout-validation.js') }}"></script>
 
 
-<script src="{{asset('public/assets/admin-module/js/firebase.min.js')}}"></script>
-<script src="{{asset('public/assets/admin-module')}}/js/keyword-highlight.js"></script>
+<script src="{{asset('assets/admin-module/js/firebase.min.js')}}"></script>
+<script src="{{asset('assets/admin-module')}}/js/keyword-highlight.js"></script>
 
-<script src="{{ asset('public/assets/common/js/file-size-type-validation.js') }}"></script>
+<script src="{{ asset('assets/common/js/file-size-type-validation.js') }}"></script>
 
 
 <audio id="audio-element">
-    <source src="{{asset('public/assets/provider-module')}}/sound/notification.mp3" type="audio/mpeg">
+    <source src="{{asset('assets/provider-module')}}/sound/notification.mp3" type="audio/mpeg">
 </audio>
 
 <script>

@@ -26,13 +26,13 @@ class LandingController extends Controller
         $data = [];
 
         $data = [
-            'top_image_1' =>  getBusinessSettingsImageFullPath(key: 'top_image_1', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'public/assets/placeholder.png'),
-            'top_image_2' =>  getBusinessSettingsImageFullPath(key: 'top_image_2', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'public/assets/placeholder.png'),
-            'top_image_3' =>  getBusinessSettingsImageFullPath(key: 'top_image_3', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'public/assets/placeholder.png'),
-            'top_image_4' =>  getBusinessSettingsImageFullPath(key: 'top_image_4', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'public/assets/placeholder.png'),
-            'support_section_image' =>  getBusinessSettingsImageFullPath(key: 'support_section_image', settingType: 'landing_web_app_image', path: 'landing-page/web/', defaultPath: 'public/assets/placeholder.png'),
-            'download_section_image' =>  getBusinessSettingsImageFullPath(key: 'download_section_image', settingType: 'landing_web_app_image', path: 'landing-page/web/', defaultPath: 'public/assets/placeholder.png'),
-            'feature_section_image' =>  getBusinessSettingsImageFullPath(key: 'feature_section_image', settingType: 'landing_web_app_image', path: 'landing-page/web/', defaultPath: 'public/assets/placeholder.png'),
+            'top_image_1' =>  getBusinessSettingsImageFullPath(key: 'top_image_1', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'assets/placeholder.png'),
+            'top_image_2' =>  getBusinessSettingsImageFullPath(key: 'top_image_2', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'assets/placeholder.png'),
+            'top_image_3' =>  getBusinessSettingsImageFullPath(key: 'top_image_3', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'assets/placeholder.png'),
+            'top_image_4' =>  getBusinessSettingsImageFullPath(key: 'top_image_4', settingType: 'landing_images', path: 'landing-page/', defaultPath: 'assets/placeholder.png'),
+            'support_section_image' =>  getBusinessSettingsImageFullPath(key: 'support_section_image', settingType: 'landing_web_app_image', path: 'landing-page/web/', defaultPath: 'assets/placeholder.png'),
+            'download_section_image' =>  getBusinessSettingsImageFullPath(key: 'download_section_image', settingType: 'landing_web_app_image', path: 'landing-page/web/', defaultPath: 'assets/placeholder.png'),
+            'feature_section_image' =>  getBusinessSettingsImageFullPath(key: 'feature_section_image', settingType: 'landing_web_app_image', path: 'landing-page/web/', defaultPath: 'assets/placeholder.png'),
         ];
 
 

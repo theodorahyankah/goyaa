@@ -131,7 +131,7 @@
                                 <tr>
                                     <td class="text-center bg-white  pt-5 pb-5" colspan="7">
                                         <div class="d-flex flex-column gap-2">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/log-list-error.svg" alt="error" class="w-100px mx-auto">
+                                            <img src="{{asset('assets/admin-module')}}/img/log-list-error.svg" alt="error" class="w-100px mx-auto">
                                             <p>{{translate('data not found')}}</p>
                                         </div>
                                     </td>

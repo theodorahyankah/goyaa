@@ -140,7 +140,7 @@
 <body style="background-color: #fff;">
 <div class="box">
     <div class="top-wrap-box">
-        <img src="{{asset('public/assets/admin-module/img/email/purchased-subscription.png')}}" alt="{{translate('Logo')}}"
+        <img src="{{asset('assets/admin-module/img/email/purchased-subscription.png')}}" alt="{{translate('Logo')}}"
              width="140"/>
 
         <h3 style="margin-top: 20px">{{translate('Subscription Plan Successfully Subscribed')}} !</h3>
@@ -166,7 +166,7 @@
             @foreach($dataValues->live_values??[] as $key=>$item)
                 <a href="{{$item['link']}}">
                     <img width="20"
-                         src="{{ asset('public/assets/admin-module/img/icons/' . $item['media'] . '.png') }}"
+                         src="{{ asset('assets/admin-module/img/icons/' . $item['media'] . '.png') }}"
                          alt="{{ translate('image') }}">
                 </a>
             @endforeach

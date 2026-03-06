@@ -122,7 +122,7 @@
                                     <a class="p-0 row text-capitalize"
                                        href="{{route('admin.business-settings.get-gallery-setup', [base64_encode($file['path']), 'storage' => $storage])}}">
                                         <div class="mx-auto text-center"><img class=""
-                                                  src="{{asset('public/assets/admin-module/img/folder.png')}}"
+                                                  src="{{asset('assets/admin-module/img/folder.png')}}"
                                                   alt=""></div>
                                         <div class="mb-1 text-center fw-medium text-capitalize"><p>{{Str::limit($file['name'],10)}}</p></div>
                                         <span class="fz-12 text-center">{{ $file['total_items'] ?? 0 }}</span>
@@ -301,7 +301,7 @@
                                                     data-url="{{ route('admin.business-settings.remove-gallery-image', [$encodedPath]) }}"
                                                     data-title="{{ translate('want_to_delete_this_file')}}?"
                                                     data-description="{{ translate('You will not be able to revert this!') }}"
-                                                    data-image="{{ asset('public/assets/admin-module/img/modal/delete-icon.svg') }}"
+                                                    data-image="{{ asset('assets/admin-module/img/modal/delete-icon.svg') }}"
                                             >
                                                 <i class="material-symbols-outlined">delete</i>
                                             </button>
@@ -580,7 +580,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close bg-light rounded-full" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="mb-20" src="{{asset('public/assets/admin-module')}}/img/cant-uploaded.png" alt="">
+                        <img class="mb-20" src="{{asset('assets/admin-module')}}/img/cant-uploaded.png" alt="">
                         <h3 class="mb-15">{{ translate('Some Files Can’t Uploaded')}}</h3>
                         <p class="mb-4 fz-14">{{ translate('Your maximum file upload limit is 128MB. Please select files between 128MB to avoid any upload interruption.')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">

@@ -150,7 +150,7 @@
 <div class="box">
     <div class="top-wrap-box">
         @php( $logo = business_config('business_logo', 'business_information'))
-        <img src="{{asset('storage/app/public/business').'/' . $logo->live_values}}" alt="{{translate('Logo')}}"
+        <img src="{{asset('storage/business').'/' . $logo->live_values}}" alt="{{translate('Logo')}}"
              width="140"/>
 
         <h3 style="margin-top: 20px">{{translate('Welcome to')}} {{(business_config('business_name', 'business_information'))->live_values}}
@@ -158,7 +158,7 @@
         <h5>{{translate('Dear')}} {{$customer?->first_name}},</h5>
         <p>{{translate('Your account for our on-demand service platform has been created.')}}.</p>
 
-        <img src="{{ asset('public/assets/admin-module/img/user-registration-mail.png') }}" alt="{{translate('Image')}}"
+        <img src="{{ asset('assets/admin-module/img/user-registration-mail.png') }}" alt="{{translate('Image')}}"
              width="400" height="172"/>
 
         <div class="my-1">{{translate('Your account credential:')}}</div>
@@ -192,7 +192,7 @@
             @foreach($dataValues->live_values??[] as $key=>$item)
                 <a href="{{$item['link']}}">
                     <img width="20"
-                         src="{{ asset('public/assets/admin-module/img/icons/' . $item['media'] . '.png') }}"
+                         src="{{ asset('assets/admin-module/img/icons/' . $item['media'] . '.png') }}"
                          alt="{{ translate('image') }}">
                 </a>
             @endforeach

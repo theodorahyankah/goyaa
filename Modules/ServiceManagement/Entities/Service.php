@@ -198,7 +198,7 @@ class Service extends Model
     public function getThumbnailFullPathAttribute()
     {
         $image = $this->thumbnail;
-        $defaultPath = request()->is('*/edit/*') ? asset('public/assets/admin-module/img/media/upload-file.png') : asset('public/assets/admin-module/img/placeholder.png');
+        $defaultPath = request()->is('*/edit/*') ? asset('assets/admin-module/img/media/upload-file.png') : asset('assets/admin-module/img/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -217,7 +217,7 @@ class Service extends Model
     public function getCoverImageFullPathAttribute()
     {
         $image = $this->cover_image;
-        $defaultPath = asset('public/assets/admin-module/img/placeholder.png');
+        $defaultPath = asset('assets/admin-module/img/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {
@@ -226,7 +226,7 @@ class Service extends Model
             return $defaultPath;
         }
         if (request()->is('*/detail/*')) {
-            $defaultPath = asset('public/assets/admin-module/img/placeholder.png');
+            $defaultPath = asset('assets/admin-module/img/placeholder.png');
         }
 
         $s3Storage = $this->storage_cover_image;

@@ -59,7 +59,7 @@ class ConversationFile extends Model
     public function getStoredFileNameFullPathAttribute()
     {
         $image = $this->stored_file_name;
-        $defaultPath = asset('public/assets/placeholder.png');
+        $defaultPath = asset('assets/placeholder.png');
 
         if (!$image) {
             if (request()->is('api/*')) {

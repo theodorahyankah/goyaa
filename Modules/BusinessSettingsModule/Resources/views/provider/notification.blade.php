@@ -3,10 +3,10 @@
 @section('title',translate('notification_setup'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
 @endpush
 
 @section('content')
@@ -113,7 +113,7 @@
                                                                         data-type="notification"
                                                                         data-title="{{ $push == 1 ? 'Disable Notification Channel' : 'Enable Notification Channel' }}"
                                                                         data-description="{{ $push == 1 ? 'Notifications will no longer be sent' : 'This will start sending notifications' }}"
-                                                                        data-image="{{ asset('public/assets/admin-module/img/icons/status_on_off.png')}}"
+                                                                        data-image="{{ asset('assets/admin-module/img/icons/status_on_off.png')}}"
                                                                        data-confirm-btn="{{ $push == 1 ? 'Disable' : 'Enable' }}"
                                                                     {{ (int)$push === 1 && (int)$admin->notification !== 0 ? 'checked' : '' }}
                                                                     {{ $admin->notification == 0 ? 'disabled' : '' }}>
@@ -133,7 +133,7 @@
                                                                         type="checkbox"
                                                                        data-title="{{ $email == 1 ? 'Disable Email Channel' : 'Enable Email Channel' }}"
                                                                        data-description="{{ $email == 1 ? 'Notifications will no longer be sent' : 'This will start sending notifications' }}"
-                                                                        data-image="{{ asset('public/assets/admin-module/img/icons/sms_status_on_off.png')}}"
+                                                                        data-image="{{ asset('assets/admin-module/img/icons/sms_status_on_off.png')}}"
                                                                        data-confirm-btn="{{ $email == 1 ? 'Disable' : 'Enable' }}"
                                                                     {{ (int)$email === 1 && (int)$admin->email !== 0 ? 'checked' : '' }}
                                                                     {{ $admin->email == 0 ? 'disabled' : '' }}>
@@ -153,7 +153,7 @@
                                                                         type="checkbox"
                                                                        data-title="{{ $sms == 1 ? 'Disable SMS Channel' : 'Enable SMS Channel' }}"
                                                                        data-description="{{ $sms == 1 ? 'Notifications will no longer be sent' : 'This will start sending notifications' }}"
-                                                                        data-image="{{ asset('public/assets/admin-module/img/icons/sms_status_on_off.png')}}"
+                                                                        data-image="{{ asset('assets/admin-module/img/icons/sms_status_on_off.png')}}"
                                                                        data-confirm-btn="{{ $sms == 1 ? 'Disable' : 'Enable' }}"
                                                                     {{ (int)$sms === 1 && (int)$admin->sms !== 0 ? 'checked' : '' }}
                                                                     {{ $admin->sms == 0 ? 'disabled' : '' }}>
@@ -186,7 +186,7 @@
                     <button type="button" class="btn-close cancel-change" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body mb-30 pb-0 text-center">
-                    <img width="80" src="{{ asset('public/assets/admin-module/img/icons/status-on.png') }}" alt="{{ translate('image') }}" class="mb-20">
+                    <img width="80" src="{{ asset('assets/admin-module/img/icons/status-on.png') }}" alt="{{ translate('image') }}" class="mb-20">
                     <h3 class="mb-3 confirmation-title-text">{{ translate('Are you sure') }}?</h3>
                     <p class="mb-0 confirmation-description-text">{{ translate('Do you want to change the status') }}?</p>
                     <div class="btn--container mt-30 justify-content-center">

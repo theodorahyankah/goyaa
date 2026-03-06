@@ -3,7 +3,7 @@
 @section('title', translate('Booking_Details'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{ asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css') }}">
     <style>
         .btn:disabled {
             background-color: var(--bs-primary) !important;
@@ -592,7 +592,7 @@
                                                 @else
                                                     <img width="58" height="58"
                                                          class="rounded-circle border border-white aspect-square object-fit-cover"
-                                                         src="{{ asset('public/assets/provider-module/img/user2x.png') }}"
+                                                         src="{{ asset('assets/provider-module/img/user2x.png') }}"
                                                          alt="{{ translate('user_image') }}">
                                                 @endif
 
@@ -825,7 +825,7 @@
 @endsection
 
 @push('script')
-    <script src="{{ asset('public/assets/admin-module/js/spartan-multi-image-picker.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/spartan-multi-image-picker.js') }}"></script>
     <script>
         "use strict";
 
@@ -870,7 +870,7 @@
             groupClassName: 'spartan_item_wrapper min-w-100px max-w-100px',
             maxFileSize: '',
             placeholderImage: {
-                image: '{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png',
+                image: '{{asset('assets/admin-module')}}/img/media/banner-upload-file.png',
                 width: '100%',
             },
             dropFileLabel: "Drop Here",

@@ -1,7 +1,7 @@
 <div class="tab-pane fade {{ request()->has('type') && request()->type == 'offline_payment' ? 'show active' : '' }}" id="payment-tabs2" role="tabpanel" aria-labelledby="payment-custom-tab2" tabindex="0">
     <div class="bg-warning bg-opacity-10 fs-12 p-12 text-dark rounded mb-10">
         <div class="d-flex align-items-center gap-2 mb-2">
-            <img src="{{ asset('public/assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
+            <img src="{{ asset('assets/admin-module/img/icons/alert_info.svg') }}" alt="alert info icon">
             <p class="fz-12 fw-medium">{{ translate('In this section, you can add offline payment methods to make them available as offline payment options for the customers') }}</p>
         </div>
         <ul class="m-0 ps-20 d-flex flex-column gap-1 text-dark">
@@ -85,8 +85,8 @@
                                                data-off-title="{{ translate('want_to_Turn_OFF_') . $withdrawalMethod->method_name . translate('payment_method') }}?"
                                                data-on-description="{{ translate('If enabled customers can only pay through this payment methods') }}"
                                                data-off-description="{{ translate('If disabled customers can not pay through this payment methods') }}"
-                                               data-on-image="{{ asset('public/assets/admin-module/img/modal/offline-payment-method.svg') }}"
-                                               data-off-image="{{ asset('public/assets/admin-module/img/modal/offline-payment-method.svg') }}"
+                                               data-on-image="{{ asset('assets/admin-module/img/modal/offline-payment-method.svg') }}"
+                                               data-off-image="{{ asset('assets/admin-module/img/modal/offline-payment-method.svg') }}"
                                                data-cancel-button-text="{{ translate('Cancel') }}"
                                                data-confirm-button-text="{{ translate('Ok') }}">
                                         <span class="switcher_control"></span>
@@ -107,7 +107,7 @@
                                                     data-url="{{ route('admin.configuration.offline-payment.delete', $withdrawalMethod->id) }}"
                                                     data-title="{{ translate('want_to_delete_') . $withdrawalMethod->method_name . translate('payment_method') }}?"
                                                     data-description="{{ translate('You will not be able to revert this!') }}"
-                                                    data-image="{{ asset('public/assets/admin-module/img/modal/delete-icon.svg') }}">
+                                                    data-image="{{ asset('assets/admin-module/img/modal/delete-icon.svg') }}">
                                                 <i class="material-icons">delete</i>
                                             </button>
                                     @endcan
@@ -118,7 +118,7 @@
                         <tr>
                             <td class="text-center bg-white  pt-5 pb-5" colspan="7">
                                 <div class="">
-                                    <img src="{{asset('public/assets/admin-module')}}/img/payment-list-error.png" alt="error" class="w-100px mx-auto mb-3">
+                                    <img src="{{asset('assets/admin-module')}}/img/payment-list-error.png" alt="error" class="w-100px mx-auto mb-3">
                                     <p>{{translate('No Payment Method List')}}</p>
                                     @if(!request()->filled('search'))
                                         <a href="{{route('admin.configuration.offline-payment.create')}}" class="btn btn--primary rounded d-inline-flex align-items-center gap-1">

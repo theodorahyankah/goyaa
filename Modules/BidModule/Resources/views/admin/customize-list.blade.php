@@ -249,8 +249,8 @@
                                                                             <img class="rounded"
                                                                                  src="{{onErrorImage(
                                                                                             $bid->provider?->logo,
-                                                                                            asset('storage/app/public/provider/logo').'/' . $bid->provider?->logo,
-                                                                                            asset('public/assets/admin-module/img/placeholder.png') ,
+                                                                                            asset('storage/provider/logo').'/' . $bid->provider?->logo,
+                                                                                            asset('assets/admin-module/img/placeholder.png') ,
                                                                                             'provider/logo/')}}"
                                                                                  alt="{{ translate('logo') }}">
                                                                         </div>
@@ -304,7 +304,7 @@
 
                                                                     <div class="d-flex justify-content-center mb-4">
                                                                         <img width="75" height="75"
-                                                                             src="{{asset('public/assets/admin-module/img/media/delete.png')}}"
+                                                                             src="{{asset('assets/admin-module/img/media/delete.png')}}"
                                                                              class="rounded-circle" alt="">
                                                                     </div>
 
@@ -360,8 +360,8 @@
                                                                 <img width="173" class="radius-10"
                                                                      src="{{onErrorImage(
                                                                             $bid?->provider?->logo,
-                                                                            asset('storage/app/public/provider/logo').'/' . $bid?->provider?->logo,
-                                                                            asset('public/assets/placeholder.png') ,
+                                                                            asset('storage/provider/logo').'/' . $bid?->provider?->logo,
+                                                                            asset('assets/placeholder.png') ,
                                                                             'provider/logo/')}}"
                                                                      alt="{{ translate('provider-logo') }}">
                                                                 <div class="media-body">

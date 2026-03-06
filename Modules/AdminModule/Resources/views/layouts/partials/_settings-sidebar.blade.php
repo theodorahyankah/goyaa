@@ -8,13 +8,13 @@
             <div class="switch-items">
                 <div class="setting-box-wrap">
                     <div class="setting-box active light-mode">
-                        <img src="{{asset('public/assets/admin-module')}}/img/light-mode.png" width="36px" alt="">
+                        <img src="{{asset('assets/admin-module')}}/img/light-mode.png" width="36px" alt="">
                     </div>
                     <h5>{{translate('Light Mode')}}</h5>
                 </div>
                 <div class="setting-box-wrap">
                     <div class="setting-box dark-mode">
-                        <img src="{{asset('public/assets/admin-module')}}/img/dark-mode.png" width="36px" alt="">
+                        <img src="{{asset('assets/admin-module')}}/img/dark-mode.png" width="36px" alt="">
                     </div>
                     <h5>{{translate('Dark Mode')}}</h5>
                 </div>
@@ -27,7 +27,7 @@
 <div class="view-guideline-btn w-50px h-50px bg-white position-fixed pointer show">
         <div class="d-flex justify-content-center align-items-center h-100 w-100">
             <button type="button" class="btn bg-info text-absolute-white border-0 p-0 action-btn" style="--size: 36px">
-                <img src="{{asset('public/assets/admin-module')}}/img/multiple-forward.svg" alt="icon/img" class="icon">
+                <img src="{{asset('assets/admin-module')}}/img/multiple-forward.svg" alt="icon/img" class="icon">
             </button>
         </div>
     </div>
@@ -54,10 +54,10 @@
             <div class="">
                 <div class="d-flex gap-3 gap-sm-4 flex-wrap">
                     <div class="setting-box flex-grow-1 light-mode">
-                        <img src="{{asset('public/assets/provider-module')}}/img/icons/light-mode.svg" width="30" alt="{{ translate('provider-module') }}">
+                        <img src="{{asset('assets/provider-module')}}/img/icons/light-mode.svg" width="30" alt="{{ translate('provider-module') }}">
                     </div>
                     <div class="setting-box flex-grow-1 dark-mode">
-                        <img src="{{asset('public/assets/provider-module')}}/img/icons/dark-mode.svg" width="30" alt="{{ translate('provider-module') }}">
+                        <img src="{{asset('assets/provider-module')}}/img/icons/dark-mode.svg" width="30" alt="{{ translate('provider-module') }}">
                     </div>
                 </div>
             </div>

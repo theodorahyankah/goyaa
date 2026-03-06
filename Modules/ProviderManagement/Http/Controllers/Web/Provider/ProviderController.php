@@ -840,7 +840,7 @@ class ProviderController extends Controller
 
         $data = [];
         foreach ($methods as $method) {
-            $gateway_image = getPaymentGatewayImageFullPath(key: $method->key_name, settingsType: $method->settings_type, defaultPath: 'public/assets/admin-module/img/placeholder.png');
+            $gateway_image = getPaymentGatewayImageFullPath(key: $method->key_name, settingsType: $method->settings_type, defaultPath: 'assets/admin-module/img/placeholder.png');
             $credentialsData = json_decode($method->$credentials);
             $additional_data = json_decode($method->additional_data);
             if ($credentialsData->status == 1) {
