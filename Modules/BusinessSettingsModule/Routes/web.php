@@ -211,10 +211,8 @@ Route::group(['prefix' => 'provider', 'as' => 'provider.', 'namespace' => 'Web\P
         Route::post('purchase-payment', [ProviderSubscriptionPackageController::class, 'purchasePayment'])->name('purchase.payment');
         Route::post('purchase-ajax', [ProviderSubscriptionPackageController::class, 'ajaxPurchasePackage'])->name('purchase.ajax');
         Route::post('cancel', [ProviderSubscriptionPackageController::class, 'cancel'])->name('cancel');
-        Route::get('transactions', [ProviderSubscriptionPackageController::class, 'transactions'])->name('transactions');
-        Route::post('transactions', [ProviderSubscriptionPackageController::class, 'transactions'])->name('transactions');
-        Route::any('download', [ProviderSubscriptionPackageController::class, 'download'])->name('download');
         Route::any('transactions', [ProviderSubscriptionPackageController::class, 'transactions'])->name('transactions');
+        Route::any('download', [ProviderSubscriptionPackageController::class, 'download'])->name('download');
         Route::get('transactions/download', [ProviderSubscriptionPackageController::class, 'transactionsDownload'])->name('transactions.download');
         Route::get('transactions/invoice/{id}', [ProviderSubscriptionPackageController::class, 'invoice'])->name('transactions.invoice');
     });
