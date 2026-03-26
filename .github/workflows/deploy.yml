@@ -1,0 +1,82 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install NPM dependencies and build assets
+        run: |
+          npm install
+          npm run prod
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository }}/app:latest
+
+      - name: Copy files to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          source: "docker-compose.yml,.docker/nginx.conf"
+          target: "~/goya"
+
+      - name: Deploy to DigitalOcean via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd ~/goya
+            
+            # Create .env if it doesn't exist (copy from .env.example)
+            if [ ! -f .env ]; then
+              cp .env.example .env
+              # You should probably replace the values here or use a secret for the full .env
+              echo "DB_HOST=db" >> .env
+              echo "REDIS_HOST=redis" >> .env
+            fi
+
+            # Login to GHCR (using a PAT if GITHUB_TOKEN doesn't work for pulls on external servers)
+            # For simplicity, assuming the user has configured docker login on the droplet
+            # or we use the GITHUB_TOKEN (must have read permissions)
+            echo "${{ secrets.DOCKER_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            # Update the image in docker-compose.yml to use the GHCR one
+            sed -i "s|build:.*|image: ghcr.io/${{ github.repository }}/app:latest|g" docker-compose.yml
+            # Remove the dockerfile line if it exists
+            sed -i "/dockerfile:/d" docker-compose.yml
+
+            docker compose pull
+            docker compose up -d --remove-orphans
+            
+            # Run migrations
+            docker compose exec -T app php artisan migrate --force

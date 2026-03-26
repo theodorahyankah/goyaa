@@ -1,0 +1,68 @@
+services:
+  # PHP Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: goya-app
+    restart: always
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - goya-network
+
+  # Nginx Web Server
+  nginx:
+    image: nginx:alpine
+    container_name: goya-nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www
+      - ./.docker/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - goya-network
+
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: goya-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-laravel}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MYSQL_USER: ${DB_USERNAME:-laravel}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
+    ports:
+      - "3306:3306"
+    volumes:
+      - goya-db-data:/var/lib/mysql
+    networks:
+      - goya-network
+
+  # Redis Cache
+  redis:
+    image: redis:alpine
+    container_name: goya-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - goya-network
+
+networks:
+  goya-network:
+    driver: bridge
+
+volumes:
+  goya-db-data:
+    driver: local

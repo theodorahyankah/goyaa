@@ -1,0 +1,16 @@
+.git
+.github
+node_modules
+vendor
+storage/*.key
+.env
+.idea
+.vscode
+public/hot
+public/storage
+tests
+phpunit.xml
+README.md
+Dockerfile
+docker-compose.yml
+.docker
