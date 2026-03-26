@@ -151,7 +151,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a href="{{route('admin.subscription.package.transactions.invoice',[$transaction->id])}}" class="action-btn btn--light-primary" style="--size: 30px" target="_blank">
+                                            <a href="{{route('admin.subscription.package.package.transactions.invoice',[$transaction->id])}}" class="action-btn btn--light-primary" style="--size: 30px" target="_blank">
                                                 <span class="material-icons">print</span>
                                             </a>
                                         </div>

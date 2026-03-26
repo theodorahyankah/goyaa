@@ -23,16 +23,19 @@ class PaytmController extends Controller
 
     private PaymentRequest $payment;
     private $user;
+    private $config_values;
 
     public function __construct(PaymentRequest $payment, User $user)
     {
         $config = $this->payment_config('paytm', 'payment_config');
+        $this->config_values = null;
         if (!is_null($config) && $config->mode == 'live') {
             $this->config_values = json_decode($config->live_values);
         } elseif (!is_null($config) && $config->mode == 'test') {
             $this->config_values = json_decode($config->test_values);
         }
-        if (isset($config)) {
+
+        if (isset($config) && !is_null($this->config_values)) {
 
             $PAYTM_STATUS_QUERY_NEW_URL = 'https://securegw-stage.paytm.in/merchant-status/getTxnStatus';
             $PAYTM_TXN_URL = 'https://securegw-stage.paytm.in/theia/processTransaction';

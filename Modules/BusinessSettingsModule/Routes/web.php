@@ -144,8 +144,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Web\Admin',
             Route::post('commission-to-subscription', [SubscriptionPackageController::class, 'commissionToSubscription'])->name('commission-to-subscription');
             Route::any('download', [SubscriptionPackageController::class, 'download'])->name('download');
             Route::any('transactions', [SubscriptionPackageController::class, 'transactions'])->name('transactions');
-            Route::get('transactions/download', [SubscriptionPackageController::class, 'transactionsDownload'])->name('transactions.download');
-            Route::get('transactions/invoice/{id}', [SubscriptionPackageController::class, 'invoice'])->name('transactions.invoice');
+            Route::get('transactions/download', [SubscriptionPackageController::class, 'transactionsDownload'])->name('package.transactions.download');
+            Route::get('transactions/invoice/{id}', [SubscriptionPackageController::class, 'invoice'])->name('package.transactions.invoice');
             Route::get('invoice/{id}/{lang}', [SubscriptionPackageController::class, 'subscriptionInvoice'])->withoutMiddleware('admin');
         });
 
@@ -158,8 +158,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Web\Admin',
             Route::post('cancel', [SubscriberController::class, 'cancel'])->name('cancel');
             Route::any('download', [SubscriberController::class, 'download'])->name('download');
             Route::any('transactions', [SubscriberController::class, 'transactions'])->name('transactions');
-            Route::get('transactions/download', [SubscriberController::class, 'transactionsDownload'])->name('transactions.download');
-            Route::get('transactions/invoice/{id}', [SubscriberController::class, 'invoice'])->name('transactions.invoice');
+            Route::get('transactions/download', [SubscriberController::class, 'transactionsDownload'])->name('subscriber.transactions.download');
+            Route::get('transactions/invoice/{id}', [SubscriberController::class, 'invoice'])->name('subscriber.transactions.invoice');
         });
     });
 

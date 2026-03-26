@@ -122,7 +122,8 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('admin.subscription.subscriber.transactions.download') }}?search={{ $search }}&provider_id={{ $providerId }}">
+                                        <a class="dropdown-item" href="{{ route('admin.subscription.subscriber.subscriber.transactions.download') }}?search={{ $search }}&provider_id={{ $providerId }}">
+
                                             {{translate('Excel')}}
                                         </a>
                                     </li>
@@ -224,3 +225,4 @@
         });
     </script>
 @endpush
+h

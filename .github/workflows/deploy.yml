@@ -46,7 +46,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "docker-compose.yml,.docker/nginx.conf,.env.example"
+          source: "docker-compose.yml,.docker/nginx.conf,.env.example,scripts/update-env.sh"
           target: "~/goya"
 
       - name: Deploy to DigitalOcean via SSH
@@ -57,20 +57,22 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd ~/goya
+            chmod +x scripts/update-env.sh
             
             # Detect first deployment
             FIRST_DEPLOY=false
             if [ ! -f .env ]; then
               FIRST_DEPLOY=true
-              cp .env.example .env
-              echo "DB_CONNECTION=mysql" >> .env
-              echo "DB_HOST=db" >> .env
-              echo "DB_PORT=3306" >> .env
-              echo "DB_DATABASE=laravel" >> .env
-              echo "DB_USERNAME=laravel" >> .env
-              echo "DB_PASSWORD=secret" >> .env
-              echo "REDIS_HOST=redis" >> .env
             fi
+            
+            # Update environment variables
+            ./scripts/update-env.sh DB_CONNECTION mysql
+            ./scripts/update-env.sh DB_HOST db
+            ./scripts/update-env.sh DB_PORT 3306
+            ./scripts/update-env.sh DB_DATABASE laravel
+            ./scripts/update-env.sh DB_USERNAME laravel
+            ./scripts/update-env.sh DB_PASSWORD secret
+            ./scripts/update-env.sh REDIS_HOST redis
 
             # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
