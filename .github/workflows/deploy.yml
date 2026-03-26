@@ -58,17 +58,16 @@ jobs:
           script: |
             cd ~/goya
             
-            # Create .env if it doesn't exist (copy from .env.example)
+            # Detect first deployment
+            FIRST_DEPLOY=false
             if [ ! -f .env ]; then
+              FIRST_DEPLOY=true
               cp .env.example .env
-              # You should probably replace the values here or use a secret for the full .env
               echo "DB_HOST=db" >> .env
               echo "REDIS_HOST=redis" >> .env
             fi
 
-            # Login to GHCR (using a PAT if GITHUB_TOKEN doesn't work for pulls on external servers)
-            # For simplicity, assuming the user has configured docker login on the droplet
-            # or we use the GITHUB_TOKEN (must have read permissions)
+            # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
             # Update the image in docker-compose.yml to use the GHCR one
@@ -79,5 +78,13 @@ jobs:
             docker compose pull
             docker compose up -d --remove-orphans
             
-            # Run migrations
-            docker compose exec -T app php artisan migrate --force
+            # Run commands based on deployment state
+            if [ "$FIRST_DEPLOY" = true ]; then
+              docker compose exec -T app php artisan key:generate
+              docker compose exec -T app php artisan migrate --seed --force
+            else
+              docker compose exec -T app php artisan migrate --force
+            fi
+            
+            # Run optimization for Laravel
+            docker compose exec -T app php artisan optimize
