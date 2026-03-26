@@ -70,10 +70,12 @@ jobs:
             # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-            # Update the image in docker-compose.yml to use the GHCR one
-            sed -i "s|build:.*|image: ghcr.io/${{ github.repository }}/app:latest|g" docker-compose.yml
-            # Remove the dockerfile line if it exists
-            sed -i "/dockerfile:/d" docker-compose.yml
+            # Update the docker-compose.yml for production (replace build block with image)
+            sed -i '/build:/d' docker-compose.yml
+            sed -i '/context: ./d' docker-compose.yml
+            sed -i '/dockerfile: Dockerfile/d' docker-compose.yml
+            # Add image line after 'app:' with correct indentation
+            sed -i '/app:/a \    image: ghcr.io/${{ github.repository }}/app:latest' docker-compose.yml
 
             docker compose pull
             docker compose up -d --remove-orphans
