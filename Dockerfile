@@ -1,5 +1,5 @@
-# Use PHP 8.2 FPM Alpine
-FROM php:8.2-fpm-alpine
+# Use PHP 8.3 FPM Alpine to satisfy dependency requirements
+FROM php:8.3-fpm-alpine
 
 # Install system dependencies
 RUN apk add --no-cache \
@@ -13,12 +13,15 @@ RUN apk add --no-cache \
     oniguruma-dev \
     icu-dev \
     libjpeg-turbo-dev \
-    freetype-dev
+    freetype-dev \
+    libwebp-dev \
+    zlib-dev
 
 # Install PHP extensions
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install \
     pdo_mysql \
+    mysqli \
     mbstring \
     exif \
     pcntl \
