@@ -46,7 +46,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "docker-compose.yml,.docker/nginx.conf"
+          source: "docker-compose.yml,.docker/nginx.conf,.env.example"
           target: "~/goya"
 
       - name: Deploy to DigitalOcean via SSH
