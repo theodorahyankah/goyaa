@@ -41,7 +41,7 @@ class CreateBookingRepeatsTable extends Migration
             $table->string('coupon_code')->nullable();
             $table->tinyInteger('is_verified')->default(0);
             $table->tinyInteger('is_reassign')->default(0);
-            $table->longText('evidence_photos',24,3)->nullable();
+            $table->longText('evidence_photos')->nullable();
             $table->string('booking_otp',255)->nullable();
             $table->timestamps();
         });
