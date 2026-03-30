@@ -84,5 +84,3 @@ volumes:
     driver: local
   goya-www-data:
     driver: local
-goya-portainer-data:
-    driver: local
