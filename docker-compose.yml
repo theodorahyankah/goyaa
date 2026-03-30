@@ -11,6 +11,7 @@ services:
       - .env
     volumes:
       - goya-www-data:/var/www
+      - ./.env:/var/www/.env
     depends_on:
       - db
       - redis
