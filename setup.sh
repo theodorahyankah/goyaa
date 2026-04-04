@@ -59,9 +59,21 @@ docker compose up -d
 
 # 4. Post-deployment tasks
 echo "Waiting for containers to start..."
-sleep 5
+sleep 10
+
+echo "Ensuring database exists..."
+docker exec goya-db mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
 
 echo "Running migrations..."
 docker exec goya-app php artisan migrate --force
+
+echo "Running seeders..."
+docker exec goya-app php artisan db:seed --force
+
+echo "Installing Passport..."
+docker exec goya-app php artisan passport:install --force
+
+echo "Setting permissions..."
+docker exec goya-app chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/config
 
 echo "Deployment finished successfully!"
