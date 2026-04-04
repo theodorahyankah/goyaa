@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Navigate to the project directory
-# Defaulting to current directory or /root/goya if on server
 PROJECT_DIR="$(pwd)"
 if [ -d "/root/goya" ]; then
     PROJECT_DIR="/root/goya"
@@ -22,31 +21,27 @@ APP_NAME=Goya
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=http://localhost
-
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
-
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=laravel
 DB_PASSWORD=secret
-
 REDIS_HOST=redis
 REDIS_PASSWORD=null
 REDIS_PORT=6379
+SESSION_DRIVER=redis
+CACHE_DRIVER=redis
 EOT
     fi
 fi
 
 # 2. Fix/Generate APP_KEY
-# Check if key is missing or is the literal bash command string
 if ! grep -q "APP_KEY=base64:" .env || grep -q "APP_KEY=base64:\$(openssl" .env; then
     echo "Generating new APP_KEY..."
-    # Remove any existing APP_KEY lines
     sed -i '/APP_KEY=/d' .env
-    # Generate and append a real key
     NEW_KEY="base64:$(openssl rand -base64 32)"
     echo "APP_KEY=$NEW_KEY" >> .env
     echo "New APP_KEY generated."
@@ -59,29 +54,51 @@ docker compose up -d
 
 # 4. Post-deployment tasks
 echo "Waiting for containers to start..."
-sleep 10
+sleep 15
 
-echo "Ensuring database exists..."
-docker exec goya-db mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
+INSTALL_MARKER=".installed"
 
-echo "Importing base SQL if available..."
-if [ -f "installation/backup/database_v3.5.sql" ]; then
-    echo "Importing installation/backup/database_v3.5.sql..."
-    # We use -i to pipe the file into the mysql command inside the container
-    docker exec -i goya-db mysql -u root -proot laravel < installation/backup/database_v3.5.sql
+if [ ! -f "$INSTALL_MARKER" ]; then
+    echo "First deployment detected. Initializing database..."
+
+    echo "Ensuring database exists..."
+    docker exec goya-db mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
+
+    echo "Importing base SQL..."
+    # Check if database.sql exists (the one with data)
+    if [ -f "installation/backup/database.sql" ]; then
+        echo "Importing installation/backup/database.sql..."
+        docker exec -i goya-db mysql -u root -proot laravel < installation/backup/database.sql
+    elif [ -f "installation/backup/database_v3.5.sql" ]; then
+        echo "Importing installation/backup/database_v3.5.sql..."
+        docker exec -i goya-db mysql -u root -proot laravel < installation/backup/database_v3.5.sql
+    fi
+
+    echo "Running migrations..."
+    docker exec goya-app php artisan migrate --force
+
+    echo "Running seeders..."
+    docker exec goya-app php artisan db:seed --force
+
+    echo "Installing Passport..."
+    docker exec goya-app php artisan passport:install --force
+
+    echo "Creating installation marker..."
+    touch "$INSTALL_MARKER"
+else
+    echo "Subsequent deployment detected. Running migrations only..."
+    docker exec goya-app php artisan migrate --force
 fi
-
-echo "Running migrations..."
-docker exec goya-app php artisan migrate --force
-
-echo "Running seeders..."
-docker exec goya-app php artisan db:seed --force
-
-echo "Installing Passport..."
-docker exec goya-app php artisan passport:install --force
 
 echo "Setting permissions..."
 docker exec goya-app chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/config
 docker exec goya-app chmod -R 775 /var/www/storage /var/www/bootstrap/cache /var/www/config
+
+echo "Creating storage link..."
+docker exec goya-app php artisan storage:link --force
+
+echo "Optimizing application..."
+docker exec goya-app php artisan optimize:clear
+docker exec goya-app php artisan optimize
 
 echo "Deployment finished successfully!"
