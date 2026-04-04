@@ -289,10 +289,7 @@ class InstallController extends Controller
 
     public function getActivationCheckView(Request $request): View|RedirectResponse
     {
-        $config = $this->getAddonsConfig();
-        $adminPanel = $config['admin_panel'] ?? [];
-        $status = ($this->is_local() || env('DEVELOPMENT_ENVIRONMENT', false)) ? 1 : ($adminPanel['active'] ?? 0);
-        return $status == 1 ? redirect(route('admin.auth.login')) : view('installation.activation-check');
+        return redirect(route('admin.auth.login'));
     }
 
     public function activationCheck(Request $request): RedirectResponse

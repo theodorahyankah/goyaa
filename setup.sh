@@ -18,9 +18,9 @@ if [ ! -f .env ]; then
         echo "Creating basic .env file..."
         cat <<EOT >> .env
 APP_NAME=Goya
-APP_ENV=production
+APP_ENV=development
 APP_DEBUG=false
-APP_URL=http://localhost
+APP_URL=http://127.0.0.1
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
 DB_CONNECTION=mysql
