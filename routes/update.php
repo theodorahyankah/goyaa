@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::any('/', [UpdateController::class, 'update_software_index'])->name('index');
 Route::any('update-system', [UpdateController::class, 'update_software'])->name('update-system');
 
-Route::get('activation-check', [InstallController::class, 'getActivationCheckView'])->name('system.activation-check');
+Route::get('activation-check', function() { return redirect('admin/dashboard'); })->name('system.activation-check');
 Route::post('activation-check', [InstallController::class, 'activationCheck']);
 
 Route::fallback(function () {

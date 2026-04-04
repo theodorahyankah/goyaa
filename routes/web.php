@@ -31,7 +31,7 @@ Route::get('/image-proxy', function () {
         ->header('Access-Control-Allow-Origin', '*');
 });
 
-Route::get('activation-check', [InstallController::class, 'getActivationCheckView'])->name('system.activation-check');
+Route::get('activation-check', function() { return redirect('admin/dashboard'); })->name('system.activation-check');
 Route::post('activation-check', [InstallController::class, 'activationCheck']);
 
 Route::get('lang/{locale}', [LandingController::class, 'lang'])->name('lang');

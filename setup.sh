@@ -19,7 +19,7 @@ if [ ! -f .env ]; then
         cat <<EOT >> .env
 APP_NAME=Goya
 APP_ENV=development
-APP_DEBUG=false
+APP_DEBUG=true
 APP_URL=http://127.0.0.1
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
@@ -72,6 +72,15 @@ if [ ! -f "$INSTALL_MARKER" ]; then
     elif [ -f "installation/backup/database_v3.5.sql" ]; then
         echo "Importing installation/backup/database_v3.5.sql..."
         docker exec -i goya-db mysql -u root -proot laravel < installation/backup/database_v3.5.sql
+    fi
+
+    echo "Importing base images..."
+    if [ -f "installation/public.zip" ]; then
+        echo "Unzipping installation/public.zip..."
+        docker exec goya-app unzip -o installation/public.zip -d storage/app/public
+        # Move files if they are nested in a 'public' folder inside the zip
+        docker exec goya-app sh -c 'if [ -d "storage/app/public/public" ]; then mv storage/app/public/public/* storage/app/public/ && rm -rf storage/app/public/public; fi'
+        docker exec goya-app rm -rf storage/app/public/__MACOSX
     fi
 
     echo "Running migrations..."
