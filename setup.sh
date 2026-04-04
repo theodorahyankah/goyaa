@@ -64,6 +64,13 @@ sleep 10
 echo "Ensuring database exists..."
 docker exec goya-db mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
 
+echo "Importing base SQL if available..."
+if [ -f "installation/backup/database_v3.5.sql" ]; then
+    echo "Importing installation/backup/database_v3.5.sql..."
+    # We use -i to pipe the file into the mysql command inside the container
+    docker exec -i goya-db mysql -u root -proot laravel < installation/backup/database_v3.5.sql
+fi
+
 echo "Running migrations..."
 docker exec goya-app php artisan migrate --force
 
@@ -75,5 +82,6 @@ docker exec goya-app php artisan passport:install --force
 
 echo "Setting permissions..."
 docker exec goya-app chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/config
+docker exec goya-app chmod -R 775 /var/www/storage /var/www/bootstrap/cache /var/www/config
 
 echo "Deployment finished successfully!"

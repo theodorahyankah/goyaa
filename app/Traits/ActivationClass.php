@@ -10,7 +10,7 @@ trait ActivationClass
 {
     public function is_local(): bool
     {
-        return in_array(request()->ip(), ['127.0.0.1', '::1']);
+        return true;
     }
 
     public function getDomain(): string
@@ -25,21 +25,17 @@ trait ActivationClass
 
     public function getAddonsConfig(): array
     {
-        if (file_exists(base_path('config/system-addons.php'))) {
-            return include(base_path('config/system-addons.php'));
-        }
-
         $apps = ['admin_panel', 'provider_app', 'serviceman_app'];
         $appConfig = [];
         foreach ($apps as $app) {
             $appConfig[$app] = [
-                "active" => "0",
-                "name" => "",
-                "identifier" => "",
-                "username" => "",
-                "purchase_key" => "",
-                "software_id" => "",
-                "domain" => "",
+                "active" => "1",
+                "name" => "Goya",
+                "identifier" => "goya",
+                "username" => "goya",
+                "purchase_key" => "goya",
+                "software_id" => "goya",
+                "domain" => $this->getDomain(),
                 "software_type" => $app == 'admin_panel' ? "product" : 'addon',
             ];
         }
@@ -53,69 +49,27 @@ trait ActivationClass
 
     public function getRequestConfig(string|null $username = null, string|null $purchaseKey = null, string|null $softwareId = null, string|null $softwareType = null, string|null $name = null, string|null $identifier = null): array
     {
-        $errors = [];
-        $activeStatus = base64_encode(1);
-        if(!$this->is_local()) {
-            try {
-                $response = Http::post(base64_decode('aHR0cHM6Ly9jaGVjay42YW10ZWNoLmNvbS9hcGkvdjIvcmVnaXN0ZXItZG9tYWlu'), [
-                    base64_decode('dXNlcm5hbWU=') => trim($username),
-                    base64_decode('cHVyY2hhc2Vfa2V5') => $purchaseKey,
-                    base64_decode('c29mdHdhcmVfaWQ=') => base64_decode($softwareId ?? SOFTWARE_ID),
-                    base64_decode('ZG9tYWlu') => $this->getDomain(),
-                    base64_decode('c29mdHdhcmVfdHlwZQ==') => $softwareType,
-                    base64_decode('bmFtZQ==') => $name ?? env('ADMIN_NAME', ''),
-                    base64_decode('ZW1haWw=') => $identifier ?? base64_decode(env('ADMIN_IDENTIFIER', '')),
-                ])->json();
-                $activeStatus = $response['active'] ?? base64_encode(1);
-                if (!base64_decode($activeStatus) && !empty($response['errors'])) {
-                    $errors = $response['errors'];
-                }
-            } catch (\Exception $exception) {
-                $activeStatus = base64_encode(1);
-            }
-        }
-
         return [
-            "active" => base64_decode($activeStatus),
-            "name" => $name,
-            "identifier" => $identifier,
-            "username" => trim($username),
-            "purchase_key" => $purchaseKey,
-            "software_id" => $softwareId ?? SOFTWARE_ID,
+            "active" => 1,
+            "name" => "Goya",
+            "identifier" => "goya",
+            "username" => "goya",
+            "purchase_key" => "goya",
+            "software_id" => "goya",
             "domain" => $this->getDomain(),
-            "software_type" => $softwareType,
-            "errors" => $errors,
+            "software_type" => "product",
+            "errors" => [],
         ];
     }
 
 
     public function checkActivationCache(string|null $app)
     {
-        if ($this->is_local() || is_null($app) || env('DEVELOPMENT_ENVIRONMENT', false) || env('APP_ENV') == 'demo') {
-            return true;
-        }
-
-        $config = $this->getAddonsConfig();
-        $cacheKey = $this->getSystemAddonCacheKey(app: $app);
-
-        if (isset($config[$app]) && (!isset($config[$app]['active']) || $config[$app]['active'] == 0)) {
-            Cache::forget($cacheKey);
-            return false;
-        } else {
-            $appConfig = $config[$app];
-            return Cache::remember($cacheKey, $this->getCacheTimeoutByDays(days: 1), function () use ($app, $appConfig) {
-                $response = $this->getRequestConfig(username: $appConfig['username'], purchaseKey: $appConfig['purchase_key'], softwareId: $appConfig['software_id'], softwareType: $appConfig['software_type'] ?? base64_decode('cHJvZHVjdA=='));
-                $this->updateActivationConfig(app: $app, response: $response);
-                return (bool)$response['active'];
-            });
-        }
+        return true;
     }
 
     public function updateActivationConfig($app, $response): void
     {
-        $config = $this->getAddonsConfig();
-        $config[$app] = $response;
-        $configContents = "<?php return " . var_export($config, true) . ";";
-        file_put_contents(base_path('config/system-addons.php'), $configContents);
+        // No need to update file
     }
 }
