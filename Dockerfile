@@ -40,6 +40,9 @@ WORKDIR /var/www
 # Copy existing application directory contents
 COPY . /var/www
 
+# Copy php.ini for custom settings
+RUN cp /var/www/php.ini $PHP_INI_DIR/php.ini
+
 # Install composer dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
