@@ -31,4 +31,4 @@ echo "📊 Verifying installation..."
 docker --version
 docker compose version
 
-echo "🎉 Server setup complete! Please LOG OUT and LOG BACK IN to enable docker permissions."
+echo " Server setup complete! Please LOG OUT and LOG BACK IN to enable docker permissions."
