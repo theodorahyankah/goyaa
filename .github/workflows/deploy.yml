@@ -37,6 +37,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: deployment/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}/app:latest
 
@@ -46,8 +47,9 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "docker-compose.yml,.docker/nginx.conf,.env.example,scripts/update-env.sh"
+          source: "deployment/docker-compose.yml,deployment/nginx.conf,.env.example,scripts/update-env.sh"
           target: "~/goya"
+          strip_components: 1
 
       - name: Deploy to DigitalOcean via SSH
         uses: appleboy/ssh-action@master
@@ -76,18 +78,14 @@ jobs:
             # Ensure APP_KEY exists
             if ! grep -q "APP_KEY=base64:" .env; then
               echo "Generating new APP_KEY..."
-              # We'll generate it temporarily and then use artisan to do it properly inside container
               echo "APP_KEY=" >> .env
             fi
 
             # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-            # Update the docker-compose.yml for production (replace build block with image)
-            # Remove build section for the app service
-            sed -i '/build:/,/dockerfile: Dockerfile/d' docker-compose.yml
-            # Add image line after 'app:' with correct indentation
-            # Check if image line already exists to avoid duplication
+            # Update the docker-compose.yml for production
+            sed -i '/build:/,/dockerfile: deployment\/Dockerfile/d' docker-compose.yml
             if ! grep -q "image: ghcr.io/${{ github.repository }}/app:latest" docker-compose.yml; then
               sed -i '/app:/a \    image: ghcr.io/${{ github.repository }}/app:latest' docker-compose.yml
             fi
@@ -95,13 +93,21 @@ jobs:
             docker compose pull
             docker compose up -d --remove-orphans
             
-            # Always ensure key is generated if missing
+            # Ensure key is generated
             if ! grep -q "APP_KEY=base64:" .env || [ "$(grep "APP_KEY=" .env | cut -d'=' -f2)" = "" ]; then
                docker compose exec -T app php artisan key:generate --force
             fi
 
-            # Run migrations
+            # Run migrations and seeders
             docker compose exec -T app php artisan migrate --force
+            docker compose exec -T app php artisan db:seed --class=GoyaaGhanaSeeder --force
             
-            # Run optimization for Laravel
+            # Install Passport
+            docker compose exec -T app php artisan passport:install --force
+
+            # Create storage link
+            docker compose exec -T app php artisan storage:link --force
+
+            # Run optimization
+            docker compose exec -T app php artisan optimize:clear
             docker compose exec -T app php artisan optimize
