@@ -64,6 +64,7 @@ if [ ! -f "$INSTALL_MARKER" ]; then
     # Try multiple paths for database.sql
     SQL_FILE="installation/backup/database.sql"
     if sudo docker exec goya-app ls "/var/www/$SQL_FILE" >/dev/null 2>&1; then
+        echo "Importing $SQL_FILE..."
         sudo docker exec goya-app cat "/var/www/$SQL_FILE" | sudo docker exec -i goya-db mysql -u root -proot laravel
     else
         echo "⚠️ Could not find $SQL_FILE inside container."
@@ -72,6 +73,7 @@ if [ ! -f "$INSTALL_MARKER" ]; then
     echo "Importing base images..."
     ZIP_FILE="installation/public.zip"
     if sudo docker exec goya-app ls "/var/www/$ZIP_FILE" >/dev/null 2>&1; then
+        echo "Unzipping $ZIP_FILE..."
         sudo docker exec goya-app unzip -o "/var/www/$ZIP_FILE" -d /var/www/storage/app/public
         sudo docker exec goya-app sh -c 'if [ -d "/var/www/storage/app/public/public" ]; then mv /var/www/storage/app/public/public/* /var/www/storage/app/public/ && rm -rf /var/www/storage/app/public/public; fi'
         sudo docker exec goya-app rm -rf /var/www/storage/app/public/__MACOSX
