@@ -26,7 +26,7 @@ chmod +x scripts/update-env.sh
 ./scripts/update-env.sh DB_HOST db
 ./scripts/update-env.sh DB_PORT 3306
 ./scripts/update-env.sh DB_DATABASE laravel
-./scripts/update-env.sh DB_USERNAME laravel
+./scripts/update-env.sh DB_USERNAME root
 ./scripts/update-env.sh DB_PASSWORD secret
 ./scripts/update-env.sh REDIS_HOST redis
 
