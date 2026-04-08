@@ -49,10 +49,10 @@ jobs:
           script: |
             cd /root/goya
             # Move files from subdirectories to root of app directory if scp put them there
-            [ -f deployment/docker-compose.yml ] && mv deployment/docker-compose.yml .
-            [ -f deployment/nginx.conf ] && mv deployment/nginx.conf .
+            [ -f deployment/docker-compose.yml ] && sudo mv deployment/docker-compose.yml .
+            [ -f deployment/nginx.conf ] && sudo mv deployment/nginx.conf .
             
-            chmod +x scripts/deploy.sh
+            sudo chmod +x scripts/deploy.sh
             
             # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
