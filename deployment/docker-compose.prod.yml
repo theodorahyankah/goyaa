@@ -1,7 +1,7 @@
 services:
   # PHP Application
   app:
-    image: ghcr.io/${{ github.repository }}/app:latest
+    image: REPOSITORY_PLACEHOLDER/app:latest
     container_name: goya-app
     restart: always
     working_dir: /var/www

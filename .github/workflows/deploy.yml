@@ -58,7 +58,7 @@ jobs:
             echo "${{ secrets.DOCKER_TOKEN }}" | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
             # Update the image placeholder in docker-compose.yml
-            sudo sed -i 's|ghcr.io/${{ github.repository }}/app:latest|ghcr.io/${{ github.repository }}/app:latest|g' docker-compose.yml
+            sudo sed -i 's|REPOSITORY_PLACEHOLDER|ghcr.io/${{ github.repository }}|g' docker-compose.yml
 
             # Execute the deployment script
             sudo ./scripts/deploy.sh /root/goya
