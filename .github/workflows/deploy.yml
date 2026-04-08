@@ -39,7 +39,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           source: "deployment/docker-compose.yml,deployment/nginx.conf,.env.example,scripts/deploy.sh,scripts/update-env.sh"
           target: "/root/goya"
-          strip_components: 1
 
       - name: Deploy to DigitalOcean via SSH
         uses: appleboy/ssh-action@master
@@ -49,6 +48,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /root/goya
+            # Move files from subdirectories to root of app directory if scp put them there
+            [ -f deployment/docker-compose.yml ] && mv deployment/docker-compose.yml .
+            [ -f deployment/nginx.conf ] && mv deployment/nginx.conf .
+            
             chmod +x scripts/deploy.sh
             
             # Login to GHCR

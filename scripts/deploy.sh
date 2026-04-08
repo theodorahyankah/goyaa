@@ -16,19 +16,26 @@ echo "🚀 Starting deployment in $PROJECT_DIR..."
 
 # 1. Ensure .env exists
 if [ ! -f .env ]; then
-    echo "📄 Creating .env from .env.example..."
-    cp .env.example .env
+    if [ -f .env.example ]; then
+        echo "📄 Creating .env from .env.example..."
+        cp .env.example .env
+    else
+        touch .env
+    fi
 fi
 
 # 2. Update environment variables using our helper script
-chmod +x scripts/update-env.sh
-./scripts/update-env.sh DB_CONNECTION mysql
-./scripts/update-env.sh DB_HOST db
-./scripts/update-env.sh DB_PORT 3306
-./scripts/update-env.sh DB_DATABASE laravel
-./scripts/update-env.sh DB_USERNAME root
-./scripts/update-env.sh DB_PASSWORD secret
-./scripts/update-env.sh REDIS_HOST redis
+UPDATE_ENV="./scripts/update-env.sh"
+[ -f "./update-env.sh" ] && UPDATE_ENV="./update-env.sh"
+
+chmod +x "$UPDATE_ENV"
+"$UPDATE_ENV" DB_CONNECTION mysql
+"$UPDATE_ENV" DB_HOST db
+"$UPDATE_ENV" DB_PORT 3306
+"$UPDATE_ENV" DB_DATABASE laravel
+"$UPDATE_ENV" DB_USERNAME root
+"$UPDATE_ENV" DB_PASSWORD secret
+"$UPDATE_ENV" REDIS_HOST redis
 
 # 3. Ensure APP_KEY exists in .env for Docker to start properly
 if ! grep -q "APP_KEY=base64:" .env; then
@@ -54,15 +61,22 @@ if [ ! -f "$INSTALL_MARKER" ]; then
     sudo docker exec goya-db mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
 
     echo "Importing base SQL..."
-    if [ -f "installation/backup/database.sql" ]; then
-        sudo docker exec goya-app cat /var/www/installation/backup/database.sql | sudo docker exec -i goya-db mysql -u root -proot laravel
+    # Try multiple paths for database.sql
+    SQL_FILE="installation/backup/database.sql"
+    if sudo docker exec goya-app ls "/var/www/$SQL_FILE" >/dev/null 2>&1; then
+        sudo docker exec goya-app cat "/var/www/$SQL_FILE" | sudo docker exec -i goya-db mysql -u root -proot laravel
+    else
+        echo "⚠️ Could not find $SQL_FILE inside container."
     fi
 
     echo "Importing base images..."
-    if [ -f "installation/public.zip" ]; then
-        sudo docker exec goya-app unzip -o /var/www/installation/public.zip -d /var/www/storage/app/public
+    ZIP_FILE="installation/public.zip"
+    if sudo docker exec goya-app ls "/var/www/$ZIP_FILE" >/dev/null 2>&1; then
+        sudo docker exec goya-app unzip -o "/var/www/$ZIP_FILE" -d /var/www/storage/app/public
         sudo docker exec goya-app sh -c 'if [ -d "/var/www/storage/app/public/public" ]; then mv /var/www/storage/app/public/public/* /var/www/storage/app/public/ && rm -rf /var/www/storage/app/public/public; fi'
         sudo docker exec goya-app rm -rf /var/www/storage/app/public/__MACOSX
+    else
+        echo "⚠️ Could not find $ZIP_FILE inside container."
     fi
 
     sudo touch "$INSTALL_MARKER"
