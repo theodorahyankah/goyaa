@@ -52,58 +52,71 @@ sudo docker compose up -d --remove-orphans
 echo "⏳ Waiting for database to start..."
 sleep 15
 
+# Detect container names
+DB_CONTAINER=$(sudo docker ps --format '{{.Names}}' | grep -E "db|database" | head -n 1)
+APP_CONTAINER=$(sudo docker ps --format '{{.Names}}' | grep -E "app|php" | head -n 1)
+
+echo "📦 Detected containers: DB=$DB_CONTAINER, APP=$APP_CONTAINER"
+
 # 6. Initialize Database if needed (Logic from setup.sh)
 INSTALL_MARKER=".installed"
 if [ ! -f "$INSTALL_MARKER" ]; then
     echo "🆕 First deployment detected. Initializing database..."
 
-    echo "Ensuring database exists..."
-    sudo docker exec goya-db mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
+    if [ -n "$DB_CONTAINER" ]; then
+        echo "Ensuring database exists in $DB_CONTAINER..."
+        sudo docker exec "$DB_CONTAINER" mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
 
-    echo "Importing base SQL..."
-    # Try multiple paths for database.sql
-    SQL_FILE="installation/backup/database.sql"
-    if sudo docker exec goya-app ls "/var/www/$SQL_FILE" >/dev/null 2>&1; then
-        echo "Importing $SQL_FILE..."
-        sudo docker exec goya-app cat "/var/www/$SQL_FILE" | sudo docker exec -i goya-db mysql -u root -proot laravel
+        echo "Importing base SQL..."
+        SQL_FILE="installation/backup/database.sql"
+        if [ -n "$APP_CONTAINER" ] && sudo docker exec "$APP_CONTAINER" ls "/var/www/$SQL_FILE" >/dev/null 2>&1; then
+            echo "Importing $SQL_FILE..."
+            sudo docker exec "$APP_CONTAINER" cat "/var/www/$SQL_FILE" | sudo docker exec -i "$DB_CONTAINER" mysql -u root -proot laravel
+        else
+            echo "⚠️ Could not find $SQL_FILE inside $APP_CONTAINER."
+        fi
+
+        echo "Importing base images..."
+        ZIP_FILE="installation/public.zip"
+        if [ -n "$APP_CONTAINER" ] && sudo docker exec "$APP_CONTAINER" ls "/var/www/$ZIP_FILE" >/dev/null 2>&1; then
+            echo "Unzipping $ZIP_FILE..."
+            sudo docker exec "$APP_CONTAINER" unzip -o "/var/www/$ZIP_FILE" -d /var/www/storage/app/public
+            sudo docker exec "$APP_CONTAINER" sh -c 'if [ -d "/var/www/storage/app/public/public" ]; then mv /var/www/storage/app/public/public/* /var/www/storage/app/public/ && rm -rf /var/www/storage/app/public/public; fi'
+            sudo docker exec "$APP_CONTAINER" rm -rf /var/www/storage/app/public/__MACOSX
+        else
+            echo "⚠️ Could not find $ZIP_FILE inside $APP_CONTAINER."
+        fi
+        
+        sudo touch "$INSTALL_MARKER"
     else
-        echo "⚠️ Could not find $SQL_FILE inside container."
+        echo "❌ DB container not found, skipping initialization."
     fi
-
-    echo "Importing base images..."
-    ZIP_FILE="installation/public.zip"
-    if sudo docker exec goya-app ls "/var/www/$ZIP_FILE" >/dev/null 2>&1; then
-        echo "Unzipping $ZIP_FILE..."
-        sudo docker exec goya-app unzip -o "/var/www/$ZIP_FILE" -d /var/www/storage/app/public
-        sudo docker exec goya-app sh -c 'if [ -d "/var/www/storage/app/public/public" ]; then mv /var/www/storage/app/public/public/* /var/www/storage/app/public/ && rm -rf /var/www/storage/app/public/public; fi'
-        sudo docker exec goya-app rm -rf /var/www/storage/app/public/__MACOSX
-    else
-        echo "⚠️ Could not find $ZIP_FILE inside container."
-    fi
-
-    sudo touch "$INSTALL_MARKER"
 fi
 
 # 7. Post-Deployment Artisan Commands
-echo "🛠️ Running Laravel maintenance tasks..."
+if [ -n "$APP_CONTAINER" ]; then
+    echo "🛠️ Running Laravel maintenance tasks in $APP_CONTAINER..."
 
-# Generate key if still empty
-if [ "$(grep "APP_KEY=" .env | cut -d'=' -f2)" = "" ]; then
-    sudo docker compose exec -T app php artisan key:generate --force
+    # Generate key if still empty
+    if [ "$(grep "APP_KEY=" .env | cut -d'=' -f2)" = "" ]; then
+        sudo docker exec "$APP_CONTAINER" php artisan key:generate --force
+    fi
+
+    sudo docker exec "$APP_CONTAINER" php artisan migrate --force
+    sudo docker exec "$APP_CONTAINER" php artisan db:seed --class=GoyaaGhanaSeeder --force
+    sudo docker exec "$APP_CONTAINER" php artisan passport:install --force
+    sudo docker exec "$APP_CONTAINER" php artisan storage:link --force
+
+    # 8. Permissions and Optimization
+    echo "🔒 Setting permissions..."
+    sudo docker exec "$APP_CONTAINER" chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/config
+    sudo docker exec "$APP_CONTAINER" chmod -R 775 /var/www/storage /var/www/bootstrap/cache /var/www/config
+
+    echo "✨ Optimizing application..."
+    sudo docker exec "$APP_CONTAINER" php artisan optimize:clear
+    sudo docker exec "$APP_CONTAINER" php artisan optimize
+else
+    echo "❌ APP container not found, skipping maintenance."
 fi
-
-sudo docker compose exec -T app php artisan migrate --force
-sudo docker compose exec -T app php artisan db:seed --class=GoyaaGhanaSeeder --force
-sudo docker compose exec -T app php artisan passport:install --force
-sudo docker compose exec -T app php artisan storage:link --force
-
-# 8. Permissions and Optimization
-echo "🔒 Setting permissions..."
-sudo docker exec goya-app chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/config
-sudo docker exec goya-app chmod -R 775 /var/www/storage /var/www/bootstrap/cache /var/www/config
-
-echo "✨ Optimizing application..."
-sudo docker compose exec -T app php artisan optimize:clear
-sudo docker compose exec -T app php artisan optimize
 
 echo "🎉 Deployment finished successfully!"

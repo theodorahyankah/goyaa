@@ -57,8 +57,10 @@ jobs:
             # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-            # Prepare docker-compose.yml for production
+            # Prepare docker-compose.yml for production (More robust sed)
+            # 1. Remove build section
             sudo sed -i '/build:/,/dockerfile: deployment\/Dockerfile/d' docker-compose.yml
+            # 2. Add image line if not already there, ensuring we don't wipe the rest of the file
             if ! grep -q "image: ghcr.io/${{ github.repository }}/app:latest" docker-compose.yml; then
               sudo sed -i '/app:/a \    image: ghcr.io/${{ github.repository }}/app:latest' docker-compose.yml
             fi
