@@ -47,7 +47,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "deployment/docker-compose.yml,deployment/nginx.conf,.env.example,scripts/update-env.sh"
+          source: "deployment/docker-compose.yml,deployment/nginx.conf,.env.example,scripts/deploy.sh,scripts/update-env.sh"
           target: "~/goya"
           strip_components: 1
 
@@ -59,55 +59,16 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd ~/goya
-            chmod +x scripts/update-env.sh
+            chmod +x scripts/deploy.sh
             
-            # Ensure .env exists
-            if [ ! -f .env ]; then
-              cp .env.example .env
-            fi
-            
-            # Update environment variables
-            ./scripts/update-env.sh DB_CONNECTION mysql
-            ./scripts/update-env.sh DB_HOST db
-            ./scripts/update-env.sh DB_PORT 3306
-            ./scripts/update-env.sh DB_DATABASE laravel
-            ./scripts/update-env.sh DB_USERNAME laravel
-            ./scripts/update-env.sh DB_PASSWORD secret
-            ./scripts/update-env.sh REDIS_HOST redis
-
-            # Ensure APP_KEY exists
-            if ! grep -q "APP_KEY=base64:" .env; then
-              echo "Generating new APP_KEY..."
-              echo "APP_KEY=" >> .env
-            fi
-
             # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-            # Update the docker-compose.yml for production
+            # Prepare docker-compose.yml for production
             sed -i '/build:/,/dockerfile: deployment\/Dockerfile/d' docker-compose.yml
             if ! grep -q "image: ghcr.io/${{ github.repository }}/app:latest" docker-compose.yml; then
               sed -i '/app:/a \    image: ghcr.io/${{ github.repository }}/app:latest' docker-compose.yml
             fi
 
-            docker compose pull
-            docker compose up -d --remove-orphans
-            
-            # Ensure key is generated
-            if ! grep -q "APP_KEY=base64:" .env || [ "$(grep "APP_KEY=" .env | cut -d'=' -f2)" = "" ]; then
-               docker compose exec -T app php artisan key:generate --force
-            fi
-
-            # Run migrations and seeders
-            docker compose exec -T app php artisan migrate --force
-            docker compose exec -T app php artisan db:seed --class=GoyaaGhanaSeeder --force
-            
-            # Install Passport
-            docker compose exec -T app php artisan passport:install --force
-
-            # Create storage link
-            docker compose exec -T app php artisan storage:link --force
-
-            # Run optimization
-            docker compose exec -T app php artisan optimize:clear
-            docker compose exec -T app php artisan optimize
+            # Execute the deployment script
+            ./scripts/deploy.sh ~/goya
