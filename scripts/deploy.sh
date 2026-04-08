@@ -81,7 +81,7 @@ if [ ! -f "$INSTALL_MARKER" ]; then
         if [ -n "$APP_CONTAINER" ] && sudo docker exec "$APP_CONTAINER" ls "/var/www/$ZIP_FILE" >/dev/null 2>&1; then
             echo "Unzipping $ZIP_FILE..."
             sudo docker exec "$APP_CONTAINER" unzip -o "/var/www/$ZIP_FILE" -d /var/www/storage/app/public
-            sudo docker exec "$APP_CONTAINER" sh -c 'if [ -d "/var/www/storage/app/public/public" ]; then mv /var/www/storage/app/public/public/* /var/www/storage/app/public/ && rm -rf /var/www/storage/app/public/public; fi'
+            sudo docker exec "$APP_CONTAINER" sh -c 'if [ -d "/var/www/storage/app/public/public" ]; then cp -r /var/www/storage/app/public/public/* /var/www/storage/app/public/ && rm -rf /var/www/storage/app/public/public; fi'
             sudo docker exec "$APP_CONTAINER" rm -rf /var/www/storage/app/public/__MACOSX
         else
             echo "⚠️ Could not find $ZIP_FILE inside $APP_CONTAINER."
