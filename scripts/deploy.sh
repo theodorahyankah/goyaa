@@ -65,7 +65,7 @@ if [ ! -f "$INSTALL_MARKER" ]; then
 
     if [ -n "$DB_CONTAINER" ]; then
         echo "Ensuring database exists in $DB_CONTAINER..."
-        sudo docker exec "$DB_CONTAINER" mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
+        sudo docker exec "$DB_CONTAINER" mysql -u root -proot -e "DROP DATABASE IF EXISTS laravel; CREATE DATABASE laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
 
         echo "Importing base SQL..."
         SQL_FILE="installation/backup/database.sql"
