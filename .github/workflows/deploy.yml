@@ -37,7 +37,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "deployment/docker-compose.yml,deployment/nginx.conf,.env.example,scripts/deploy.sh,scripts/update-env.sh"
+          source: "deployment/docker-compose.prod.yml,deployment/nginx.conf,.env.example,scripts/deploy.sh,scripts/update-env.sh"
           target: "/root/goya"
 
       - name: Deploy to DigitalOcean via SSH
@@ -48,22 +48,17 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /root/goya
-            # Move files from subdirectories to root of app directory if scp put them there
-            [ -f deployment/docker-compose.yml ] && sudo mv deployment/docker-compose.yml .
-            [ -f deployment/nginx.conf ] && sudo mv deployment/nginx.conf .
+            # Move production files to root of app directory
+            [ -f deployment/docker-compose.prod.yml ] && sudo cp deployment/docker-compose.prod.yml docker-compose.yml
+            [ -f deployment/nginx.conf ] && sudo cp deployment/nginx.conf .
             
             sudo chmod +x scripts/deploy.sh
             
             # Login to GHCR
             echo "${{ secrets.DOCKER_TOKEN }}" | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-            # Prepare docker-compose.yml for production (More robust sed)
-            # 1. Remove build section
-            sudo sed -i '/build:/,/dockerfile: deployment\/Dockerfile/d' docker-compose.yml
-            # 2. Add image line if not already there, ensuring we don't wipe the rest of the file
-            if ! grep -q "image: ghcr.io/${{ github.repository }}/app:latest" docker-compose.yml; then
-              sudo sed -i '/app:/a \    image: ghcr.io/${{ github.repository }}/app:latest' docker-compose.yml
-            fi
+            # Update the image placeholder in docker-compose.yml
+            sudo sed -i 's|ghcr.io/${{ github.repository }}/app:latest|ghcr.io/${{ github.repository }}/app:latest|g' docker-compose.yml
 
             # Execute the deployment script
             sudo ./scripts/deploy.sh /root/goya
