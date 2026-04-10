@@ -141,9 +141,32 @@ if (!function_exists('file_uploader')) {
 //        return $imageName;
 //    }
 
-    function file_uploader(string $dir, string $format, array|object|null $image = null, ?string $old_image = null)
+    function file_uploader(string $dir, string $format, string|array|object|null $image = null, ?string $old_image = null)
     {
         if ($image == null) {
+            return $old_image ?? 'def.png';
+        }
+
+        // If a string path is given, try to create a pseudo-file object or handle it directly
+        if (is_string($image) && file_exists($image)) {
+            $disk = getDisk();
+            $dir  = rtrim($dir, '/') . '/';
+            if ($old_image) {
+                Storage::disk($disk)->delete($dir . $old_image);
+            }
+            $imageName = now()->toDateString() . "-" . uniqid() . "." . $format;
+            try {
+                if (!Storage::disk($disk)->exists($dir)) {
+                    Storage::disk($disk)->makeDirectory($dir);
+                }
+                Storage::disk($disk)->put($dir . $imageName, file_get_contents($image));
+            } catch (\Exception $exception) {
+                return $old_image ?? 'def.png';
+            }
+            return $imageName;
+        }
+
+        if (is_string($image)) {
             return $old_image ?? 'def.png';
         }
 
