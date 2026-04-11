@@ -50,24 +50,29 @@ sudo docker compose up -d --remove-orphans
 
 # 5. Wait for DB to be ready
 echo "⏳ Waiting for database to start..."
-sleep 15
+sleep 20
 
 # Detect container names
 DB_CONTAINER=$(sudo docker ps --format '{{.Names}}' | grep -E "db|database" | head -n 1)
 APP_CONTAINER=$(sudo docker ps --format '{{.Names}}' | grep -E "app|php" | head -n 1)
 
+# Fallback to hardcoded names from docker-compose.yml if detection fails
+if [ -z "$DB_CONTAINER" ]; then DB_CONTAINER="goya-db"; fi
+if [ -z "$APP_CONTAINER" ]; then APP_CONTAINER="goya-app"; fi
+
 echo "📦 Detected containers: DB=$DB_CONTAINER, APP=$APP_CONTAINER"
 
-# 6. Initialize Database if needed (Logic from setup.sh)
+# 6. Initialize Database if needed
 INSTALL_MARKER=".installed"
 if [ ! -f "$INSTALL_MARKER" ]; then
-    echo "🆕 First deployment detected. Initializing database..."
+    echo "🆕 First deployment or reset detected. Initializing database..."
 
     if [ -n "$DB_CONTAINER" ]; then
         echo "Ensuring database exists in $DB_CONTAINER..."
-        sudo docker exec "$DB_CONTAINER" mysql -u root -proot -e "DROP DATABASE IF EXISTS laravel; CREATE DATABASE laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
+        sudo docker exec "$DB_CONTAINER" mysql -u root -proot -e "CREATE DATABASE IF NOT EXISTS laravel; CREATE USER IF NOT EXISTS 'laravel'@'%' IDENTIFIED BY 'secret'; GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'%'; FLUSH PRIVILEGES;"
 
         echo "Importing base SQL..."
+        # We use database.sql which should be present in the installation/backup folder of the image
         SQL_FILE="installation/backup/database.sql"
         if [ -n "$APP_CONTAINER" ] && sudo docker exec "$APP_CONTAINER" ls "/var/www/$SQL_FILE" >/dev/null 2>&1; then
             echo "Importing $SQL_FILE..."
@@ -80,6 +85,7 @@ if [ ! -f "$INSTALL_MARKER" ]; then
         ZIP_FILE="installation/public.zip"
         if [ -n "$APP_CONTAINER" ] && sudo docker exec "$APP_CONTAINER" ls "/var/www/$ZIP_FILE" >/dev/null 2>&1; then
             echo "Unzipping $ZIP_FILE..."
+            sudo docker exec "$APP_CONTAINER" mkdir -p /var/www/storage/app/public
             sudo docker exec "$APP_CONTAINER" unzip -o "/var/www/$ZIP_FILE" -d /var/www/storage/app/public
             sudo docker exec "$APP_CONTAINER" sh -c 'if [ -d "/var/www/storage/app/public/public" ]; then cp -r /var/www/storage/app/public/public/* /var/www/storage/app/public/ && rm -rf /var/www/storage/app/public/public; fi'
             sudo docker exec "$APP_CONTAINER" rm -rf /var/www/storage/app/public/__MACOSX
@@ -102,6 +108,7 @@ if [ -n "$APP_CONTAINER" ]; then
         sudo docker exec "$APP_CONTAINER" php artisan key:generate --force
     fi
 
+    # Run migrations then seeders
     sudo docker exec "$APP_CONTAINER" php artisan migrate --force
     sudo docker exec "$APP_CONTAINER" php artisan db:seed --class=GoyaaGhanaSeeder --force
     sudo docker exec "$APP_CONTAINER" php artisan passport:install --force

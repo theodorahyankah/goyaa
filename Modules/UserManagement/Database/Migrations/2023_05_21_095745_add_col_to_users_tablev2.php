@@ -13,11 +13,13 @@ class AddColToUsersTableV2 extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('login_hit_count')->default('0');
-            $table->boolean('is_temp_blocked')->default('0');
-            $table->timestamp('temp_block_time')->nullable();
-        });
+        if (!Schema::hasColumn('users', 'login_hit_count')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->tinyInteger('login_hit_count')->default('0');
+                $table->boolean('is_temp_blocked')->default('0');
+                $table->timestamp('temp_block_time')->nullable();
+            });
+        }
     }
 
     /**

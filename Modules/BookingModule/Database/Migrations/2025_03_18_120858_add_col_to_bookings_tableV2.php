@@ -13,10 +13,11 @@ class AddColToBookingsTableV2 extends Migration
      */
     public function up()
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            $table->text('service_address_location')->nullable();
-
-        });
+        if (!Schema::hasColumn('bookings', 'service_address_location')) {
+            Schema::table('bookings', function (Blueprint $table) {
+                $table->text('service_address_location')->nullable();
+            });
+        }
     }
 
     /**
