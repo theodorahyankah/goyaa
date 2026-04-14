@@ -43,6 +43,13 @@ if ! grep -q "APP_KEY=base64:" .env; then
     echo "APP_KEY=" >> .env
 fi
 
+# 3.5 Backup current DB if it exists
+if [ "$(sudo docker ps -q -f name=goya-db)" ]; then
+    echo "💾 Performing pre-deployment backup..."
+    sudo chmod +x ./scripts/backup.sh
+    sudo ./scripts/backup.sh || echo "⚠️ Backup failed, but continuing with deployment..."
+fi
+
 # 4. Pull and Start Containers
 echo "🐳 Restarting Docker containers..."
 sudo docker compose pull
